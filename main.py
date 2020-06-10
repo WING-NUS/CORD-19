@@ -3,6 +3,7 @@ import argparse
 import glob
 from backend.utils.search_result_retrieval import *
 from backend.abstract_tagging.abstract_tagging import *
+from backend.biomedical_ner_tagging.biomedical_ner_tagging import *
 
 def parse_argument():
     parser = argparse.ArgumentParser()
@@ -40,6 +41,16 @@ if __name__ == "__main__":
     ans = retrieve_answer(question, cache_root)
     ans = ans['results']['docs'][:num]
     dois = get_answer_ids(ans)
+
+    """
     print("get abstract labels")
     method = 'SciWing'
     abstracts, tags = get_abstract_labels(abstract_tagger, method, dois, df_covid)
+    """
+
+    print("get Biomedical labels")
+    method = 'SciWing'
+    label_type = 'cadec'
+    body_texts, tags = get_abstract_labels(abstract_tagger, method, label_type, dois, df_covid)
+
+
