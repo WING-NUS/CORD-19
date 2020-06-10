@@ -15,7 +15,7 @@ def get_abstract_labels(tagger, method, dois, df_covid):
     return abstracts, tags
 
 class AbstractTagger():
-    def __init__(self,):
+    def __init__(self):
         self.sciwing_model = None
 
     def tag_abstracts(self, method, abstracts):
