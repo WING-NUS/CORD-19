@@ -111,7 +111,9 @@ const ComplexList = () => {
 
   const getArticles = async () => {
     const response = await axios.get(
-      `${process.env.REACT_APP_BASE_URL}/display`
+        'http://localhost:8000/display'
+       // `https://code-buffalo-api.herokuapp.com/quizzes`
+     //`${process.env.REACT_APP_BASE_URL}/display`
     );
     setArticles(response.data);
   };
@@ -119,15 +121,17 @@ const ComplexList = () => {
   useEffect(() => {
     getArticles();
   }, []);
-
+  debugger;
   return (
     <ul className="App-articles">
       {JSON.stringify(articles)}
       {articles.map(item => (
-        <li key={item.id}>
-          <div>{item.Title}</div>
-          <div>{item.Authors}</div>
-          <div>{item.Abstract.text}</div>
+        <li key={item.paper_id}>
+          <div>{item.paper_id}</div>
+          <div>{item.title}</div>
+          <div>{item.author}</div>
+          <div>{item.abstract}</div>
+          <div>{item.body_text}</div>
         </li>
       ))}
     </ul>
