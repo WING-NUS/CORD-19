@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 const list = [
   {
@@ -105,16 +106,32 @@ const list = [
   }
 ];
 
-const ComplexList = () => (
-  <ul>
-    {list.map(item => (
-      <li key={item.id}>
-        <div>{item.Title}</div>
-        <div>{item.Authors}</div>
-        <div>{item.Abstract.text}</div>
-      </li>
-    ))}
-  </ul>
-);
+const ComplexList = () => {
+  const [articles, setArticles] = useState([]);
+
+  const getArticles = async () => {
+    const response = await axios.get(
+      `${process.env.REACT_APP_BASE_URL}/display`
+    );
+    setArticles(response.data);
+  };
+
+  useEffect(() => {
+    getArticles();
+  }, []);
+
+  return (
+    <ul className="App-articles">
+      {JSON.stringify(articles)}
+      {articles.map(item => (
+        <li key={item.id}>
+          <div>{item.Title}</div>
+          <div>{item.Authors}</div>
+          <div>{item.Abstract.text}</div>
+        </li>
+      ))}
+    </ul>
+  );
+};
 
 export default ComplexList;

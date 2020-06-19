@@ -1,8 +1,14 @@
 import React from "react";
 import "../App.css";
+import Search from "./Search";
 
-function Header() {
-  return <header className="App-header">CORD19-SciWING</header>;
-}
+const Header = () => {
+  return (
+    <div className="App-header">
+      <h2 className="heading">WING-NUS COVID</h2>
+      <Search />
+    </div>
+  );
+};
 
 export default Header;
