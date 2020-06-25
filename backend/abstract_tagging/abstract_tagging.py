@@ -1,7 +1,10 @@
 from backend.abstract_tagging.sciwing.coda19_classification_elmo_lstm_inter import BuildCoda19ClassificationInfer
 import pathlib
+from backend.utils.const import *
+from tqdm import tqdm
+import numpy as np
 
-def get_abstract_labels(tagger, method, dois, df_covid):
+def get_abstract_labels(tagger, paper_ids, tags_cache, df_covid):
     """
 
     :param tagger: AbstactTagger
@@ -9,32 +12,38 @@ def get_abstract_labels(tagger, method, dois, df_covid):
     :param df_covid: database
     :return: tags
     """
-    abstracts = [df_covid.loc[df_covid['doi'] == doi]["abstract"].values for doi in dois]
-    abstracts = [abs[0] if len(abs) > 0 else "" for abs in abstracts]
-    tags = tagger.tag_abstracts(method, abstracts)
-    return abstracts, tags
+    abstag = tagger.tag_abstracts(paper_ids, tags_cache, df_covid)
+    return abstag
 
 class AbstractTagger():
     def __init__(self):
         self.sciwing_model = None
 
-    def tag_abstracts(self, method, abstracts):
+    def tag_abstracts(self, paper_ids, tags_cache, df_covid):
         """
 
         :param method: model being used
         :param abstracts: List[str], a list of abstracts
         :return: List[List[str]], a list of tags for each abstract
         """
-        if method == "SciWing":
-            if not self.sciwing_model:
-                self.sciwing_model = self.create_sciwing_tagger()
-            tags = []
-            for abs in abstracts:
-                tags.append([self.sciwing_model.on_user_input(text) for text in abs.split('.')[:-1]])
-            return tags
+
+        # Initialise tagging machine
+        for method in ABSTAG_METHOD:
+            if method == "sciwing":
+                if not self.sciwing_model:
+                    self.sciwing_model = self.create_sciwing_tagger()
+            # if there are other methods
+
+        for paper_id in tqdm(paper_ids):
+            idx = df_covid.loc[df_covid['paper_id'] == paper_id].index
+            tags_cache[paper_id] = dict()
+            tags_cache[paper_id]["sciwing"] = [self.sciwing_model.on_user_input(text) for text in df_covid.loc[idx, "abstract"].values[0].split(".")[:-1]]
+            # if there are other methods
+
+        return tags_cache
 
     def create_sciwing_tagger(self):
-        dirname = pathlib.Path(".", "coda19_classification_elmo_slower")
+        dirname = pathlib.Path("./backend/abstract_tagging/sciwing/", "coda19_classification_elmo_slower")
         model_filepath = dirname.joinpath("checkpoints", "best_model.pt")
         hparams = {
             "embedding_type": "glove_6B_100",
