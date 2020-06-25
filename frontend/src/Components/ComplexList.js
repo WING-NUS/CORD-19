@@ -111,8 +111,8 @@ const ComplexList = () => {
 
   const getArticles = async () => {
     const response = await axios.get(
-      // 'http://localhost:8000/display'
-      `https://code-buffalo-api.herokuapp.com/quizzes`
+      "http://localhost:8000/display"
+      // `https://code-buffalo-api.herokuapp.com/quizzes`
       //`${process.env.REACT_APP_BASE_URL}/display`
     );
     setArticles(response.data);
