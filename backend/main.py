@@ -4,11 +4,28 @@ from schemas import *
 import pickle
 from utils import search_result_retrieval, const, conversion
 import json
+from starlette.middleware.cors import CORSMiddleware
+
+origins = [
+    "http://localhost",
+    "http://localhost:3000",
+    "http://localhost:8000",
+    "http://192.168.1.132/",
+]
+
+app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 
 database = pickle.load(open(const.DB_SAMPLE_CACHE, 'rb'))
 abstags = json.load(open(const.ABSTAG_JSON_CACHE, 'rb'))
-
-app = FastAPI()
 
 @app.get("/answer/", response_model=List[Answer])
 def answer_query(query: str, limit = 20):
@@ -36,18 +53,12 @@ def read_paper(paper_id: str):
             "abstract": str(paper['abstract'].values),
             "body_text": str(paper['body_text'].values)}
 
-@app.get("/display")
+@app.get("/display", response_model=List[Paper])
 def display():
-    papers = database.iloc[:5]
-    return papers
-        #papers.to_json(orient='split')
-    """
-    paper = papers.iloc[0]
-    return {"paper_id": paper['paper_id'],
-            "title": "what is covid-19",
-            "author": "Jack",
-            "abstract": paper['abstract'],
-            "body_text": paper['body_text']}
-    """
+    print("CALL FROM FRONTEND")
+    #print(type(json.load(open(all_json[0], "rb"))))
+    #return json.load(open(all_json[0], "rb"))
+
+
 if __name__ == "__main__":
     uvicorn.run("main:app", port=8000, reload=True)
