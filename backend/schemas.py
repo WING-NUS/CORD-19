@@ -9,10 +9,6 @@ class Author(BaseModel):
     email: str
     affiliation: str
 
-class Abstract(BaseModel):
-    paper_id: str
-    content: str
-
 class BodyText(BaseModel):
     paper_id: str
     content: str
@@ -21,10 +17,22 @@ class Citation(BaseModel):
     paper_id: str
     content: str
 """
-class Paper(BaseModel):
+class Answer(BaseModel):
+    doi: str
+    doc_score: str
+    doc_date: str
+    title: str
+    sents: List[str]
+
+class Abstract(BaseModel):
+    doi: str
     paper_id: str
     title: str
-    author: str
-    abstract: str
+    authors: List[str]
+    text: List[str]
+    sciwingTags: List[str]
+
+class Paper(BaseModel):
+    abstract: Abstract
     body_text: str
  #   citation: List[Citation]
