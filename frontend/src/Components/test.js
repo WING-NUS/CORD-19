@@ -106,7 +106,7 @@ import axios from "axios";
 //   }
 // ];
 
-const ComplexList = () => {
+const test = () => {
   const [articles, setArticles] = useState([]);
 
   const getArticles = async () => {
@@ -138,4 +138,4 @@ const ComplexList = () => {
   );
 };
 
-export default ComplexList;
+export default test;

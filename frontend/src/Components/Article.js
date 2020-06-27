@@ -3,8 +3,6 @@ import AbstractDetails from "./AbstractDetails";
 import { Link } from "react-router-dom";
 const Article = ({ article }) => {
   const [show, setShow] = useState(false);
-  const [showDetails, setShowDetails] = useState(false);
-  //const { label, image, url, ingredients } = article.recipe;
   const { doi, paper_id, doc_date, title, authors, abstract, answer } = article;
   const listAnswers = answer.sents.map(sent => <li>{sent}</li>);
   const author = authors.join(", ");
@@ -13,9 +11,6 @@ const Article = ({ article }) => {
     <div className="article">
       <div className="title-author-date">
         <h2>Title: {title}</h2>
-        {/* <Link to={{ pathname: `/specificArticle?${paper_id}`, data: article }}>
-          Show Details
-        </Link> */}
         <Link
           to={{
             pathname: `/specificArticle/${paper_id}`,
