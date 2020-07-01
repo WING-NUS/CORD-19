@@ -13,9 +13,8 @@ class ArticleDetails extends React.Component {
       title,
       authors,
       abstract,
-      answer
+      bodyText
     } = this.props.location.state.article;
-    const listAnswers = answer.sents.map(sent => <li>{sent}</li>);
     const author = authors.join(", ");
     return (
       <div className="App-header">
@@ -28,6 +27,10 @@ class ArticleDetails extends React.Component {
               <div>Publish Date: {doc_date}</div>
             </div>
             <AbstractDetails abstract={abstract} />
+            <div className="answer-list">
+              <h3>Body Text</h3>
+              {bodyText.text}
+            </div>
             {/* <ul className="answer-list">Answers:{listAnswers}</ul> */}
           </div>
         </div>

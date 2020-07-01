@@ -2,33 +2,57 @@ import React, { useState } from "react";
 import AbstractDetails from "./AbstractDetails";
 import { Link } from "react-router-dom";
 const Article = ({ article }) => {
-  const [show, setShow] = useState(false);
+  const [showAbstract, setShowAbstract] = useState(false);
+  const [open, setOpen] = useState(false);
   const { doi, paper_id, doc_date, title, authors, abstract, answer } = article;
-  const listAnswers = answer.sents.map(sent => <li>{sent}</li>);
+  var MAX_ITEMS = 3;
+  // var listAnswers = answer.sents.slice(0, size).map(sent => <li>{sent}</li>);
   const author = authors.join(", ");
 
+  function toggle() {
+    setOpen(!open);
+  }
+
+  function getRenderedItems() {
+    if (open) {
+      return answer.sents;
+    }
+    return answer.sents.slice(0, MAX_ITEMS);
+  }
+
   return (
-    <div className="article">
-      <div className="title-author-date">
-        <h2>Title: {title}</h2>
-        <Link
-          to={{
-            pathname: `/specificArticle/${paper_id}`,
-            state: { article: article }
-          }}
+    <div>
+      <div className="article">
+        <div className="title-author-date">
+          <h2>Title: {title}</h2>
+          <Link
+            to={{
+              pathname: `/specificArticle/${paper_id}`,
+              state: { article: article }
+            }}
+          >
+            Show Details
+          </Link>
+
+          <div>Authors: {author}</div>
+          <div>Publish Date: {doc_date}</div>
+        </div>
+        <div className="answer-list">
+          <h3> Sentences answering the query</h3>
+          {getRenderedItems().map((item, id) => (
+            <div key={id}>{item}</div>
+          ))}
+          <button onClick={toggle}>{open ? "Show Less" : "Show More"}</button>
+        </div>
+
+        <button
+          className="button"
+          onClick={() => setShowAbstract(!showAbstract)}
         >
-          Show Details
-        </Link>
-
-        <div>Authors: {author}</div>
-        <div>Publish Date: {doc_date}</div>
+          <h3> Show Abstract</h3>
+        </button>
+        {showAbstract && <AbstractDetails abstract={abstract} />}
       </div>
-      <ul className="answer-list">Answers:{listAnswers}</ul>
-
-      <button className="button" onClick={() => setShow(!show)}>
-        <h3> Show Abstract</h3>
-      </button>
-      {show && <AbstractDetails abstract={abstract} />}
     </div>
   );
 };
