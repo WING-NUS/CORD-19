@@ -1,24 +1,22 @@
 import React, { useState } from "react";
 import AbstractDetails from "./AbstractDetails";
 import { Link } from "react-router-dom";
-const Article = ({ article }) => {
+const SimilarArticle = ({ article }) => {
   const [showAbstract, setShowAbstract] = useState(false);
   const [open, setOpen] = useState(false);
-  const { paper_id, title, doc_date, authors, abstract, answer } = article;
+  const {
+    paper_id,
+    doi,
+    doc_date,
+    title,
+    authors,
+    summary,
+    abstract
+  } = article;
+
   var MAX_ITEMS = 3;
   // var listAnswers = answer.sents.slice(0, size).map(sent => <li>{sent}</li>);
   const author = authors.join(", ");
-
-  function toggle() {
-    setOpen(!open);
-  }
-
-  function getRenderedItems() {
-    if (open) {
-      return answer.sents;
-    }
-    return answer.sents.slice(0, MAX_ITEMS);
-  }
 
   return (
     <div>
@@ -37,23 +35,10 @@ const Article = ({ article }) => {
           <div>Authors: {author}</div>
           <div>Publish Date: {doc_date}</div>
         </div>
-        <div className="answer-list">
-          <h3> Sentences answering the query</h3>
-          {getRenderedItems().map((item, id) => (
-            <div key={id}>{item}</div>
-          ))}
-          <button onClick={toggle}>{open ? "Show Less" : "Show More"}</button>
-        </div>
-        <button
-          className="button"
-          onClick={() => setShowAbstract(!showAbstract)}
-        >
-          <h3> Show Abstract</h3>
-        </button>
-        {showAbstract && <AbstractDetails abstract={abstract} />}
+        {<AbstractDetails abstract={abstract} />}
       </div>
     </div>
   );
 };
 
-export default Article;
+export default SimilarArticle;
