@@ -7,7 +7,7 @@ function App() {
   return (
     <div>
       <Switch>
-        <div className="App-header">
+        <div>
           <Route exact path="/" component={SearchMain} exact />
           <Route path="/specificArticle/:id" component={ArticleDetails} />
         </div>
