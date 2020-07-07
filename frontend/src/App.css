@@ -54,9 +54,9 @@
 }
 
 .article {
-  margin: 5px;
+  margin: 0.1rem;
   left: 250px;
-  /* right: 0px; */
+  width: 1000px;
   display: flex;
   flex-direction: column;
   background-color: #f0f0f0;
@@ -71,7 +71,7 @@
   margin-top: 0.1rem;
   background: linear-gradient(152.25deg, #061a40 0%, #006daa 100%);
   border-radius: 0.5rem;
-  padding: 0.5rem;
+  padding: 0.2rem;
   color: #fff;
   line-height: 18pt;
 }
@@ -252,6 +252,10 @@
   border-radius: 0.3rem;
 }
 
+.Label1 {
+  background-color: pink;
+  border-radius: 0.3rem;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

@@ -1,96 +1,89 @@
-import React, { useState } from "react";
+import React, { useState, useLocation } from "react";
 import AbstractDetails from "./AbstractDetails";
 import Header from "./Header";
 import SimilarArticle from "./SimilarArticle";
 // import BodyText from "./BodyText";
 import Article from "./Article";
 import ReactDOM from "react-dom";
-class ArticleDetails extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      showBodyText: true
-    };
-    this.handleButtonClick = this.handleButtonClick.bind(this);
-  }
-  handleButtonClick() {
-    this.setState({ showBodyText: !this.showBodyText });
-  }
 
-  render() {
-    // const [open, setOpen] = useState(false);
-    // const { paper, similar } = this.props.location.state.article;
-    const {
-      paper_id,
-      doi,
-      doc_date,
-      title,
-      authors,
-      summary,
-      abstract,
-      bodyText
-    } = this.props.location.state.article;
-    const author = authors.join(", ");
-    var MAX_ITEMS = 1;
+const ArticleDetails = () => {
+  const [showBodyText, setBodyText] = useState(false);
+  const location = useLocation();
+  const {
+    paper_id,
+    doi,
+    doc_date,
+    title,
+    authors,
+    summary,
+    abstract,
+    bodyText
+  } = location.state.article;
+  const author = authors.join(", ");
+  var MAX_ITEMS = 1;
 
-    // const [showBodyText, setBodyText] = useState(false);
+  // render() {
+  // const [open, setOpen] = useState(false);
+  // const { paper, similar } = this.props.location.state.article;
 
-    // function handleButtonClick() {
-    //   return setBodyText(!showBodyText);
-    // }
-    // const [showBodyText, setBodyText] = useState(false);
+  // const [showBodyText, setBodyText] = useState(false);
 
-    //toggle show less/more for body text
-    // const toggle = () => {
-    //   return setOpen(!open);
-    // };
+  // function handleButtonClick() {
+  //   return setBodyText(!showBodyText);
+  // }
+  // const [showBodyText, setBodyText] = useState(false);
 
-    // const getRenderedItems = () => {
-    //   if (open) {
-    //     return paper.bodyText.text;
-    //   }
-    //   return paper.bodyText.text.slice(0, MAX_ITEMS);
-    // };
+  //toggle show less/more for body text
+  // const toggle = () => {
+  //   return setOpen(!open);
+  // };
 
-    return (
-      <div className="App-header">
-        <Header />
-        <div className="articles">
-          <div className="article">
-            <div className="title-author-date">
-              <h2>Title: {title}</h2>
-              <div>Authors: {author}</div>
-              <div>Publish Date: {doc_date}</div>
-            </div>
-            <AbstractDetails abstract={abstract} />
-            {/* <button className="button" onClick={handleButtonClick}>
+  // const getRenderedItems = () => {
+  //   if (open) {
+  //     return paper.bodyText.text;
+  //   }
+  //   return paper.bodyText.text.slice(0, MAX_ITEMS);
+  // };
+
+  return (
+    <div className="App-header">
+      <Header />
+      <div className="articles">
+        <div className="article">
+          <div className="title-author-date">
+            <h2>Title: {title}</h2>
+            <div>Authors: {author}</div>
+            <div>Publish Date: {doc_date}</div>
+          </div>
+          <AbstractDetails abstract={abstract} />
+          {/* <button className="button" onClick={handleButtonClick}>
               <h3> Show Body Text</h3>
             </button>
             {showBodyText && <AbstractDetails abstract={abstract} />} */}
 
-            <div className="answer-list">
-              <h3>Body Text</h3>
-              {/* <BodyText bodyText={bodyText} /> */}
-              {bodyText.text.map((item, id) => (
-                <span key={id}>
-                  {item}
-                  <br />
-                  <br />
-                </span>
-              ))}
-            </div>
-          </div>
-          <h2>Similar Articles</h2>
-          <div>
-            {similar.map(article => (
-              <SimilarArticle key={article.paper_id} article={article} />
+          <div className="answer-list">
+            <h3>Body Text</h3>
+            {/* <BodyText bodyText={bodyText} /> */}
+            {bodyText.text.map((item, id) => (
+              <span key={id}>
+                {item}
+                <br />
+                <br />
+              </span>
             ))}
           </div>
         </div>
+        <h2>Similar Articles</h2>
+        <div>
+          {similar.map(article => (
+            <SimilarArticle key={article.paper_id} article={article} />
+          ))}
+        </div>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
+// }
 // ReactDOM.render(<ArticleDetails />, document.getElementById("root"));
 
 export default ArticleDetails;

@@ -24,7 +24,7 @@ const Article = ({ article }) => {
     <div>
       <div className="article">
         <div className="title-author-date">
-          <h2>Title: {title}</h2>
+          <h3>Title: {title}</h3>
           <Link
             to={{
               pathname: `/specificArticle/${paper_id}`,
