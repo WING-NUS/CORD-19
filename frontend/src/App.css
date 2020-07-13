@@ -94,7 +94,7 @@
 
 .button {
   text-transform: uppercase;
-  background-color: #40b48e;
+  background-color: #7fc2ac;
   border-radius: 0.5rem;
   color: white;
   text-align: center;
@@ -259,15 +259,18 @@
 
 .problem {
   color: red;
+  font-weight: bold;
   border-radius: 0.3rem;
 }
 .test {
   color: purple;
+  font-weight: bold;
   border-radius: 0.3rem;
 }
 
 .treatment {
   color: green;
+  font-weight: bold;
   border-radius: 0.3rem;
 }
 

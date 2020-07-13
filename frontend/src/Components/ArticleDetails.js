@@ -14,6 +14,8 @@ export default function ArticleDetails(props) {
   const [showSimilar, setShowSimilar] = useState(false);
   const url = `http://localhost:8000/answer/?paper_id=${query}`;
 
+  const [sectionHeaders, setsectionHeaders] = useState("");
+
   const getData = async () => {
     if (query !== "") {
       const result = await Axios.get(url);
@@ -36,6 +38,12 @@ export default function ArticleDetails(props) {
   const author = authors.join(", ");
   var MAX_ITEMS = 1;
 
+  const section_headers = bodyText.section_header.Original;
+
+  let unique_section_headers = section_headers.filter(
+    (item, i, ar) => ar.indexOf(item) === i
+  );
+
   return (
     <div className="App-header">
       <Header />
@@ -54,17 +62,17 @@ export default function ArticleDetails(props) {
             <h3> Show Body Text</h3>
           </button>
           {showBodyText && <BodyText bodyText={bodyText} />}
-        </div>
-        {/* dinamic similar articles, comment out */}
-        <button className="button" onClick={() => getData()}>
-          <h3>Similar Articles</h3>
-        </button>
+          {/* dinamic similar articles, comment out */}
+          <button className="button" onClick={() => getData()}>
+            <h3>Similar Articles</h3>
+          </button>
 
-        <div>
-          {showSimilar &&
-            similar.map(article => (
-              <SimilarArticle key={article.paper_id} article={article} />
-            ))}
+          <div>
+            {showSimilar &&
+              similar.map(article => (
+                <SimilarArticle key={article.paper_id} article={article} />
+              ))}
+          </div>
         </div>
       </div>
     </div>

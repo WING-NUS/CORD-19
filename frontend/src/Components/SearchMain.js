@@ -58,15 +58,15 @@ function SearchMain() {
 
         {/* test using sample data */}
         {/* {JSON.stringify(articles)} */}
-        {/* {articleSample !== [] &&
+        {articleSample !== [] &&
           articleSample.map(article => (
             <Article key={article.paper_id} article={article} />
-          ))} */}
+          ))}
         {/* actual code using api */}
-        {articles !== [] &&
+        {/* {articles !== [] &&
           articles.map(article => (
             <Article key={article.paper_id} article={article} />
-          ))}
+          ))} */}
       </ul>
     </div>
   );
@@ -145,6 +145,44 @@ const articleSample = [
         "acids of different mammals to determine which mammalian ACE2 could interact with S protein of human SARSr-CoV. By analyzing the protein sequence of mammalian ACE2, we found that the ACE2 of Camelus dromedarius, Procyon lotor, Rhinolophus ferrumequinum, Rattus norvegicus, Mus musculus, Ornithorhynchus anatinus, Loxodonta africana, Erinaceus europaeus, Nyctereutes procyonoides, Suricata suricatta, Dipodomys ordii, and Cavia porcellus lose the capability to associate with S protein (Table 1) . These mammals could be ruled out from the potential host list for SARS-CoV-2. We found that S protein may bind to ACE2 from some wild mammals, which suggests that we should investigate whether these animals may be intermediate hosts for SARS-CoV-2. It has been reported that the RBM region in S protein of pangolin coronavirus is similar to that of S protein of SARS-CoV-2 [11, 12] , which may be involved in the recombination of SARS-CoV-2. We identified that N82 of pangolin ACE2 showed closer contact with RBD than human ACE2 (Fig. 3C) , indicating that pangolin ACE2 might show better affinity to SARS-CoV-2. This finding further supports the hypothesis that pangolin is involved in SARS-CoV-2 evolution. In current study, only a limited list of wild mammals is covered. In the future, we should select more mammals for study. Although no SARS-CoV-2 has been found in domestic cats and dogs, cat/dog ACE2 may bind to S protein of SARS-CoV-2. In the future, we should pay attention to monitoring whether domestic cats and dogs could be infected by SARS-CoV-2. Animal model is an important tool in the study of infectious diseases. ACE2 of mice cannot interact with SARS-CoV-2, so it cannot be used as animal model of SARS-CoV-2 directly. Some studies have generated mice transfected with human ACE2 as the models to study SARS-CoV [20] , and these mice can also be used as animal models for SARS-CoV-2 infection. Interestingly, we identified that N82 in ACE2 is closer to RBD than M82 (Fig. 3C and D) , indicating a novel strategy to design an optimized ACE2 for SARS-CoV-2 infection. We speculated that small peptide based on N82 of ACE2 might show higher affinity to SARS-CoV-2 RBD. We proposed that if M82 in human ACE2 was mutated to N82, the modified human ACE2 will enhance SARS-CoV-2 infection. In the future, those ideas will be tested in cell culture and animal model. We noticed that the ACE2 proteins from Circetidae (Mesocricetus auratus, Phodopus campbelli, Ictidomys tridecemlineatus, and Cricetulus griseus) are capable to recognize RBD. Mesocricetus auratus (golden hamster) and Cricetulus griseus (Chinese hamster) are experimental animals and our finding indicates the possibility to develop small animal models for SARS-CoV-2 infection using Chinese hamster and golden hamster.",
         "The authors declare that there are no conflicts of interest."
       ],
+      section_header: {
+        Original: [
+          "intro",
+          "intro",
+          "main",
+          "main",
+          "main",
+          "main",
+          "main",
+          "main",
+          "main",
+          "main",
+          "main",
+          "main",
+          "conclusion",
+          "conclusion",
+          "conclusion",
+          "conclusion"
+        ],
+        Generic: [
+          "intro",
+          "intro",
+          "main",
+          "main",
+          "main",
+          "main",
+          "main",
+          "main",
+          "main",
+          "main",
+          "main",
+          "main",
+          "conclusion",
+          "conclusion",
+          "conclusion",
+          "conclusion"
+        ]
+      },
       tags: {
         sciwing: {
           "1,1": "treatment",
