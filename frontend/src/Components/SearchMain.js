@@ -58,15 +58,15 @@ function SearchMain() {
 
         {/* test using sample data */}
         {/* {JSON.stringify(articles)} */}
-        {articleSample !== [] &&
+        {/* {articleSample !== [] &&
           articleSample.map(article => (
             <Article key={article.paper_id} article={article} />
-          ))}
+          ))} */}
         {/* actual code using api */}
-        {/* {articles !== [] &&
+        {articles !== [] &&
           articles.map(article => (
             <Article key={article.paper_id} article={article} />
-          ))} */}
+          ))}
       </ul>
     </div>
   );

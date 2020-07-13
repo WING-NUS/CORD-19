@@ -9,19 +9,19 @@ export default function ArticleDetails(props) {
   const [showBodyText, setShowBodyText] = useState(false);
 
   //dinamic similar articles, comment out &set correct url to use
-  // const [query, setQuery] = useState("");
-  // const [similar, setSimilar] = useState([]);
-  // const [showSimilar, setShowSimilar] = useState(false);
-  // const url = `http://localhost:8000/answer/?query=${query}`;
+  const [query, setQuery] = useState("");
+  const [similar, setSimilar] = useState([]);
+  const [showSimilar, setShowSimilar] = useState(false);
+  const url = `http://localhost:8000/answer/?paper_id=${query}`;
 
-  // const getData = async () => {
-  //   if (query !== "") {
-  //     const result = await Axios.get(url);
-  //     setSimilar(result.data);
-  //     setQuery("");
-  //     setShowSimilar(!showSimilar);
-  //   }
-  // };
+  const getData = async () => {
+    if (query !== "") {
+      const result = await Axios.get(url);
+      setSimilar(result.data);
+      setQuery("");
+      setShowSimilar(!showSimilar);
+    }
+  };
 
   const {
     paper_id,
@@ -56,13 +56,13 @@ export default function ArticleDetails(props) {
           {showBodyText && <BodyText bodyText={bodyText} />}
         </div>
         {/* dinamic similar articles, comment out */}
-        {/* <button className="button" onClick={() => getData()}></button> */}
+        <button className="button" onClick={() => getData()}></button>
         <h3>Similar Articles</h3>
         <div>
-          {/* {showSimilar && */}
-          {similar.map(article => (
-            <SimilarArticle key={article.paper_id} article={article} />
-          ))}
+          {showSimilar &&
+            similar.map(article => (
+              <SimilarArticle key={article.paper_id} article={article} />
+            ))}
         </div>
       </div>
     </div>
