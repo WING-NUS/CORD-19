@@ -1,57 +1,44 @@
 import React from "react";
-// import { v4 as uuidv4 } from "uuid";
 
-// {bodyText.text.map((item, id) => (
-//     <span key={id}>
-//       {item}
-//       <br />
-//       <br />
-//     </span>
-//   ))}
-// </div>
-// tags: {
-//     "0": {
-//       tagPerPara: {
-//         "0": "Label1",
-//         "1": "Label2"
-//       }
-//     },
-//     "1": {
-//       tagPerPara: {
-//         "0": "Label3",
-//         "1": "Label4"
-//       }
+const BodyText = ({ bodyText }) => {
+  const tags = bodyText.tags;
+  const tag_dict = tags.sciwing;
+  const keys = Object.keys(tag_dict);
 
-// const BodyText = ({ bodyText }) => {
-//   const result = bodyText.text.map((text, i) => {
-//     const eachSentList = text.split(" ");
-//     const bioStyle = text.tags.i;
-//     var eachword = eachSentList.map((word, j) => {
-//       return <span className={bioStyle[j]}>{word}</span>;
-//     });
-//   });
+  function bio_tag(i, j, word) {
+    const to_check = `${i},${j}`;
+    if (keys.indexOf(to_check) > -1) {
+      return tag_dict[to_check];
+    }
+    return;
+  }
 
-//   return (
-//     <div>
-//       <div className="answer-list">
-//         <h3>Abstract</h3>
-//         <div>
-//           Highlight for abstract:
-//           <span id="square_background"></span>
-//           Background
-//           <span id="square_purpose"></span>
-//           Purpose
-//           <span id="square_finding"></span>
-//           Finding
-//           <span id="square_method"></span>
-//           Method
-//           <span id="square_other"></span>
-//           Others
-//         </div>
-//         <p>{result}</p>
-//       </div>
-//     </div>
-//   );
-// };
+  const result = bodyText.text.map((text, i) => {
+    return (
+      <span>
+        <span> </span>
+        {text.split(" ").map((word, j) => (
+          <span className={bio_tag(i, j, word)}>{word + " "}</span>
+        ))}
+        <br />
+        <br />
+      </span>
+    );
+  });
+
+  return (
+    <div className="answer-list">
+      <h3>Body Text</h3>
+      <div>
+        Font color for bio-ner-tags:
+        <span className="problem"> &nbsp;&nbsp;Problem&nbsp;&nbsp;</span>
+        <span className="test"> Test&nbsp;&nbsp;</span>
+        <span className="treatment"> Treatment &nbsp;&nbsp;</span>
+        <br />
+      </div>
+      <p>{result}</p>
+    </div>
+  );
+};
 
 export default BodyText;

@@ -252,10 +252,25 @@
   border-radius: 0.3rem;
 }
 
-.Label1 {
-  background-color: pink;
+.lable1 {
+  color: green;
   border-radius: 0.3rem;
 }
+
+.problem {
+  color: red;
+  border-radius: 0.3rem;
+}
+.test {
+  color: purple;
+  border-radius: 0.3rem;
+}
+
+.treatment {
+  color: green;
+  border-radius: 0.3rem;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
