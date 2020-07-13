@@ -1,4 +1,5 @@
 import os.path as osp
+#root = "/diskC/Kong211/work/CORD-19/"
 root = "/Users/zijinkong/Desktop/Covid-19/CORD-19/"
 
 root_path = osp.join(root, '../CORD-19-research-challenge')
@@ -7,5 +8,15 @@ ANS_CACHE_ROOT = osp.join(root, "./database/ans_cache")
 DB_CACHE = osp.join(root, "./database/database.pkl")
 DB_SAMPLE_CACHE = osp.join(root, "./database/sample.pkl")
 
-ABSTAG_JSON_CACHE = osp.join(root, "./database/sample.json")
+ABSTAG_JSON_CACHE = osp.join(root, "./database/abstag.json")
 ABSTAG_METHOD = ["sciwing"]
+
+GenerctHeader_JSON_CACHE = osp.join(root, "./database/generic_header.json")
+
+SciwingI2B2_NER_CACHE = osp.join(root, "./database/sciwingI2B2.json")
+
+SIMILAR_SAMPLE_CACHE = osp.join(root, "./database/similar_sample.pkl")
+SIMILAR_CACHE = osp.join(root, "./database/similar.pkl")
+
+XTYPEs = ["Date"]
+YTYPEs = ["Risk Factor"]
