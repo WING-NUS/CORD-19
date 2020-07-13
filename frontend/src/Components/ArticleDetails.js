@@ -56,8 +56,10 @@ export default function ArticleDetails(props) {
           {showBodyText && <BodyText bodyText={bodyText} />}
         </div>
         {/* dinamic similar articles, comment out */}
-        <button className="button" onClick={() => getData()}></button>
-        <h3>Similar Articles</h3>
+        <button className="button" onClick={() => getData()}>
+          <h3>Similar Articles</h3>
+        </button>
+
         <div>
           {showSimilar &&
             similar.map(article => (
