@@ -1,13 +1,49 @@
 import React, { useState, useEffect } from "react";
+import Collapsible from "react-collapsible";
+
+//bio tag for each word in body text
+const bio_tag = (i, j, keys, tag_dict) => {
+  const to_check = `${i},${j}`;
+  if (keys.indexOf(to_check) > -1) {
+    return tag_dict[to_check];
+  }
+  return;
+};
+
+const highlight_tag_in_text = (text, textIndex, keys, tag_dict) => {
+  return text
+    .split(" ")
+    .map((word, j) => (
+      <span className={bio_tag(textIndex, j, keys, tag_dict)}>
+        {word + " "}
+      </span>
+    ));
+};
+
+const create_text_from_header = (
+  header,
+  keys,
+  tag_dict,
+  bodyText,
+  unique_section_header_to_body
+) => {
+  return (
+    <Collapsible trigger={header}>
+      {unique_section_header_to_body[header].map((position, i) => (
+        <p>
+          {highlight_tag_in_text(bodyText.text[position], i, keys, tag_dict)}
+        </p>
+      ))}
+    </Collapsible>
+  );
+};
 
 const BodyText = ({ bodyText }) => {
   const tags = bodyText.tags;
   const tag_dict = tags.sciwing;
   const keys = Object.keys(tag_dict);
-  const text = bodyText.text;
 
   const section_headers = bodyText.section_header.Original;
-  //map section_header:[setence index]
   var unique_section_header_to_body = {};
   for (let i = 0; i < section_headers.length; i++) {
     var sh = section_headers[i];
@@ -17,123 +53,15 @@ const BodyText = ({ bodyText }) => {
       unique_section_header_to_body[sh].push(i);
     }
   }
-  console.log(unique_section_header_to_body);
-
-  //add state  for each header button
-  //switch_array = [];
-  //   unique_section_header_to_position_in_state = {};
-  //   counter = 0;
-  //   for (var key in unique_section_header_to_body) {
-  //     switch_array.push(true);
-  //     unique_section_header_to_position_in_state[key] = counter++;
-  //   }
-  //   const [headerSwitch, setHeaderSwitch] = useState(switch_array);
-
-  const [headerSwitch, setHeaderSwitch] = useState([]);
-  const addHeaderSwitch = key => {
-    console.log("adding headerSwitch");
-
-    setHeaderSwitch([
-      ...headerSwitch,
-      {
-        id: key,
-        value: true
-      }
-    ]);
-    return headerSwitch;
-  };
-
-  useEffect(() => {
-    for (var key in unique_section_header_to_body) {
-      console.log("iterating key to state");
-      addHeaderSwitch(key);
-    }
-    console.log("finished initializing state...");
-  }, []);
-
-  //bio tag for each word in body text
-  function bio_tag(i, j, word) {
-    const to_check = `${i},${j}`;
-    if (keys.indexOf(to_check) > -1) {
-      return tag_dict[to_check];
-    }
-    return;
-  }
-
-  const toggleHeaderSwitch = sh => {
-    console.log("updating headerSwitch: " + sh);
-
-    setHeaderSwitch([
-      ...headerSwitch,
-      {
-        id: sh,
-        value: !headerSwitch.value
-      }
-    ]);
-
-    return headerSwitch;
-  };
-
-  //   const text_from_header = sh => {
-  //     return (
-  //         <span>
-  //         <span> </span>
-  //         {unique_section_header_to_body[sh].map(position, i) => (
-  //             highlight_tag_in_text(bodyText.text[position]);
-  //         )}
-  //         <br />
-  //         <br />
-  //         </span>
-  //     );
-  //   }
-
-  //   const highlight_tag_in_text = text => {
-  //     return text
-  //       .split(" ")
-  //       .map((word, j) => (
-  //         <span className={bio_tag(i, j, word)}>{word + " "}</span>
-  //       ));
-  //   };
 
   const unique_headers = Object.keys(unique_section_header_to_body);
-  //   const result = unique_headers.map((header, index) => {
-  //     return (
-  //       <span>
-  //         <span> </span>
-  //         <button>
-  //           {check_section_header(unique_section_header_to_body, index)}
-  //         </button>
-  //         {text.split(" ").map((word, j) => (
-  //           <span className={bio_tag(index, j, word)}>{word + " "}</span>
-  //         ))}
-  //         <br />
-  //         <br />
-  //       </span>
-  //     );
-  //   });
-
-  function check_section_header(unique_section_header_to_body, i) {
-    for (var key in unique_section_header_to_body) {
-      var value = unique_section_header_to_body[key];
-      if (value[0] == i) {
-        return key;
-      } else {
-        continue;
-      }
-    }
-  }
-
-  const result = bodyText.text.map((text, i) => {
-    return (
-      <span>
-        <span> </span>
-        <h3>{check_section_header(unique_section_header_to_body, i)}</h3>
-        {text.split(" ").map((word, j) => (
-          <span className={bio_tag(i, j, word)}>{word + " "}</span>
-        ))}
-        <br />
-        <br />
-      </span>
+  const result = unique_headers.map((header, i) => {
+    return create_text_from_header(
+      header,
+      keys,
+      tag_dict,
+      bodyText,
+      unique_section_header_to_body
     );
   });
 
@@ -147,6 +75,7 @@ const BodyText = ({ bodyText }) => {
         <span className="treatment"> Treatment &nbsp;&nbsp;</span>
         <br />
       </div>
+      <br />
       <p>{result}</p>
     </div>
   );
