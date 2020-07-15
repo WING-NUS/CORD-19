@@ -43,13 +43,13 @@ const Article = ({ article }) => {
             &nbsp;&nbsp;|&nbsp;&nbsp;Publish Date: {doc_date}
           </span>
         </div>
-        <Collapsible trigger="Sentences Answering the Query">
+        <Collapsible trigger="Related sentences">
           {answer.sents.map((item, id) => (
             <div key={id}>{item}</div>
           ))}
         </Collapsible>
 
-        <Collapsible trigger="Show Abstract">
+        <Collapsible trigger="Abstract">
           <AbstractDetails abstract={abstract} />
         </Collapsible>
 

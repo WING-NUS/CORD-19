@@ -60,18 +60,18 @@ export default function ArticleDetails(props) {
             </span>
           </div>
           {/* <AbstractDetails abstract={abstract} /> */}
-          <Collapsible trigger="Show Abstract">
+          <Collapsible trigger="Abstract">
             <AbstractDetails abstract={abstract} />
           </Collapsible>
 
-          <Collapsible trigger="Show Body Text">
+          <Collapsible trigger="Body Text">
             <BodyText bodyText={bodyText} />
           </Collapsible>
           {/* dinamic similar articles, comment out */}
           {/* <button className="button" onClick={() => getData()}>
             <h3>Similar Articles</h3>
           </button> */}
-          <Collapsible trigger="Show Similar Articles">
+          <Collapsible trigger="Related Articles">
             {() => getData()}
             {similar.map(article => (
               <SimilarArticle key={article.paper_id} article={article} />

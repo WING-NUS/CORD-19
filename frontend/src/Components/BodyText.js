@@ -40,7 +40,7 @@ const create_text_from_header = (
 
 const BodyText = ({ bodyText }) => {
   const tags = bodyText.tags;
-  const tag_dict = tags.sciwingI2B2;
+  const tag_dict = tags.sciwing;
   const keys = Object.keys(tag_dict);
 
   const section_headers = bodyText.section_header.Original;
@@ -67,7 +67,6 @@ const BodyText = ({ bodyText }) => {
 
   return (
     <div className="answer-list">
-      <h3>Body Text</h3>
       <div>
         Sciwing I2B2:
         <span className="problem"> &nbsp;&nbsp;Problem&nbsp;&nbsp;</span>
