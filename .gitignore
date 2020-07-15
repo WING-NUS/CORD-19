@@ -7,3 +7,4 @@
 ./sample.json
 ./reload_abstag.py
 ./backend/utils/__pycache__/
+*.pyc

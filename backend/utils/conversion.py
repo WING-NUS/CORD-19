@@ -13,7 +13,7 @@ def to_ans(ans):
 
 
 
-def to_paper_info(row, abstag):
+def to_paper_info(row, abstags, i2b2tags, genericHeader):
     if len(row["authors"]) > 0:
         authors = [".".join([author['first'], author['last']]) for author in row["authors"]]
     else:
@@ -25,18 +25,21 @@ def to_paper_info(row, abstag):
     return {"paper_id": row["paper_id"],
                 "doi": row["doi"],
                 "title": row["title"],
-                "doc_date": "doc_date",
+                "doc_date": row["doc_date"],
                 "authors": authors,
                 "summary": "",
                 "abstract": {"text": abstract,
-                             "tags": abstag},
-                "bodyText": {"text": row["body_text"].split("\n"),
-                             "tags": {"sciwingI2B2": {"1, 2": "CHEM", "2, 3": "Bio"}}},
+                             "tags": abstags},
+                "bodyText": {"section_header":
+                                 {"original": [para[0] for para in row["body_text"]],
+                                  "generic": genericHeader, },
+                             "text": [para[1] for para in row["body_text"]],
+                             "tags": {"sciwingI2B2": {"1, 2": "problem", "2, 3": "treatment"}}},
                 "url": row["url"],
             }
 
 
-def to_general_ans(ans, row, abstag):
+def to_general_ans(ans, row, abstag, i2b2tags, genericHeader):
     if len(row["authors"]) > 0:
         authors = [".".join([author['first'], author['last']]) for author in row["authors"]]
     else:
@@ -50,22 +53,22 @@ def to_general_ans(ans, row, abstag):
            "paper_id": row["paper_id"],
            "doi": row["doi"],
            "title": row["title"],
-           "doc_date": "doc_date",
+           "doc_date": row["doc_date"],
            "authors": authors,
            "summary": "",
            "abstract": {"text": abstract,
                         "tags": abstag},
            "bodyText": {"section_header": {"original": [para[0] for para in row["body_text"]],
-                                           "generic": [para[0] for para in row["body_text"]] #TODO: change to generic section header
+                                           "generic": genericHeader, #TODO: change to generic section header
                                             },
                         "text": [para[1] for para in row["body_text"]],
-                        "tags": {"sciwingI2B2": {"1, 2": "CHEM", "2, 3": "Bio"}}
+                        "tags": {"sciwingI2B2": {"1, 2": "problem", "2, 3": "treatment"}}
                         },
            "url": row["url"],
            }
     return res
 
-def to_similar(similars, db_abstags):
+def to_similar(similars, db_abstags, db_i2b2ner, db_genericheader):
     if similars is None:
         return [{"paper_id": "",
                     "doi": "",
@@ -75,18 +78,32 @@ def to_similar(similars, db_abstags):
                     "summary": "",
                     "abstract": {"text": [""],
                                  "tags": {"sciwing": []}},
-                    "bodyText": {"text": [""],
-                                 "tags": {"sciwingI2B2":{}}},
+                    "bodyText": {"section_header": {"original": [],
+                                           "generic": []}, #TODO: change to generic section header
+                                 "text": [""],
+                                 "tags": {"sciwingI2B2":{}}}
+                    ,
                     "url": "",
                     }]
     res = []
     for idx in range(len(similars)):
         row = similars.iloc[idx]
-        if row['paper_id'] in db_abstags.keys():
-            abstag = db_abstags[row['paper_id']]
+        if not row["paper_id"] or row["paper_id"] not in db_abstags:
+            abstags = {"sciwing": [""] * len(row["abstract"])}
         else:
-            abstag = empty_abstag()
-        res.append(to_paper_info(similars.iloc[idx], abstag))
+            abstags = db_abstags[row["paper_id"]]
+
+        if not row["paper_id"] or row["paper_id"] not in db_i2b2ner:
+            i2b2tags = {"sciwingI2B2": {}}
+        else:
+            i2b2tags = db_i2b2ner[row["paper_id"]]
+
+        if not row["paper_id"] or row["paper_id"] not in db_genericheader:
+            genericHeader = [""] * len(row["body_text"])
+        else:
+            genericHeader = db_genericheader[row["paper_id"]]
+
+        res.append(to_paper_info(similars.iloc[idx], abstags, i2b2tags, genericHeader))
     return res
 
 

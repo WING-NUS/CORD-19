@@ -11,12 +11,12 @@ DB_SAMPLE_CACHE = osp.join(root, "./database/sample.pkl")
 ABSTAG_JSON_CACHE = osp.join(root, "./database/abstag.json")
 ABSTAG_METHOD = ["sciwing"]
 
-GenerctHeader_JSON_CACHE = osp.join(root, "./database/generic_header.json")
+GenericHeader_JSON_CACHE = osp.join(root, "./database/generic_headers.json")
 
 SciwingI2B2_NER_CACHE = osp.join(root, "./database/sciwingI2B2.json")
 
 SIMILAR_SAMPLE_CACHE = osp.join(root, "./database/similar_sample.pkl")
-SIMILAR_CACHE = osp.join(root, "./database/similar.pkl")
+SIMILAR_CACHE = osp.join(root, "./database/similar_processed.pkl")
 
 XTYPEs = ["Date"]
 YTYPEs = ["Risk Factor"]
