@@ -13,13 +13,13 @@ export default function ArticleDetails(props) {
   const [query, setQuery] = useState("");
   const [similar, setSimilar] = useState([]);
   const [showSimilar, setShowSimilar] = useState(false);
-  const url = `http://localhost:8000/answer/?paper_id=${query}`;
+  const url_similar = `http://localhost:8000/answer/?paper_id=${query}`;
 
   const [sectionHeaders, setsectionHeaders] = useState("");
 
   const getData = async () => {
     if (query !== "") {
-      const result = await Axios.get(url);
+      const result = await Axios.get(url_similar);
       setSimilar(result.data);
       setQuery("");
       setShowSimilar(!showSimilar);
@@ -34,16 +34,39 @@ export default function ArticleDetails(props) {
     authors,
     summary,
     abstract,
-    bodyText
+    bodyText,
+    url
   } = props.location.state.article;
   const author = authors.join(", ");
   var MAX_ITEMS = 1;
-
+  const article_url = `${url}`;
   const section_headers = bodyText.section_header.Original;
 
   let unique_section_headers = section_headers.filter(
     (item, i, ar) => ar.indexOf(item) === i
   );
+
+  const similar_papers = () => {
+    console.log("here in similar _papers");
+    getData();
+    console.log(similar);
+    if (similar.length > 0) {
+      return (
+        <Collapsible trigger="Show Similar Articles">
+          {similar.map(article => (
+            <SimilarArticle key={article.paper_id} article={article} />
+          ))}
+        </Collapsible>
+      );
+    } else {
+      console.log("no similar");
+      return (
+        <Collapsible trigger="no Similar Articles">
+          <div className="answer-list">No Similar Articles Available</div>
+        </Collapsible>
+      );
+    }
+  };
 
   return (
     <div>
@@ -54,8 +77,11 @@ export default function ArticleDetails(props) {
         <div className="article">
           <div className="title-author-date">
             <h2>Title: {title}</h2>
+            <a target="_blank" href={article_url} className="external_link">
+              View Original Article
+            </a>
             <span>
-              Authors: {author}
+              &nbsp;&nbsp;|&nbsp;&nbsp; Authors: {author}
               &nbsp;&nbsp;|&nbsp;&nbsp;Publish Date: {doc_date}
             </span>
           </div>
@@ -63,7 +89,6 @@ export default function ArticleDetails(props) {
           <Collapsible trigger="Show Abstract">
             <AbstractDetails abstract={abstract} />
           </Collapsible>
-
           <Collapsible trigger="Show Body Text">
             <BodyText bodyText={bodyText} />
           </Collapsible>
@@ -71,19 +96,14 @@ export default function ArticleDetails(props) {
           {/* <button className="button" onClick={() => getData()}>
             <h3>Similar Articles</h3>
           </button> */}
-          <Collapsible trigger="Show Similar Articles">
-            {() => getData()}
-            {similar.map(article => (
-              <SimilarArticle key={article.paper_id} article={article} />
-            ))}
-          </Collapsible>
-
-          {/* <div>
-            {showSimilar &&
-              similar.map(article => (
-                <SimilarArticle key={article.paper_id} article={article} />
-              ))}
-          </div> */}
+          <div>{similar_papers}</div>
+          <Collapsible
+            trigger="Show Similar Articles"
+            onTriggerOpening={similar_papers}
+          />
+          {similar.map(article => (
+            <SimilarArticle key={article.paper_id} article={article} />
+          ))}
         </div>
       </div>
     </div>

@@ -264,6 +264,11 @@
   text-decoration: underline;
 }
 
+.external_link {
+  color: burlywood;
+  text-decoration: underline;
+}
+
 .Collapsible {
   background-color: base;
 }

@@ -86,6 +86,7 @@ const articleSample = [
     paper_id: "d0dafaa2700d9fa0289b620ce87992f9cf393ae1",
     doi: "10.1016/s0140-6736(20)30763-7",
     doc_date: "2020-03-31",
+    url: "https://doi.org/10.1016/j.bbrc.2020.03.047",
     title:
       "Spike protein recognition of mammalian ACE2 predicts the host range and an optimized ACE2 for SARS-CoV-2 infection",
     authors: ["Junwen.Luan", "Yue.Lu", "Xiaolu.Jin", "Leiliang.Zhang"],
@@ -240,6 +241,7 @@ const articleSample = [
     },
 
     paper_id: "d0dafaa2700d9fa0289b620ce87992f9cf393ae11",
+    url: "https://doi.org/10.1016/j.bbrc.2020.03.047",
     doi: "10.1016/s0140-6736(20)30763-7",
     doc_date: "2020-03-02",
     title:
