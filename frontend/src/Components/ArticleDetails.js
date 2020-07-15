@@ -4,6 +4,7 @@ import Axios from "axios";
 import Header from "./Header";
 import SimilarArticle from "./SimilarArticle";
 import BodyText from "./BodyText";
+import Collapsible from "react-collapsible";
 
 export default function ArticleDetails(props) {
   const [showBodyText, setShowBodyText] = useState(false);
@@ -13,6 +14,8 @@ export default function ArticleDetails(props) {
   const [similar, setSimilar] = useState([]);
   const [showSimilar, setShowSimilar] = useState(false);
   const url = `http://localhost:8000/answer/?paper_id=${query}`;
+
+  const [sectionHeaders, setsectionHeaders] = useState("");
 
   const getData = async () => {
     if (query !== "") {
@@ -36,35 +39,51 @@ export default function ArticleDetails(props) {
   const author = authors.join(", ");
   var MAX_ITEMS = 1;
 
+  const section_headers = bodyText.section_header.Original;
+
+  let unique_section_headers = section_headers.filter(
+    (item, i, ar) => ar.indexOf(item) === i
+  );
+
   return (
-    <div className="App-header">
-      <Header />
+    <div>
+      <div className="App-header">
+        <Header />
+      </div>
       <div className="articles">
         <div className="article">
           <div className="title-author-date">
             <h2>Title: {title}</h2>
-            <div>Authors: {author}</div>
-            <div>Publish Date: {doc_date}</div>
+            <span>
+              Authors: {author}
+              &nbsp;&nbsp;|&nbsp;&nbsp;Publish Date: {doc_date}
+            </span>
           </div>
-          <AbstractDetails abstract={abstract} />
-          <button
-            className="button"
-            onClick={() => setShowBodyText(!showBodyText)}
-          >
-            <h3> Show Body Text</h3>
-          </button>
-          {showBodyText && <BodyText bodyText={bodyText} />}
-        </div>
-        {/* dinamic similar articles, comment out */}
-        <button className="button" onClick={() => getData()}>
-          <h3>Similar Articles</h3>
-        </button>
+          {/* <AbstractDetails abstract={abstract} /> */}
+          <Collapsible trigger="Show Abstract">
+            <AbstractDetails abstract={abstract} />
+          </Collapsible>
 
-        <div>
-          {showSimilar &&
-            similar.map(article => (
+          <Collapsible trigger="Show Body Text">
+            <BodyText bodyText={bodyText} />
+          </Collapsible>
+          {/* dinamic similar articles, comment out */}
+          {/* <button className="button" onClick={() => getData()}>
+            <h3>Similar Articles</h3>
+          </button> */}
+          <Collapsible trigger="Show Similar Articles">
+            {() => getData()}
+            {similar.map(article => (
               <SimilarArticle key={article.paper_id} article={article} />
             ))}
+          </Collapsible>
+
+          {/* <div>
+            {showSimilar &&
+              similar.map(article => (
+                <SimilarArticle key={article.paper_id} article={article} />
+              ))}
+          </div> */}
         </div>
       </div>
     </div>
