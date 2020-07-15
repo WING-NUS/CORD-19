@@ -2,7 +2,7 @@ import React from "react";
 
 const BodyText = ({ bodyText }) => {
   const tags = bodyText.tags;
-  const tag_dict = tags.sciwing;
+  const tag_dict = tags.sciwingI2B2;
   const keys = Object.keys(tag_dict);
 
   function bio_tag(i, j, word) {
@@ -30,7 +30,7 @@ const BodyText = ({ bodyText }) => {
     <div className="answer-list">
       <h3>Body Text</h3>
       <div>
-        Font color for bio-ner-tags:
+        Sciwing I2B2:
         <span className="problem"> &nbsp;&nbsp;Problem&nbsp;&nbsp;</span>
         <span className="test"> Test&nbsp;&nbsp;</span>
         <span className="treatment"> Treatment &nbsp;&nbsp;</span>

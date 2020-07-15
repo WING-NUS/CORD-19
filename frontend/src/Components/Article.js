@@ -38,7 +38,7 @@ const Article = ({ article }) => {
           <div>Publish Date: {doc_date}</div>
         </div>
         <div className="answer-list">
-          <h3> Sentences answering the query</h3>
+          <h3> Related sentences </h3>
           {getRenderedItems().map((item, id) => (
             <div key={id}>{item}</div>
           ))}
