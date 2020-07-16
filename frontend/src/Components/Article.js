@@ -1,38 +1,73 @@
 import React, { useState } from "react";
 import AbstractDetails from "./AbstractDetails";
+import { NavLink } from "react-router-dom";
+import Collapsible from "react-collapsible";
 
 const Article = ({ article }) => {
-  const [show, setShow] = useState(false);
-  //const { label, image, url, ingredients } = article.recipe;
-  const { doi, paper_id, doc_date, title, authors, abstract, answer } = article;
-  const listAnswers = answer.sents.map(sent => <li>{sent}</li>);
+  const [showAbstract, setShowAbstract] = useState(false);
+  const [open, setOpen] = useState(false);
+  const { paper_id, title, doc_date, authors, abstract, answer } = article;
+  var MAX_ITEMS = 3;
+  // var listAnswers = answer.sents.slice(0, size).map(sent => <li>{sent}</li>);
   const author = authors.join(", ");
 
-  {
-    /* {articles.map(item => (
-        <li key={item.paper_id}>
-          <div>{item.paper_id}</div>
-          <div>{item.title}</div>
-          <div>{item.author}</div>
-          <div>{item.abstract}</div>
-          <div>{item.body_text}</div>
-        </li>
-      ))} */
-  }
+  // function toggle() {
+  //   setOpen(!open);
+  // }
+
+  // function getRenderedItems() {
+  //   if (open) {
+  //     return answer.sents;
+  //   }
+  //   return answer.sents.slice(0, MAX_ITEMS);
+  // }
 
   return (
-    <div className="article">
-      <div className="title-author-date">
-        <h2>Title: {title}</h2>
-        <div>Authors: {author}</div>
-        <div>Publish Date: {doc_date}</div>
-      </div>
-      <ul className="answer-list">Answers:{listAnswers}</ul>
+    <div>
+      <div className="article">
+        <div className="title-author-date">
+          <h3>Title: {title}</h3>
+          <NavLink
+            to={{
+              pathname: `/specificArticle/${paper_id}`,
+              state: { article: article }
+            }}
+            className="inactive"
+            activeClassName="active"
+          >
+            Show Details
+          </NavLink>
 
-      <button className="button" onClick={() => setShow(!show)}>
-        <h3> Show Abstract</h3>
-      </button>
-      {show && <AbstractDetails abstract={abstract} />}
+          <span>
+            &nbsp;&nbsp;|&nbsp;&nbsp;Authors: {author}{" "}
+            &nbsp;&nbsp;|&nbsp;&nbsp;Publish Date: {doc_date}
+          </span>
+        </div>
+        <Collapsible trigger="Related sentences">
+          {answer.sents.map((item, id) => (
+            <div key={id}>{item}</div>
+          ))}
+        </Collapsible>
+
+        <Collapsible trigger="Abstract">
+          <AbstractDetails abstract={abstract} />
+        </Collapsible>
+
+        {/* <div className="answer-list">
+          <h3> Sentences answering the query</h3>
+          {getRenderedItems().map((item, id) => (
+            <div key={id}>{item}</div>
+          ))}
+          <button onClick={toggle}>{open ? "Show Less" : "Show More"}</button>
+        </div>
+        <button
+          className="button"
+          onClick={() => setShowAbstract(!showAbstract)}
+        >
+          <h3> Show Abstract</h3>
+        </button> */}
+        {/* {showAbstract && <AbstractDetails abstract={abstract} />} */}
+      </div>
     </div>
   );
 };
