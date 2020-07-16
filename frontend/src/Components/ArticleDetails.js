@@ -11,8 +11,7 @@ export default function ArticleDetails(props) {
 
   //dinamic similar articles, comment out &set correct url to use
   const [query, setQuery] = useState("");
-  const [similar, setSimilar] = useState([]);
-  const [showSimilar, setShowSimilar] = useState(false);
+  var [similar, setSimilar] = useState([]);
   const url_similar = `http://localhost:8000/answer/?paper_id=${query}`;
 
   const [sectionHeaders, setsectionHeaders] = useState("");
@@ -22,7 +21,6 @@ export default function ArticleDetails(props) {
       const result = await Axios.get(url_similar);
       setSimilar(result.data);
       setQuery("");
-      setShowSimilar(!showSimilar);
     }
   };
 
@@ -47,9 +45,6 @@ export default function ArticleDetails(props) {
   );
 
   const similar_papers = () => {
-    console.log("here in similar _papers");
-    getData();
-    console.log(similar);
     if (similar.length > 0) {
       return (
         <Collapsible trigger="Show Similar Articles">
@@ -60,12 +55,12 @@ export default function ArticleDetails(props) {
       );
     } else {
       console.log("no similar");
-      return (
-        <Collapsible trigger="no Similar Articles">
-          <div className="answer-list">No Similar Articles Available</div>
-        </Collapsible>
-      );
+      return <div className="answer-list">No Similar Articles Available</div>;
     }
+  };
+
+  const header = () => {
+    return <h1>header hehehehhe</h1>;
   };
 
   return (
@@ -92,25 +87,14 @@ export default function ArticleDetails(props) {
           <Collapsible trigger="Show Body Text">
             <BodyText bodyText={bodyText} />
           </Collapsible>
-          {/* dinamic similar articles, comment out */}
-          {/* <button className="button" onClick={() => getData()}>
-            <h3>Similar Articles</h3>
-          </button> */}
-          <div>{similar_papers}</div>
-          <Collapsible
-            trigger="Show Similar Articles"
-            onTriggerOpening={similar_papers}
-          />
-          {similar.map(article => (
-            <SimilarArticle key={article.paper_id} article={article} />
-          ))}
+          {similar_papers()}
         </div>
       </div>
     </div>
   );
 }
 
-const similar = [
+const similar_paper = [
   {
     paper_id: "paper id test 1",
     doi: "doi test",
