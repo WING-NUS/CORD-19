@@ -7,14 +7,10 @@ import BodyText from "./BodyText";
 import Collapsible from "react-collapsible";
 
 export default function ArticleDetails(props) {
-  const [showBodyText, setShowBodyText] = useState(false);
-
   //dinamic similar articles, comment out &set correct url to use
   const [query, setQuery] = useState("");
   var [similar, setSimilar] = useState([]);
   const url_similar = `http://localhost:8000/answer/?paper_id=${query}`;
-
-  const [sectionHeaders, setsectionHeaders] = useState("");
 
   const getData = async () => {
     if (query !== "") {
@@ -45,6 +41,7 @@ export default function ArticleDetails(props) {
   );
 
   const similar_papers = () => {
+    similar = similar_paper;
     if (similar.length > 0) {
       return (
         <Collapsible trigger="Show Similar Articles">
@@ -57,10 +54,6 @@ export default function ArticleDetails(props) {
       console.log("no similar");
       return <div className="answer-list">No Similar Articles Available</div>;
     }
-  };
-
-  const header = () => {
-    return <h1>header hehehehhe</h1>;
   };
 
   return (
