@@ -41,7 +41,6 @@ export default function ArticleDetails(props) {
   );
 
   const similar_papers = () => {
-    similar = similar_paper;
     if (similar.length > 0) {
       return (
         <Collapsible trigger="Show Similar Articles">
