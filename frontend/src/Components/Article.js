@@ -23,37 +23,39 @@ const Article = ({ article }) => {
   // }
 
   return (
-    <div>
-      <div className="article">
-        <div className="title-author-date">
-          <h3>Title: {title}</h3>
-          <NavLink
-            to={{
-              pathname: `/specificArticle/${paper_id}`,
-              state: { article: article }
-            }}
-            className="inactive"
-            activeClassName="active"
-          >
-            Show Details
-          </NavLink>
+    <div className="article">
+      <div className="title-author-date">
+        <h3>Title: {title}</h3>
+        <NavLink
+          to={{
+            pathname: `/specificArticle/${paper_id}`,
+            state: { article: article }
+          }}
+          className="inactive"
+          activeClassName="active"
+        >
+          Show Details
+        </NavLink>
 
-          <span>
-            &nbsp;&nbsp;|&nbsp;&nbsp;Authors: {author}{" "}
-            &nbsp;&nbsp;|&nbsp;&nbsp;Publish Date: {doc_date}
-          </span>
-        </div>
-        <Collapsible trigger="Sentences Answering the Query">
+        <span>
+          &nbsp;&nbsp;|&nbsp;&nbsp;Authors: {author}{" "}
+          &nbsp;&nbsp;|&nbsp;&nbsp;Publish Date: {doc_date}
+        </span>
+      </div>
+      <Collapsible trigger="Sentences Answering the Query">
+        <div className="answer-list">
+          {" "}
           {answer.sents.map((item, id) => (
             <div key={id}>{item}</div>
           ))}
-        </Collapsible>
+        </div>
+      </Collapsible>
 
-        <Collapsible trigger="Show Abstract">
-          <AbstractDetails abstract={abstract} />
-        </Collapsible>
+      <Collapsible trigger="Show Abstract">
+        <AbstractDetails abstract={abstract} />
+      </Collapsible>
 
-        {/* <div className="answer-list">
+      {/* <div className="answer-list">
           <h3> Sentences answering the query</h3>
           {getRenderedItems().map((item, id) => (
             <div key={id}>{item}</div>
@@ -66,8 +68,7 @@ const Article = ({ article }) => {
         >
           <h3> Show Abstract</h3>
         </button> */}
-        {/* {showAbstract && <AbstractDetails abstract={abstract} />} */}
-      </div>
+      {/* {showAbstract && <AbstractDetails abstract={abstract} />} */}
     </div>
   );
 };

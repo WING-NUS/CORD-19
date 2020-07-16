@@ -76,7 +76,7 @@ const BodyText = ({ bodyText }) => {
         <br />
       </div>
       <br />
-      <p>{result}</p>
+      <div>{result}</div>
     </div>
   );
 };

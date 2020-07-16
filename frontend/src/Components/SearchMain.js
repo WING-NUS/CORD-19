@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Axios from "axios";
 import Article from "./Article";
 import Header from "./Header";
-import test_data from "./test_data";
+import Collapsible from "react-collapsible";
 
 function SearchMain() {
   const [query, setQuery] = useState("");
@@ -52,7 +52,7 @@ function SearchMain() {
       </form>
 
       <ul className="articles">
-        <div className="article">
+        <div className="query_display">
           <h3>Query:&nbsp;{query}</h3>
         </div>
         {articleSample !== [] &&
