@@ -34,7 +34,7 @@ export default function ArticleDetails(props) {
   const author = authors.join(", ");
   var MAX_ITEMS = 1;
   const article_url = `${url}`;
-  const section_headers = bodyText.section_header.Original;
+  const section_headers = bodyText.section_header.original;
 
   let unique_section_headers = section_headers.filter(
     (item, i, ar) => ar.indexOf(item) === i

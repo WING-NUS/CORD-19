@@ -58,7 +58,20 @@
 .initial_search {
   position: absolute;
   height: 400px;
-  left: 20px;
+  left: 5%;
+  top: 170px;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.initial_clustering {
+  position: absolute;
+  height: 400px;
+  left: 55%;
   top: 170px;
   width: 50%;
   display: flex;
