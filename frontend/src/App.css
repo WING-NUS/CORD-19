@@ -55,12 +55,38 @@
   justify-content: center;
   align-items: flex-start;
 }
+.initial_intro {
+  position: absolute;
+  height: 400px;
+  left: 2%;
+  top: 170px;
+  width: 96%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+
 .initial_search {
   position: absolute;
   height: 400px;
-  left: 5%;
-  top: 170px;
-  width: 50%;
+  left: 2%;
+  top: 420px;
+  width: 47%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.initial_compare {
+  position: absolute;
+  height: 400px;
+  left: 51%;
+  top: 420px;
+  width: 47%;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
