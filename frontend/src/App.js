@@ -1,9 +1,10 @@
 import React from "react";
-import { BrowserRouter as Switch, Route } from "react-router-dom";
+import { BrowserRouter as Switch, Route, Router } from "react-router-dom";
 import InitialPage from "./Components/InitialPage";
 import SearchMain from "./Components/SearchMain";
 import ArticleDetails from "./Components/ArticleDetails";
 import CompareMain from "./Components/CompareMain";
+import CompareArticles from "./Components/CompareArticles";
 
 function App() {
   return (
@@ -14,6 +15,12 @@ function App() {
           <Route exact path="/compare" component={CompareMain} exact />
           <Route exact path="/" component={SearchMain} exact />
           <Route path="/specificArticle/:id" component={ArticleDetails} />
+          <Route
+            exact
+            path="/CompareArticles"
+            component={CompareArticles}
+            exact
+          />
         </div>
       </Switch>
     </div>
