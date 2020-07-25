@@ -44,13 +44,13 @@ class CompareMain extends React.Component {
             yLabelTextAlign={"left"}
             yLabelWidth={100}
             data={graph_data.numbers}
-            height={100}
+            height={150}
             squares
             onClick={(x, y) => this.redirectToTarget(x, y)}
             cellStyle={(background, value, min, max, data, x, y) => ({
               background: `rgba(66, 86, 244, ${1 -
                 (max - value) / (max - min)})`,
-              fontSize: "11px"
+              fontSize: "20px"
             })}
             cellRender={value => value}
             title={(value, unit) => `${value}`}
