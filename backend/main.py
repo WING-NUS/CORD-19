@@ -1,16 +1,18 @@
 import uvicorn
 from fastapi import FastAPI
-from schemas import *
+from backend.schemas import *
 import pickle
-from utils import search_result_retrieval, const, conversion
+from backend.utils import search_result_retrieval, const, conversion
 import json
 from starlette.middleware.cors import CORSMiddleware
 import random
+import pandas as pd
 
 origins = [
     "http://localhost",
     "http://localhost:3000",
-    "http://3.17.70.182",
+    "ubuntu@ec2-3-17-70-182.us-east-2.compute.amazonaws.com",
+    "http://3.17.70.182:80/",
     "http://192.168.1.132/",
 	'http://192.168.2.121/'
 ]
@@ -51,24 +53,27 @@ def answer_query(query: str, limit = 20):
             print("ERROR: no corresponding DOI: ", doi, "Skip this answer")
             continue
 
-        row = database.iloc[idx[0]]
+        try:
+            row = database.iloc[idx[0]]
         # TODO: abstag use both doi and paper id
-        if not row["paper_id"] or row["paper_id"] not in db_abstags:
-            abstags = {"sciwing": [""]*len(row["abstract"])}
-        else:
-            abstags = db_abstags[row["paper_id"]]
+            if not row["paper_id"] or row["paper_id"] not in db_abstags:
+                abstags = {"sciwing": [""]*len(row["abstract"])}
+            else:
+                abstags = db_abstags[row["paper_id"]]
 
-        if not row["paper_id"] or row["paper_id"] not in db_i2b2ner:
-            i2b2tags = {"sciwingI2B2": {}}
-        else:
-            i2b2tags = db_i2b2ner[row["paper_id"]]
+            if not row["paper_id"] or row["paper_id"] not in db_i2b2ner:
+                i2b2tags = {}
+            else:
+                i2b2tags = db_i2b2ner[row["paper_id"]]
 
-        if not row["paper_id"] or row["paper_id"] not in db_genericheader:
-            genericHeader = [""]*len(row["body_text"])
-        else:
-            genericHeader = db_genericheader[row["paper_id"]]
+            if not row["paper_id"] or row["paper_id"] not in db_genericheader:
+                genericHeader = [""]*len(row["body_text"])
+            else:
+                genericHeader = db_genericheader[row["paper_id"]]
 
-        result.append(conversion.to_general_ans(note, row, abstags, i2b2tags, genericHeader))
+            result.append(conversion.to_general_ans(note, row, abstags, i2b2tags, genericHeader))
+        except IndexError:
+            print("IndexError: Skip")
     return result
 
 @app.get("/compare/{x}+{y}", response_model=Graph)
@@ -89,9 +94,17 @@ def get_graph(x: str, y: str):
 @app.get("/answer/{paper_id}", response_model=List[PaperInfo])
 def get_similar_articles(paper_id: str):
     print("check similar papers")
+    similars = pd.DataFrame(columns=database.columns)
     if paper_id in db_similarpapers.keys():
-        similars = db_similarpapers[paper_id]
-
+        for id in db_similarpapers[paper_id]:
+            idx = database.loc[database['paper_id']==id].index
+            try:
+                if len(idx) > 0:
+                    row = database.iloc[idx[0]]
+                    similars = similars.append(row)
+            except IndexError:
+                print("skip")
+                continue
     else:
         similars = None
 
