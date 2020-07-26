@@ -43,7 +43,7 @@ const BodyText = ({ bodyText }) => {
   const tag_dict = tags.sciwingI2B2;
   const keys = Object.keys(tag_dict);
 
-  const section_headers = bodyText.section_header.Original;
+  const section_headers = bodyText.section_header.original;
   var unique_section_header_to_body = {};
   for (let i = 0; i < section_headers.length; i++) {
     var sh = section_headers[i];
@@ -76,7 +76,7 @@ const BodyText = ({ bodyText }) => {
         <br />
       </div>
       <br />
-      <p>{result}</p>
+      <div>{result}</div>
     </div>
   );
 };
