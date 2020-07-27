@@ -69,7 +69,7 @@ const BodyText = ({ bodyText }) => {
     <div className="answer-list">
       <h3>Body Text</h3>
       <div>
-        Font color for bio-ner-tags:
+        Sciwing I2B2:
         <span className="problem"> &nbsp;&nbsp;Problem&nbsp;&nbsp;</span>
         <span className="test"> Test&nbsp;&nbsp;</span>
         <span className="treatment"> Treatment &nbsp;&nbsp;</span>
