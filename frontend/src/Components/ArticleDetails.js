@@ -5,13 +5,17 @@ import Header from "./Header";
 import SimilarArticle from "./SimilarArticle";
 import BodyText from "./BodyText";
 import Collapsible from "react-collapsible";
+import Dropdown from "react-dropdown";
 
 export default function ArticleDetails(props) {
   //dinamic similar articles, comment out &set correct url to use
   const [query, setQuery] = useState("");
   var [similar, setSimilar] = useState([]);
+  var [sectionHeaderType, setSectionHeaderType] = useState({
+    value: "Original",
+    label: "Original"
+  });
   const url_similar = `http://localhost:8000/answer/?paper_id=${query}`;
-
   const getData = async () => {
     if (query !== "") {
       const result = await Axios.get(url_similar);
@@ -36,6 +40,18 @@ export default function ArticleDetails(props) {
   const article_url = `${url}`;
   const section_headers = bodyText.section_header.original;
 
+  //control related
+  const defaultOption = sectionHeaderType;
+  const options = [
+    { value: "Generic", label: "Generic" },
+    { value: "Original", label: "Original" }
+  ];
+
+  const _onSelect = option => {
+    setSectionHeaderType(option);
+  };
+
+  //section header related
   let unique_section_headers = section_headers.filter(
     (item, i, ar) => ar.indexOf(item) === i
   );
@@ -71,6 +87,28 @@ export default function ArticleDetails(props) {
     <div>
       <div className="App-header">
         <Header />
+      </div>
+      <div className="control_panel">
+        <div className="article">
+          <div className="control_title">
+            <h2>Control Panel</h2>
+          </div>
+        </div>
+
+        <div className="article">
+          <div className="control_title">
+            <h4>Body Text</h4>
+          </div>
+          <div className="answer-list">
+            Choose Section Header Type:
+            <Dropdown
+              options={options}
+              onChange={_onSelect}
+              value={defaultOption}
+              placeholder="Select Y-axis"
+            />
+          </div>
+        </div>
       </div>
       <div className="articles">
         <div className="article">
