@@ -10,7 +10,8 @@ function SearchMain() {
   const [alert, setAlert] = useState("");
 
   //url for search function
-  const url = `http://localhost:8000/answer/?query=${query}`;
+  //const url = `http://localhost:8000/answer/?query=${query}`;
+  const url = `https://cord19backend.herokuapp.com/answer/?query=${query}`;
 
   const getData = async () => {
     if (query !== "") {
