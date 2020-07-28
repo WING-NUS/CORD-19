@@ -3,7 +3,9 @@ import AbstractDetails from "./AbstractDetails";
 import { NavLink } from "react-router-dom";
 import Collapsible from "react-collapsible";
 
-const Article = ({ article }) => {
+const Article = ({ article, abstractHighlights }) => {
+  console.log(article);
+  console.log(abstractHighlights);
   const [showAbstract, setShowAbstract] = useState(false);
   const [open, setOpen] = useState(false);
   const { paper_id, title, doc_date, authors, abstract, answer } = article;
@@ -81,7 +83,9 @@ const Article = ({ article }) => {
         >
           <h3> Show Abstract</h3>
         </button> */}
-      {showAbstract && <AbstractDetails abstract={abstract} />}
+      {showAbstract && (
+        <AbstractDetails abstract={abstract} highlights={abstractHighlights} />
+      )}
     </div>
   );
 };

@@ -3,6 +3,7 @@ import Axios from "axios";
 import Article from "./Article";
 import Header from "./Header";
 import Collapsible from "react-collapsible";
+import Select from "react-select";
 
 function SearchMain() {
   const [query, setQuery] = useState("");
@@ -35,24 +36,88 @@ function SearchMain() {
     getData();
   };
 
+  //highlight control for abstract varaibles
+  var [highlightParts, setHighlightParts] = useState([
+    { label: "Background", value: "background" },
+    { label: "Purpose", value: "pupose" },
+    { label: "Finding", value: "finding" },
+    { label: "Method", value: "method" },
+    { label: "Others", value: "others" }
+  ]);
+  const defaultHighlightParts = highlightParts;
+  const highlightPartsOptions = [
+    { label: "Background", value: "background" },
+    { label: "Purpose", value: "pupose" },
+    { label: "Finding", value: "finding" },
+    { label: "Method", value: "method" },
+    { label: "Others", value: "others" }
+  ];
+  const highlightList = highlightParts => {
+    var result = [];
+    if (highlightParts === null) {
+      return result;
+    } else {
+      for (let i = 0; i < highlightParts.length; i++) {
+        result.push(highlightParts[i].value);
+      }
+      return result;
+    }
+  };
+  const _highlightOnSelectSearch = option => {
+    setHighlightParts(option);
+    highlightList(option);
+    console.log("highlight on select function here");
+    console.log(highlightList(option));
+  };
+  console.log(highlightList(highlightParts));
   return (
-    <div className="App-header">
-      <Header />
-      <form onSubmit={onSubmit} className="search-form" htmlFor="search-input">
-        <input
-          type="text"
-          name="query"
-          value={query}
-          id="search-input"
-          // placeholder="Search..."
-          placeholder="What are the risk factors of covid 19?"
-          //placeholder="Is there a cure for Covid-19?"
-          //placeholder="How long will the outbreak of Covid-19 last?"
-          autoComplete="off"
-          onChange={onChange}
-        />
-        <input type="submit" value="Search" />
-      </form>
+    <div>
+      <div className="App-header">
+        <Header />
+        <form
+          onSubmit={onSubmit}
+          className="search-form"
+          htmlFor="search-input"
+        >
+          <input
+            type="text"
+            name="query"
+            value={query}
+            id="search-input"
+            // placeholder="Search..."
+            placeholder="What are the risk factors of covid 19?"
+            //placeholder="Is there a cure for Covid-19?"
+            //placeholder="How long will the outbreak of Covid-19 last?"
+            autoComplete="off"
+            onChange={onChange}
+          />
+          <input type="submit" value="Search" />
+        </form>
+      </div>
+      <div className="control_panel">
+        <div className="article">
+          <div className="control_title">
+            <h3>Control Panel</h3>
+          </div>
+        </div>
+        <div className="article">
+          <div className="control_title">
+            <h4>Abstract</h4>
+          </div>
+          <div className="answer-list">
+            Highlight Sections:
+            <div className="Dropdown">
+              <Select
+                options={highlightPartsOptions}
+                onChange={_highlightOnSelectSearch}
+                value={defaultHighlightParts}
+                isMulti
+              />
+              <div className="col-md-4"></div>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <ul className="articles">
         {/* <div className="query_display">
@@ -60,7 +125,11 @@ function SearchMain() {
         </div> */}
         {articleSample !== [] &&
           articleSample.map(article => (
-            <Article key={article.paper_id} article={article} />
+            <Article
+              key={article.paper_id}
+              article={article}
+              abstractHighlights={highlightList(highlightParts)}
+            />
           ))}
       </ul>
       <ul className="articles">
@@ -69,7 +138,11 @@ function SearchMain() {
         </div> */}
         {articles !== [] &&
           articles.map(article => (
-            <Article key={article.paper_id} article={article} />
+            <Article
+              key={article.paper_id}
+              article={article}
+              abstractHighlights={highlightList(highlightParts)}
+            />
           ))}
       </ul>
     </div>
