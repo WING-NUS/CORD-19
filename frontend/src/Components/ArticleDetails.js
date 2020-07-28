@@ -12,17 +12,7 @@ export default function ArticleDetails(props) {
   //dinamic similar articles, comment out &set correct url to use
   const [query, setQuery] = useState("");
   var [similar, setSimilar] = useState([]);
-  var [sectionHeaderType, setSectionHeaderType] = useState({
-    value: "generic",
-    label: "Generic"
-  });
-  var [highlightParts, setHighlightParts] = useState([
-    { label: "Background", value: "background" },
-    { label: "Purpose", value: "pupose" },
-    { label: "Finding", value: "finding" },
-    { label: "Method", value: "method" },
-    { label: "Others", value: "others" }
-  ]);
+
   const url_similar = `http://localhost:8000/answer/?paper_id=${query}`;
   const getData = async () => {
     if (query !== "") {
@@ -49,11 +39,28 @@ export default function ArticleDetails(props) {
   const section_headers = bodyText.section_header.original;
 
   //control related
+  //section header
+  var [sectionHeaderType, setSectionHeaderType] = useState({
+    value: "generic",
+    label: "Generic"
+  });
   const defaultOption = sectionHeaderType;
   const options = [
     { value: "generic", label: "Generic" },
     { value: "original", label: "Original" }
   ];
+  const _onSelect = option => {
+    setSectionHeaderType(option);
+  };
+
+  //abstract highlight
+  var [highlightParts, setHighlightParts] = useState([
+    { label: "Background", value: "background" },
+    { label: "Purpose", value: "pupose" },
+    { label: "Finding", value: "finding" },
+    { label: "Method", value: "method" },
+    { label: "Others", value: "others" }
+  ]);
   const defaultHighlightParts = highlightParts;
   const highlightPartsOptions = [
     { label: "Background", value: "background" },
@@ -62,7 +69,6 @@ export default function ArticleDetails(props) {
     { label: "Method", value: "method" },
     { label: "Others", value: "others" }
   ];
-
   const highlightList = highlightParts => {
     var result = [];
     if (highlightParts === null) {
@@ -74,23 +80,44 @@ export default function ArticleDetails(props) {
       return result;
     }
   };
-
-  const _onSelect = option => {
-    setSectionHeaderType(option);
-  };
-
   const _highlightOnSelect = option => {
     setHighlightParts(option);
     highlightList(option);
     console.log(highlightList(option));
   };
 
-  //section header related
-  let unique_section_headers = section_headers.filter(
-    (item, i, ar) => ar.indexOf(item) === i
-  );
+  //NER tagging
+  var [NERTaggingParts, setNERTaggingParts] = useState([
+    { label: "Test", value: "test" },
+    { label: "Problem", value: "problem" },
+    { label: "Treatment", value: "treatment" }
+  ]);
+
+  const defaultNERTagging = NERTaggingParts;
+  const NERTaggingOptions = [
+    { label: "Problem", value: "problem" },
+    { label: "Test", value: "test" },
+    { label: "Treatment", value: "treatment" }
+  ];
+  const NERTaggingList = NERTaggingParts => {
+    var result = [];
+    if (NERTaggingParts === null) {
+      return result;
+    } else {
+      for (let i = 0; i < NERTaggingParts.length; i++) {
+        result.push(NERTaggingParts[i].value);
+      }
+      return result;
+    }
+  };
+  const _NERTaggingOnSelect = option => {
+    setNERTaggingParts(option);
+    NERTaggingList(option);
+    console.log(NERTaggingList(option));
+  };
 
   const similar_papers = () => {
+    // will be removed, for static data
     if (paper_id === "PMC3763004") {
       similar = similar_paper_1_1;
     }
@@ -103,6 +130,7 @@ export default function ArticleDetails(props) {
     if (paper_id === "PMC7164849") {
       similar = similar_paper_3_2;
     }
+    //ends here
     if (similar.length > 0) {
       return (
         <Collapsible trigger="Show Similar Articles">
@@ -159,6 +187,18 @@ export default function ArticleDetails(props) {
               placeholder="Select Type"
             />
           </div>
+          <div className="answer-list">
+            NER Tagging:
+            <div className="Dropdown">
+              <Select
+                options={NERTaggingOptions}
+                onChange={_NERTaggingOnSelect}
+                value={defaultNERTagging}
+                isMulti
+              />
+              <div className="col-md-4"></div>
+            </div>
+          </div>
         </div>
       </div>
       <div className="articles">
@@ -181,6 +221,7 @@ export default function ArticleDetails(props) {
             <BodyText
               bodyText={bodyText}
               sectionHeaderType={sectionHeaderType.value.replace(/^"|"$/g, "")}
+              tag_list={NERTaggingList(NERTaggingParts)}
             />
           </Collapsible>
           {similar_papers()}
@@ -190,6 +231,7 @@ export default function ArticleDetails(props) {
   );
 }
 
+//static datas
 const similar_paper_3_2 = [
   {
     paper_id: "PMC7115413",
