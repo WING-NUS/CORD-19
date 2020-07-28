@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, Component } from "react";
 import AbstractDetails from "./AbstractDetails";
 import Axios from "axios";
 import Header from "./Header";
@@ -6,15 +6,23 @@ import SimilarArticle from "./SimilarArticle";
 import BodyText from "./BodyText";
 import Collapsible from "react-collapsible";
 import Dropdown from "react-dropdown";
+import Select from "react-select";
 
 export default function ArticleDetails(props) {
   //dinamic similar articles, comment out &set correct url to use
   const [query, setQuery] = useState("");
   var [similar, setSimilar] = useState([]);
   var [sectionHeaderType, setSectionHeaderType] = useState({
-    value: "Original",
-    label: "Original"
+    value: "generic",
+    label: "Generic"
   });
+  var [highlightParts, setHighlightParts] = useState([
+    { label: "Background", value: "background" },
+    { label: "Purpose", value: "pupose" },
+    { label: "Finding", value: "finding" },
+    { label: "Method", value: "method" },
+    { label: "Others", value: "others" }
+  ]);
   const url_similar = `http://localhost:8000/answer/?paper_id=${query}`;
   const getData = async () => {
     if (query !== "") {
@@ -43,12 +51,38 @@ export default function ArticleDetails(props) {
   //control related
   const defaultOption = sectionHeaderType;
   const options = [
-    { value: "Generic", label: "Generic" },
-    { value: "Original", label: "Original" }
+    { value: "generic", label: "Generic" },
+    { value: "original", label: "Original" }
   ];
+  const defaultHighlightParts = highlightParts;
+  const highlightPartsOptions = [
+    { label: "Background", value: "background" },
+    { label: "Purpose", value: "pupose" },
+    { label: "Finding", value: "finding" },
+    { label: "Method", value: "method" },
+    { label: "Others", value: "others" }
+  ];
+
+  const highlightList = highlightParts => {
+    var result = [];
+    if (highlightParts === null) {
+      return result;
+    } else {
+      for (let i = 0; i < highlightParts.length; i++) {
+        result.push(highlightParts[i].value);
+      }
+      return result;
+    }
+  };
 
   const _onSelect = option => {
     setSectionHeaderType(option);
+  };
+
+  const _highlightOnSelect = option => {
+    setHighlightParts(option);
+    highlightList(option);
+    console.log(highlightList(option));
   };
 
   //section header related
@@ -91,7 +125,24 @@ export default function ArticleDetails(props) {
       <div className="control_panel">
         <div className="article">
           <div className="control_title">
-            <h2>Control Panel</h2>
+            <h3>Control Panel</h3>
+          </div>
+        </div>
+        <div className="article">
+          <div className="control_title">
+            <h4>Abstract</h4>
+          </div>
+          <div className="answer-list">
+            Highlight Sections:
+            <div className="Dropdown">
+              <Select
+                options={highlightPartsOptions}
+                onChange={_highlightOnSelect}
+                value={defaultHighlightParts}
+                isMulti
+              />
+              <div className="col-md-4"></div>
+            </div>
           </div>
         </div>
 
@@ -100,12 +151,12 @@ export default function ArticleDetails(props) {
             <h4>Body Text</h4>
           </div>
           <div className="answer-list">
-            Choose Section Header Type:
+            Section Header Type:
             <Dropdown
               options={options}
               onChange={_onSelect}
               value={defaultOption}
-              placeholder="Select Y-axis"
+              placeholder="Select Type"
             />
           </div>
         </div>
@@ -122,9 +173,15 @@ export default function ArticleDetails(props) {
               &nbsp;&nbsp;|&nbsp;&nbsp;Publish Date: {doc_date}
             </span>
           </div>
-          <AbstractDetails abstract={abstract} />
+          <AbstractDetails
+            abstract={abstract}
+            highlights={highlightList(highlightParts)}
+          />
           <Collapsible trigger="Show Body Text">
-            <BodyText bodyText={bodyText} />
+            <BodyText
+              bodyText={bodyText}
+              sectionHeaderType={sectionHeaderType.value.replace(/^"|"$/g, "")}
+            />
           </Collapsible>
           {similar_papers()}
         </div>

@@ -1,9 +1,13 @@
 import React from "react";
 // import { v4 as uuidv4 } from "uuid";
 
-const AbstractDetails = ({ abstract }) => {
+const AbstractDetails = ({ abstract, highlights }) => {
   const result = abstract.text.map((text, i) => {
-    return <span className={abstract.tags.sciwing[i]}>{text}</span>;
+    var style;
+    if (highlights.includes(abstract.tags.sciwing[i])) {
+      style = abstract.tags.sciwing[i];
+    }
+    return <span className={style}>{text}</span>;
   });
 
   const abstract_details = () => {

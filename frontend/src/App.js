@@ -11,9 +11,9 @@ function App() {
     <div>
       <Switch>
         <div>
-          <Route exact path="/InitialPage" component={InitialPage} exact />
+          <Route exact path="/" component={InitialPage} exact />
           <Route exact path="/compare" component={CompareMain} exact />
-          <Route exact path="/" component={SearchMain} exact />
+          <Route exact path="/search" component={SearchMain} exact />
           <Route path="/specificArticle/:id" component={ArticleDetails} />
           <Route
             exact

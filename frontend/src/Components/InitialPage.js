@@ -43,7 +43,7 @@ export default function ArticleDetails(props) {
           <div className="title-author-date">
             <NavLink
               to={{
-                pathname: `/`
+                pathname: `/search`
               }}
               className="inactive"
               activeClassName="active"
