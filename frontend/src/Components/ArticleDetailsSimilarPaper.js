@@ -54,11 +54,7 @@ export default function ArticleDetailsSimilarPaper(props) {
 
   //abstract highlight
   var [highlightParts, setHighlightParts] = useState([
-    { label: "Background", value: "background" },
-    { label: "Purpose", value: "pupose" },
-    { label: "Finding", value: "finding" },
-    { label: "Method", value: "method" },
-    { label: "Others", value: "others" }
+    { label: "Finding", value: "finding" }
   ]);
   const defaultHighlightParts = highlightParts;
   const highlightPartsOptions = [

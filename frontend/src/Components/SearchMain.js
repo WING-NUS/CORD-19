@@ -7,7 +7,9 @@ import Dropdown from "react-dropdown";
 
 function SearchMain() {
   const [query, setQuery] = useState("");
-  const [articles, setArticles] = useState([]);
+  // const [articles, setArticles] = useState();
+  //for testing,dynamic data
+  const [articles, setArticles] = useState(articleSample_2);
   const [alert, setAlert] = useState("");
 
   //url for search function
@@ -146,8 +148,8 @@ function SearchMain() {
 
       <div className="articles">
         {/* <div className="articles_inner"> */}
-        {articleSample !== [] &&
-          articleSample.map(article => (
+        {articles !== [] &&
+          articles.map(article => (
             <Article
               key={article.paper_id}
               article={article}
