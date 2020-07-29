@@ -3,6 +3,7 @@ import Axios from "axios";
 import HeatMap from "react-heatmap-grid";
 import Header from "./Header";
 import Dropdown from "react-dropdown";
+import Footer from "./Footer";
 
 class CompareMain extends React.Component {
   constructor(props) {
@@ -63,7 +64,7 @@ class CompareMain extends React.Component {
 
     return (
       <div>
-        <div className="App-header">
+        <div className="header">
           <Header />
         </div>
 
@@ -121,6 +122,7 @@ class CompareMain extends React.Component {
             </div>
           </div>
         </div>
+        <Footer />
       </div>
     );
   }

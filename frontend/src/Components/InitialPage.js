@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import Header from "./Header";
 import { NavLink } from "react-router-dom";
+import Footer from "./Footer";
 export default function ArticleDetails(props) {
   return (
     <div>
-      <div className="App-header">
+      <div className="header">
         <Header />
       </div>
       <div className="initial_intro">
@@ -95,6 +96,7 @@ export default function ArticleDetails(props) {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }
