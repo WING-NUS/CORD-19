@@ -39,8 +39,6 @@ export default function ArticleDetailsBodyText(props) {
 
   //NER tagging
   var [NERTaggingParts, setNERTaggingParts] = useState([
-    { label: "Test", value: "test" },
-    { label: "Problem", value: "problem" },
     { label: "Treatment", value: "treatment" }
   ]);
 

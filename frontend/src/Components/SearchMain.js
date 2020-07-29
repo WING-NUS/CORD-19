@@ -51,11 +51,7 @@ function SearchMain() {
 
   //highlight control for abstract varaibles
   var [highlightParts, setHighlightParts] = useState([
-    { label: "Background", value: "background" },
-    { label: "Purpose", value: "pupose" },
-    { label: "Finding", value: "finding" },
-    { label: "Method", value: "method" },
-    { label: "Others", value: "others" }
+    { label: "Finding", value: "finding" }
   ]);
   const defaultHighlightParts = highlightParts;
   const highlightPartsOptions = [
@@ -192,7 +188,8 @@ const articleSample_2 = [
         "As of April 9, 2020, there were 1,604,252 confirmed cases and 95,714 deaths from COVID-19 worldwide [2] .",
         "The COVID-19 pandemic has been greatly affecting peoples lives and the world's economy.",
         "Among many infection related questions, governments and people are most concerned with (i) when the COVID-19 outbreak will peak; (ii) how long the outbreak will last and (iii) how many people will eventually be infected."
-      ]
+      ],
+      sent_section: ["intro", "intro", "intro", "intro"]
     },
     paper_id: "PMC7251219",
     doi: "10.1007/s00134-020-06112-4",
