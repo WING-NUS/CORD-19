@@ -5,7 +5,7 @@ root = "/Users/zijinkong/Desktop/Covid-19/CORD-19/"
 root_path = osp.join(root, '../CORD-19-research-challenge')
 ANS_CACHE_ROOT = osp.join(root, "./database/ans_cache")
 
-DB_CACHE = osp.join(root, "./database/database.pkl")
+DB_CACHE = osp.join(root, "./database/demo_db.pkl")
 DB_SAMPLE_CACHE = osp.join(root, "./database/sample.pkl")
 
 ABSTAG_JSON_CACHE = osp.join(root, "./database/abstag.json")
