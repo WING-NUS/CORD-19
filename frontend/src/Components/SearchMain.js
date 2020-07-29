@@ -3,6 +3,7 @@ import Axios from "axios";
 import Article from "./Article";
 import Footer from "./Footer";
 import Select from "react-select";
+import Dropdown from "react-dropdown";
 
 function SearchMain() {
   const [query, setQuery] = useState("");
@@ -26,6 +27,19 @@ function SearchMain() {
     } else {
       setAlert("Please fill the form");
     }
+  };
+
+  var [sentNumber, setSentNumber] = useState({
+    value: "<=3",
+    label: "Less or = 3"
+  });
+  const defaultOption = sentNumber;
+  const options = [
+    { value: "<=3", label: "Less or = 3" },
+    { value: "all", label: "all" }
+  ];
+  const _onSelect = option => {
+    setSentNumber(option);
   };
 
   const onChange = e => setQuery(e.target.value);
@@ -102,6 +116,21 @@ function SearchMain() {
         </div>
         <div className="article">
           <div className="control_title">
+            <h4>Relavant Sentences</h4>
+          </div>
+          <div className="answer-list">
+            Number of Sentences to display:
+            <Dropdown
+              options={options}
+              onChange={_onSelect}
+              value={defaultOption}
+              placeholder="Select Type"
+            />
+          </div>
+        </div>
+
+        <div className="article">
+          <div className="control_title">
             <h4>Abstract</h4>
           </div>
           <div className="answer-list">
@@ -127,6 +156,7 @@ function SearchMain() {
               key={article.paper_id}
               article={article}
               abstractHighlights={highlightList(highlightParts)}
+              sentToDisplay={sentNumber.value}
             />
           ))}
         {/* </div> */}

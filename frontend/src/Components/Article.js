@@ -3,24 +3,46 @@ import AbstractDetails from "./AbstractDetails";
 import { NavLink } from "react-router-dom";
 import Collapsible from "react-collapsible";
 
-const Article = ({ article, abstractHighlights }) => {
+const Article = ({ article, abstractHighlights, sentToDisplay }) => {
   console.log(article);
   console.log(abstractHighlights);
   const [showAbstract, setShowAbstract] = useState(false);
-  const [open, setOpen] = useState(false);
   const { paper_id, title, doc_date, authors, abstract, answer } = article;
-  var MAX_ITEMS = 3;
   const author = authors.join(", ");
 
-  function toggle() {
-    setOpen(!open);
+  function checkSentsToDisplay() {
+    if (answer === undefined) {
+      return (
+        <div className="main_answer_list_title">
+          No Sentences answering the query!
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          <div className="main_answer_list_title">
+            Sentences answering the query
+          </div>
+          {getRenderedItems().map((item, id) => (
+            <div key={id}>
+              <span>
+                <span className="sentence_index">Sentence {id + 1}:</span>
+                {item}
+              </span>
+            </div>
+          ))}
+        </div>
+      );
+    }
   }
 
   function getRenderedItems() {
-    if (open) {
+    if (sentToDisplay === "all") {
       return answer.sents;
     }
-    return answer.sents.slice(0, MAX_ITEMS);
+    if (sentToDisplay === "<=3") {
+      return answer.sents.slice(0, 3);
+    }
   }
 
   return (
@@ -52,20 +74,21 @@ const Article = ({ article, abstractHighlights }) => {
       </div>
 
       <div className="answer-list">
-        <span className="main_answer_list_title">
+        {checkSentsToDisplay()}
+        {/* <span className="main_answer_list_title">
           Sentences answering the query &nbsp;&nbsp;|&nbsp;&nbsp;
           <button className="button" onClick={toggle}>
             {open ? "Show Less" : "Show More"}
           </button>
-        </span>
-        {getRenderedItems().map((item, id) => (
+        </span> */}
+        {/* {getRenderedItems().map((item, id) => (
           <div key={id}>
             <span>
               <span className="sentence_index">Sentence {id + 1}:</span>
               {item}
             </span>
           </div>
-        ))}
+        ))} */}
       </div>
 
       {showAbstract && (
