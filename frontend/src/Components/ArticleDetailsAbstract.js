@@ -4,6 +4,7 @@ import Header from "./Header";
 import Select from "react-select";
 import { NavLink } from "react-router-dom";
 import Footer from "./Footer";
+import Dropdown from "react-dropdown";
 
 export default function ArticleDetailsAbstract(props) {
   //dinamic similar articles, comment out &set correct url to use
@@ -25,6 +26,21 @@ export default function ArticleDetailsAbstract(props) {
   const article_url = `${url}`;
 
   //control related
+
+  //control of highlightmodel
+  var [highlightModel, setHighlightModel] = useState({
+    value: "sciwing",
+    label: "SCIWING"
+  });
+  const defaulthHighlightModelOption = highlightModel;
+  const highlightModeloptions = [
+    { value: "sciwing", label: "SCIWING" },
+    { value: "coda19", label: "CODA19" }
+  ];
+  const _highlightModelOnSelect = option => {
+    setHighlightModel(option);
+  };
+
   //abstract highlight
   var [highlightParts, setHighlightParts] = useState([
     { label: "Finding", value: "finding" }
@@ -32,7 +48,7 @@ export default function ArticleDetailsAbstract(props) {
   const defaultHighlightParts = highlightParts;
   const highlightPartsOptions = [
     { label: "Background", value: "background" },
-    { label: "Purpose", value: "pupose" },
+    { label: "Purpose", value: "purpose" },
     { label: "Finding", value: "finding" },
     { label: "Method", value: "method" },
     { label: "Others", value: "others" }
@@ -68,6 +84,15 @@ export default function ArticleDetailsAbstract(props) {
         <div className="article">
           <div className="control_title">
             <h4>Abstract</h4>
+          </div>
+          <div className="answer-list">
+            Highlight Model:
+            <Dropdown
+              options={highlightModeloptions}
+              onChange={_highlightModelOnSelect}
+              value={defaulthHighlightModelOption}
+              placeholder="Select Type"
+            />
           </div>
           <div className="answer-list">
             Highlight Sections:
@@ -146,6 +171,7 @@ export default function ArticleDetailsAbstract(props) {
           <AbstractDetails
             abstract={abstract}
             highlights={highlightList(highlightParts)}
+            highlightModel={highlightModel.value}
           />
         </div>
       </div>

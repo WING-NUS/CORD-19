@@ -179,7 +179,17 @@ const graph_data_example_2 = {
               " 1\nThere have been many reports of long-term sequelae of severe acute respiratory syndrome (SARS), 5-10 but to the best of our knowledge no report has addressed long-term sequelae in"
             ],
             tags: {
-              sciwing: ["tag1"]
+              sciwing: [
+                "background",
+                "finding",
+                "method",
+                "method",
+                "method",
+                "method",
+                "method",
+                "method"
+              ],
+              coda19: []
             }
           },
           bodyText: {
@@ -1638,7 +1648,17 @@ const graph_data_example = {
               " 1\nThere have been many reports of long-term sequelae of severe acute respiratory syndrome (SARS), 5-10 but to the best of our knowledge no report has addressed long-term sequelae in"
             ],
             tags: {
-              sciwing: ["tag1"]
+              sciwing: [
+                "background",
+                "finding",
+                "method",
+                "method",
+                "method",
+                "method",
+                "method",
+                "method"
+              ],
+              coda19: []
             }
           },
           bodyText: {

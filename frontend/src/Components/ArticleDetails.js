@@ -59,7 +59,7 @@ export default function ArticleDetails(props) {
   //abstract highlight
   var [highlightParts, setHighlightParts] = useState([
     { label: "Background", value: "background" },
-    { label: "Purpose", value: "pupose" },
+    { label: "Purpose", value: "purpose" },
     { label: "Finding", value: "finding" },
     { label: "Method", value: "method" },
     { label: "Others", value: "others" }
@@ -67,7 +67,7 @@ export default function ArticleDetails(props) {
   const defaultHighlightParts = highlightParts;
   const highlightPartsOptions = [
     { label: "Background", value: "background" },
-    { label: "Purpose", value: "pupose" },
+    { label: "Purpose", value: "purpose" },
     { label: "Finding", value: "finding" },
     { label: "Method", value: "method" },
     { label: "Others", value: "others" }

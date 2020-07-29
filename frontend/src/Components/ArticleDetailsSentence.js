@@ -39,7 +39,10 @@ export default function ArticleDetailsSentence(props) {
   };
 
   const sent_section = (item, id) => {
-    if (answer["sent_section"] === undefined) {
+    if (
+      answer["sent_section"] === undefined ||
+      answer["sent_section"].length < 1
+    ) {
       return (
         <span>
           <span className="sentence_index">Sentence {id + 1} :</span>

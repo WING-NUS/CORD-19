@@ -3,7 +3,12 @@ import AbstractDetails from "./AbstractDetails";
 import { NavLink } from "react-router-dom";
 import Collapsible from "react-collapsible";
 
-const Article = ({ article, abstractHighlights, sentToDisplay }) => {
+const Article = ({
+  article,
+  abstractHighlights,
+  sentToDisplay,
+  abstractHighlightModel
+}) => {
   console.log(article);
   console.log(abstractHighlights);
   const [showAbstract, setShowAbstract] = useState(false);
@@ -32,7 +37,10 @@ const Article = ({ article, abstractHighlights, sentToDisplay }) => {
   }
 
   const sent_section = (item, id) => {
-    if (answer["sent_section"] === undefined) {
+    if (
+      answer["sent_section"] === undefined ||
+      answer["sent_section"].length < 1
+    ) {
       return (
         <span>
           <span className="sentence_index">Sentence {id + 1} :</span>
@@ -92,7 +100,11 @@ const Article = ({ article, abstractHighlights, sentToDisplay }) => {
       <div className="answer-list">{checkSentsToDisplay()}</div>
 
       {showAbstract && (
-        <AbstractDetails abstract={abstract} highlights={abstractHighlights} />
+        <AbstractDetails
+          abstract={abstract}
+          highlights={abstractHighlights}
+          highlightModel={abstractHighlightModel}
+        />
       )}
     </div>
   );

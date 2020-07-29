@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import AbstractDetails from "./AbstractDetails";
 import { NavLink } from "react-router-dom";
-const SimilarArticle = ({ article, abstractHighlights }) => {
+const SimilarArticle = ({
+  article,
+  abstractHighlights,
+  abstractHighlightModel
+}) => {
   const [showAbstract, setShowAbstract] = useState(false);
   const [open, setOpen] = useState(false);
   const {
@@ -21,7 +25,7 @@ const SimilarArticle = ({ article, abstractHighlights }) => {
   return (
     <div className="article">
       <div className="title-author-date">
-        <h2>Title: {title}</h2>
+        <h2>{title}</h2>
         <NavLink
           to={{
             pathname: `/specificArticle/Abstract/${paper_id}`,
@@ -38,7 +42,13 @@ const SimilarArticle = ({ article, abstractHighlights }) => {
           &nbsp;&nbsp;|&nbsp;&nbsp;Publish Date: {doc_date}
         </span>
       </div>
-      {<AbstractDetails abstract={abstract} highlights={abstractHighlights} />}
+      {
+        <AbstractDetails
+          abstract={abstract}
+          highlights={abstractHighlights}
+          highlightModel={abstractHighlightModel}
+        />
+      }
     </div>
   );
 };
