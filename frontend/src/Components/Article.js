@@ -24,15 +24,7 @@ const Article = ({ article, abstractHighlights, sentToDisplay }) => {
             Sentences answering the query
           </div>
           {getRenderedItems().map((item, id) => (
-            <div key={id}>
-              {sent_section(item, id)}
-              {/* <span>
-                <span className="sentence_index">
-                  Sentence {id + 1} in section :
-                </span>
-                {item}
-              </span> */}
-            </div>
+            <div key={id}>{sent_section(item, id)}</div>
           ))}
         </div>
       );
@@ -97,23 +89,7 @@ const Article = ({ article, abstractHighlights, sentToDisplay }) => {
         </span>
       </div>
 
-      <div className="answer-list">
-        {checkSentsToDisplay()}
-        {/* <span className="main_answer_list_title">
-          Sentences answering the query &nbsp;&nbsp;|&nbsp;&nbsp;
-          <button className="button" onClick={toggle}>
-            {open ? "Show Less" : "Show More"}
-          </button>
-        </span> */}
-        {/* {getRenderedItems().map((item, id) => (
-          <div key={id}>
-            <span>
-              <span className="sentence_index">Sentence {id + 1}:</span>
-              {item}
-            </span>
-          </div>
-        ))} */}
-      </div>
+      <div className="answer-list">{checkSentsToDisplay()}</div>
 
       {showAbstract && (
         <AbstractDetails abstract={abstract} highlights={abstractHighlights} />

@@ -38,6 +38,27 @@ export default function ArticleDetailsSentence(props) {
     setSentNumber(option);
   };
 
+  const sent_section = (item, id) => {
+    if (answer["sent_section"] === undefined) {
+      return (
+        <span>
+          <span className="sentence_index">Sentence {id + 1} :</span>
+          {item}
+        </span>
+      );
+    } else {
+      return (
+        <span>
+          <span className="sentence_index">Sentence {id + 1} :</span>
+          {item}
+          <span className="sentence_index">
+            [{answer.sent_section[id]} section]
+          </span>
+        </span>
+      );
+    }
+  };
+
   function checkSents() {
     if (props.location.state.article["answer"] === undefined) {
       return (
@@ -52,12 +73,7 @@ export default function ArticleDetailsSentence(props) {
             Sentences answering the query
           </div>
           {getRenderedItems().map((item, id) => (
-            <div key={id}>
-              <span>
-                <span className="sentence_index">Sentence {id + 1}:</span>
-                {item}
-              </span>
-            </div>
+            <div key={id}>{sent_section(item, id)}</div>
           ))}
         </div>
       );
