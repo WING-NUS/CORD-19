@@ -98,12 +98,6 @@ export default function CompareArticles(props) {
               abstractHighlights={highlightList(highlightParts)}
               abstractHighlightModel={highlightModel.value}
             />
-            // <SimilarArticle
-            //   key={article.paper_id}
-            //   article={article}
-            //   abstractHighlights={highlightList(highlightParts)}
-            //   abstractHighlightModel={highlightModeloptions.value}
-            // />
           ))}
       </ul>
       <Footer />

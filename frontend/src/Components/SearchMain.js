@@ -183,21 +183,7 @@ function SearchMain() {
               sentToDisplay={sentNumber.value}
             />
           ))}
-        {/* </div> */}
       </div>
-
-      {/* <ul className="articles">
-        
-          {articles !== [] &&
-            articles.map(article => (
-              <Article
-                key={article.paper_id}
-                article={article}
-                abstractHighlights={highlightList(highlightParts)}
-              />
-            ))}
-        </ul>
-      </ul> */}
       <Footer />
     </div>
   );
