@@ -191,7 +191,7 @@ const articleSample_2 = [
         "The COVID-19 pandemic has been greatly affecting peoples lives and the world's economy.",
         "Among many infection related questions, governments and people are most concerned with (i) when the COVID-19 outbreak will peak; (ii) how long the outbreak will last and (iii) how many people will eventually be infected."
       ],
-      sent_section: ["intro", "intro", "intro", "intro"]
+      sent_section: ["intro", "intro", "intro", "intro", "conclusion"]
     },
     paper_id: "PMC7251219",
     doi: "10.1007/s00134-020-06112-4",

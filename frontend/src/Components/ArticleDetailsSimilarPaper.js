@@ -11,7 +11,7 @@ export default function ArticleDetailsSimilarPaper(props) {
   const [query, setQuery] = useState("");
   var [similar, setSimilar] = useState([]);
 
-  const url_similar = `http://localhost:8000/answer/?paper_id=${query}`;
+  const url_similar = `https://cord19backend.herokuapp.com/similar/?paper_id=${query}`;
   const getData = async () => {
     if (query !== "") {
       const result = await Axios.get(url_similar);
