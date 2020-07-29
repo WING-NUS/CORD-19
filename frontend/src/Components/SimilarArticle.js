@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import AbstractDetails from "./AbstractDetails";
 import { NavLink } from "react-router-dom";
-const SimilarArticle = ({ article }) => {
+const SimilarArticle = ({ article, abstractHighlights }) => {
   const [showAbstract, setShowAbstract] = useState(false);
   const [open, setOpen] = useState(false);
   const {
@@ -19,28 +19,26 @@ const SimilarArticle = ({ article }) => {
   const author = authors.join(", ");
 
   return (
-    <div>
-      <div className="article">
-        <div className="title-author-date">
-          <h2>Title: {title}</h2>
-          <NavLink
-            to={{
-              pathname: `/specificArticle/${paper_id}`,
-              state: { article: article }
-            }}
-            className="inactive"
-            activeClassName="active"
-          >
-            Show Details
-          </NavLink>
+    <div className="article">
+      <div className="title-author-date">
+        <h2>Title: {title}</h2>
+        <NavLink
+          to={{
+            pathname: `/specificArticle/Abstract/${paper_id}`,
+            state: { article: article }
+          }}
+          className="inactive"
+          activeClassName="active"
+        >
+          Show Details
+        </NavLink>
 
-          <span>
-            &nbsp;&nbsp;|&nbsp;&nbsp;Authors: {author}{" "}
-            &nbsp;&nbsp;|&nbsp;&nbsp;Publish Date: {doc_date}
-          </span>
-        </div>
-        {<AbstractDetails abstract={abstract} />}
+        <span>
+          &nbsp;&nbsp;|&nbsp;&nbsp;Authors: {author}{" "}
+          &nbsp;&nbsp;|&nbsp;&nbsp;Publish Date: {doc_date}
+        </span>
       </div>
+      {<AbstractDetails abstract={abstract} highlights={abstractHighlights} />}
     </div>
   );
 };

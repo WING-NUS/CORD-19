@@ -5,6 +5,10 @@ import SearchMain from "./Components/SearchMain";
 import ArticleDetails from "./Components/ArticleDetails";
 import CompareMain from "./Components/CompareMain";
 import CompareArticles from "./Components/CompareArticles";
+import ArticleDetailsAbstract from "./Components/ArticleDetailsAbstract";
+import ArticleDetailsSentence from "./Components/ArticleDetailsSentence";
+import ArticleDetailsBodyText from "./Components/ArticleDetailsBodyText";
+import ArticleDetailsSimilarPaper from "./Components/ArticleDetailsSimilarPaper";
 
 import testxixi from "./Components/testxixi";
 
@@ -16,8 +20,29 @@ function App() {
           <Route exact path="/" component={InitialPage} exact />
           <Route exact path="/compare" component={CompareMain} exact />
           <Route exact path="/search" component={SearchMain} exact />
-          <Route path="/specificArticle/:id" component={ArticleDetails} />
-          <Route path="/test" component={testxixi} />
+          <Route exact path="/specificArticle/:id" component={ArticleDetails} />
+          <Route
+            exact
+            path="/specificArticle/sentences/:id"
+            component={ArticleDetailsSentence}
+          />
+          <Route
+            exact
+            path="/specificArticle/abstract/:id"
+            component={ArticleDetailsAbstract}
+          />
+          <Route
+            exact
+            path="/specificArticle/bodyText/:id"
+            component={ArticleDetailsBodyText}
+          />
+          <Route
+            exact
+            path="/specificArticle/similarPaper/:id"
+            component={ArticleDetailsSimilarPaper}
+          />
+
+          <Route exact path="/test" component={testxixi} />
           <Route
             exact
             path="/CompareArticles"

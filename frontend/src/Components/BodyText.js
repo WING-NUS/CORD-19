@@ -79,15 +79,16 @@ const BodyText = ({ bodyText, sectionHeaderType, tag_list }) => {
 
   return (
     <div className="answer-list">
-      <h3>Body Text</h3>
-      <div>
-        Sciwing I2B2:
-        <span className="problem"> &nbsp;&nbsp;Problem&nbsp;&nbsp;</span>
-        <span className="test"> Test&nbsp;&nbsp;</span>
-        <span className="treatment"> Treatment &nbsp;&nbsp;</span>
-        <br />
+      <div className="main_answer_list_title">
+        <h3>Body Text</h3>
+        <div>
+          Sciwing I2B2:
+          <span className="problem"> &nbsp;&nbsp;Problem&nbsp;&nbsp;</span>
+          <span className="test"> Test&nbsp;&nbsp;</span>
+          <span className="treatment"> Treatment &nbsp;&nbsp;</span>
+          <br />
+        </div>
       </div>
-      <br />
       <div>{result}</div>
     </div>
   );

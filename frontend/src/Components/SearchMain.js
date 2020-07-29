@@ -2,10 +2,7 @@ import React, { useState, useEffect } from "react";
 import Axios from "axios";
 import Article from "./Article";
 import Footer from "./Footer";
-import Header from "./Header";
-import Collapsible from "react-collapsible";
 import Select from "react-select";
-import Sticky from "react-sticky-state";
 
 function SearchMain() {
   const [query, setQuery] = useState("");

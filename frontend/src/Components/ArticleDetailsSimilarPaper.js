@@ -1,16 +1,12 @@
 import React, { useState, Component } from "react";
-import AbstractDetails from "./AbstractDetails";
 import Axios from "axios";
 import Header from "./Header";
 import SimilarArticle from "./SimilarArticle";
-import BodyText from "./BodyText";
-import Collapsible from "react-collapsible";
-import Dropdown from "react-dropdown";
 import Select from "react-select";
 import { NavLink } from "react-router-dom";
-import ArticleDetailsSentence from "./ArticleDetailsSentence";
+import Footer from "./Footer";
 
-export default function ArticleDetails(props) {
+export default function ArticleDetailsSimilarPaper(props) {
   //dinamic similar articles, comment out &set correct url to use
   const [query, setQuery] = useState("");
   var [similar, setSimilar] = useState([]);
@@ -136,11 +132,20 @@ export default function ArticleDetails(props) {
     //ends here
     if (similar.length > 0) {
       return (
-        <Collapsible trigger="Show Similar Articles">
+        // <Collapsible trigger="Show Similar Articles">
+        <div className="answer-list">
+          <div className="main_answer_list_title">
+            <h3>Similar Papers</h3>
+          </div>
           {similar.map(article => (
-            <SimilarArticle key={article.paper_id} article={article} />
+            <SimilarArticle
+              key={article.paper_id}
+              article={article}
+              abstractHighlights={highlightList(highlightParts)}
+            />
           ))}
-        </Collapsible>
+        </div>
+        // </Collapsible>
       );
     } else {
       console.log("no similar");
@@ -159,48 +164,16 @@ export default function ArticleDetails(props) {
             <h3>Control Panel</h3>
           </div>
         </div>
-        <div className="article">
-          <div className="control_title">
-            <h4>Abstract</h4>
-          </div>
-          <div className="answer-list">
-            Highlight Sections:
-            <div className="Dropdown">
-              <Select
-                options={highlightPartsOptions}
-                onChange={_highlightOnSelect}
-                value={defaultHighlightParts}
-                isMulti
-              />
-              <div className="col-md-4"></div>
-            </div>
-          </div>
-        </div>
-
-        <div className="article">
-          <div className="control_title">
-            <h4>Body Text</h4>
-          </div>
-          <div className="answer-list">
-            Section Header Type:
-            <Dropdown
-              options={options}
-              onChange={_onSelect}
-              value={defaultOption}
-              placeholder="Select Type"
+        <div className="answer-list">
+          Similar Paper Highlight Sections:
+          <div className="Dropdown">
+            <Select
+              options={highlightPartsOptions}
+              onChange={_highlightOnSelect}
+              value={defaultHighlightParts}
+              isMulti
             />
-          </div>
-          <div className="answer-list">
-            NER Tagging:
-            <div className="Dropdown">
-              <Select
-                options={NERTaggingOptions}
-                onChange={_NERTaggingOnSelect}
-                value={defaultNERTagging}
-                isMulti
-              />
-              <div className="col-md-4"></div>
-            </div>
+            <div className="col-md-4"></div>
           </div>
         </div>
       </div>
@@ -264,20 +237,10 @@ export default function ArticleDetails(props) {
             </a>
             <br />
           </div>
-          <AbstractDetails
-            abstract={abstract}
-            highlights={highlightList(highlightParts)}
-          />
-          <Collapsible trigger="Show Body Text">
-            <BodyText
-              bodyText={bodyText}
-              sectionHeaderType={sectionHeaderType.value.replace(/^"|"$/g, "")}
-              tag_list={NERTaggingList(NERTaggingParts)}
-            />
-          </Collapsible>
           {similar_papers()}
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

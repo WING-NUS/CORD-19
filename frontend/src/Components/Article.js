@@ -10,7 +10,6 @@ const Article = ({ article, abstractHighlights }) => {
   const [open, setOpen] = useState(false);
   const { paper_id, title, doc_date, authors, abstract, answer } = article;
   var MAX_ITEMS = 3;
-  // var listAnswers = answer.sents.slice(0, size).map(sent => <li>{sent}</li>);
   const author = authors.join(", ");
 
   function toggle() {
@@ -30,7 +29,7 @@ const Article = ({ article, abstractHighlights }) => {
         <h3>{title}</h3>
         <NavLink
           to={{
-            pathname: `/specificArticle/${paper_id}`,
+            pathname: `/specificArticle/sentences/${paper_id}`,
             state: { article: article }
           }}
           className="inactive"
@@ -51,14 +50,6 @@ const Article = ({ article, abstractHighlights }) => {
           &nbsp;&nbsp;|&nbsp;&nbsp;Publish Date: {doc_date}
         </span>
       </div>
-      {/* <Collapsible trigger="Sentences Answering the Query">
-        <div className="answer-list">
-          {" "}
-          {answer.sents.map((item, id) => (
-            <div key={id}>{item}</div>
-          ))}
-        </div>
-      </Collapsible> */}
 
       <div className="answer-list">
         <span className="main_answer_list_title">
@@ -77,17 +68,6 @@ const Article = ({ article, abstractHighlights }) => {
         ))}
       </div>
 
-      {/* <Collapsible trigger="Show Abstract"> */}
-      {/* <AbstractDetails abstract={abstract} /> */}
-      {/* </Collapsible> */}
-
-      {/*
-        <button
-          className="button"
-          onClick={() => setShowAbstract(!showAbstract)}
-        >
-          <h3> Show Abstract</h3>
-        </button> */}
       {showAbstract && (
         <AbstractDetails abstract={abstract} highlights={abstractHighlights} />
       )}

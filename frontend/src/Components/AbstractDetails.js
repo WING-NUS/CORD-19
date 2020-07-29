@@ -17,7 +17,7 @@ const AbstractDetails = ({ abstract, highlights }) => {
       return (
         <div>
           <span className="main_answer_list_title">
-            Abstract
+            <h3>Abstract</h3>
             <div>
               Highlight for abstract:
               <span id="square_background"></span>
