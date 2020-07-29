@@ -6,6 +6,8 @@ import ArticleDetails from "./Components/ArticleDetails";
 import CompareMain from "./Components/CompareMain";
 import CompareArticles from "./Components/CompareArticles";
 
+import testxixi from "./Components/testxixi";
+
 function App() {
   return (
     <div>
@@ -15,6 +17,7 @@ function App() {
           <Route exact path="/compare" component={CompareMain} exact />
           <Route exact path="/search" component={SearchMain} exact />
           <Route path="/specificArticle/:id" component={ArticleDetails} />
+          <Route path="/test" component={testxixi} />
           <Route
             exact
             path="/CompareArticles"

@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import Axios from "axios";
 import Article from "./Article";
+import Footer from "./Footer";
 import Header from "./Header";
 import Collapsible from "react-collapsible";
 import Select from "react-select";
+import Sticky from "react-sticky-state";
 
 function SearchMain() {
   const [query, setQuery] = useState("");
@@ -72,8 +74,7 @@ function SearchMain() {
   console.log(highlightList(highlightParts));
   return (
     <div>
-      <div className="App-header">
-        <Header />
+      <div className="header">
         <form
           onSubmit={onSubmit}
           className="search-form"
@@ -93,7 +94,9 @@ function SearchMain() {
           />
           <input type="submit" value="Search" />
         </form>
+        {/* </div> */}
       </div>
+
       <div className="control_panel">
         <div className="article">
           <div className="control_title">
@@ -119,10 +122,8 @@ function SearchMain() {
         </div>
       </div>
 
-      <ul className="articles">
-        {/* <div className="query_display">
-          <h3>Query:&nbsp;{query}</h3>
-        </div> */}
+      <div className="articles">
+        {/* <div className="articles_inner"> */}
         {articleSample !== [] &&
           articleSample.map(article => (
             <Article
@@ -131,20 +132,22 @@ function SearchMain() {
               abstractHighlights={highlightList(highlightParts)}
             />
           ))}
-      </ul>
-      <ul className="articles">
-        {/* <div className="query_display">
-          <h3>Query:&nbsp;{query}</h3>
-        </div> */}
-        {articles !== [] &&
-          articles.map(article => (
-            <Article
-              key={article.paper_id}
-              article={article}
-              abstractHighlights={highlightList(highlightParts)}
-            />
-          ))}
-      </ul>
+        {/* </div> */}
+      </div>
+
+      {/* <ul className="articles">
+        
+          {articles !== [] &&
+            articles.map(article => (
+              <Article
+                key={article.paper_id}
+                article={article}
+                abstractHighlights={highlightList(highlightParts)}
+              />
+            ))}
+        </ul>
+      </ul> */}
+      <Footer />
     </div>
   );
 }

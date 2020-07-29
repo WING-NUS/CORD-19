@@ -27,7 +27,7 @@ const Article = ({ article, abstractHighlights }) => {
   return (
     <div className="article">
       <div className="title-author-date">
-        <h3>Title: {title}</h3>
+        <h3>{title}</h3>
         <NavLink
           to={{
             pathname: `/specificArticle/${paper_id}`,
@@ -68,7 +68,12 @@ const Article = ({ article, abstractHighlights }) => {
           </button>
         </span>
         {getRenderedItems().map((item, id) => (
-          <div key={id}>{item}</div>
+          <div key={id}>
+            <span>
+              <span className="sentence_index">Sentence {id + 1}:</span>
+              {item}
+            </span>
+          </div>
         ))}
       </div>
 

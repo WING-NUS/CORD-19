@@ -20,11 +20,7 @@
       "paper_id": "8198900b75d855cd82dc34ed8b9872074a9fa937",
       "doi": "10.1101/2020.04.10.20060376",
       "title": "Giant Reverse Transcriptase-Encoding Transposable Elements at Telomeres",
-      "authors": [
-        "Irina.Arkhipova",
-        "Irina.Yushenova",
-        "Fernando.Rodriguez"
-      ],
+      "authors": ["Irina.Arkhipova", "Irina.Yushenova", "Fernando.Rodriguez"],
       "summary": "",
       "abstract": {
         "text": [
@@ -113,9 +109,7 @@
         "paper_id": "",
         "doi": "",
         "title": "",
-        "authors": [
-          ""
-        ],
+        "authors": [""],
         "summary": "",
         "abstract": {
           "text": [],
@@ -124,9 +118,7 @@
           }
         },
         "bodyText": {
-          "text": [
-            ""
-          ],
+          "text": [""],
           "tags": {}
         }
       }
@@ -153,12 +145,7 @@
       "paper_id": "d0dafaa2700d9fa0289b620ce87992f9cf393ae1",
       "doi": "10.1016/s0140-6736(20)30763-7",
       "title": "Spike protein recognition of mammalian ACE2 predicts the host range and an optimized ACE2 for SARS-CoV-2 infection",
-      "authors": [
-        "Junwen.Luan",
-        "Yue.Lu",
-        "Xiaolu.Jin",
-        "Leiliang.Zhang"
-      ],
+      "authors": ["Junwen.Luan", "Yue.Lu", "Xiaolu.Jin", "Leiliang.Zhang"],
       "summary": "",
       "abstract": {
         "text": [
@@ -228,25 +215,16 @@
         "paper_id": "paper id test",
         "doi": "doi test",
         "title": "Biophysical characterization of the SARS-CoV-2 spike protein binding with the ACE2 receptor and implications for infectivity",
-        "authors": [
-          "author test"
-        ],
+        "authors": ["author test"],
         "summary": "We computationally contrasted the binding interactions between human ACE2 and coronavirus spike protein receptor binding domain (RBD) of the 2002 epidemic-causing SARS-CoV-1, SARS-CoV-2, and bat coronavirus RaTG13 using the Rosetta energy function.\nWe find that the RBD of the spike protein of SARS-CoV-2 is highly optimized to achieve very strong binding with human ACE2 (hACE2) which is consistent with its enhanced infectivity.\nNotably, the SARS-CoV-2 RBD out-competes the angiotensin 2 receptor type I (ATR1) which is the native binding partner of ACE2 by 35% in terms of the calculated binding affinity.\nBy contrasting the spike protein SARS-CoV-2 Rosetta binding energy with ACE2 of different livestock and pet species we find strongest binding with bat ACE2 followed by human, feline, equine, canine and finally chicken.",
         "abstract": {
-          "text": [
-            "abstract text test"
-          ],
+          "text": ["abstract text test"],
           "tags": {
-            "sciwing": [
-              "tag 1"
-            ]
+            "sciwing": ["tag 1"]
           }
         },
         "bodyText": {
-          "text": [
-            "bodytext text test",
-            "paragraph 2"
-          ],
+          "text": ["bodytext text test", "paragraph 2"],
           "tags": {
             "0": {
               "tagPerPara": {
@@ -267,25 +245,16 @@
         "paper_id": "paper id test",
         "doi": "doi test",
         "title": "Phylogenetic Analysis and Structural Modeling of SARS-CoV-2 Spike Protein Reveals an Evolutionary Distinct and Proteolytically Sensitive Activation Loop",
-        "authors": [
-          "author test"
-        ],
+        "authors": ["author test"],
         "summary": "The 2019 novel coronavirus (2019-nCoV/SARS-CoV-2) originally arose as part of a major outbreak of respiratory disease centered on Hubei province, China.\nTaxonomically, SARS-CoV-2 was shown to be a Betacoronavirus (lineage B) closely related to SARS-CoV and SARS-related bat coronaviruses, and it has been reported to share a common receptor with SARS-CoV (ACE-2).\nSubsequently, betacoronaviruses from pangolins were identified as close relatives to SARS-CoV-2.\nCompared to SARS-CoV and all other coronaviruses in Betacoronavirus lineage B, we identify an extended structural loop containing basic amino acids at the interface of the receptor binding (S1) and fusion (S2) domains.\nWe suggest this loop confers fusion activation and entry properties more in line with betacoronaviruses in lineages A and C, and be a key component in the evolution of SARS-CoV-2 with this structural loop affecting virus stability and transmission.",
         "abstract": {
-          "text": [
-            "abstract text test"
-          ],
+          "text": ["abstract text test"],
           "tags": {
-            "sciwing": [
-              "tag 1"
-            ]
+            "sciwing": ["tag 1"]
           }
         },
         "bodyText": {
-          "text": [
-            "bodytext text test",
-            "paragraph 2"
-          ],
+          "text": ["bodytext text test", "paragraph 2"],
           "tags": {
             "0": {
               "tagPerPara": {
@@ -306,25 +275,16 @@
         "paper_id": "paper id test",
         "doi": "doi test",
         "title": "Structural and Functional Basis of SARS-CoV-2 Entry by Using Human ACE2",
-        "authors": [
-          "author test"
-        ],
+        "authors": ["author test"],
         "summary": "The recent emergence of a novel coronavirus (SARS-CoV-2) in China has caused significant public health concerns.\nRecently, ACE2 was reported as an entry receptor for SARS-CoV-2.\nIn this study, we present the crystal structure of the C-terminal domain of SARS-CoV-2 (SARS-CoV-2-CTD) spike (S) protein in complex with human ACE2 (hACE2), which reveals a hACE2-binding mode similar overall to that observed for SARS-CoV.\nHowever, atomic details at the binding interface demonstrate that key residue substitutions in SARS-CoV-2-CTD slightly strengthen the interaction and lead to higher affinity for receptor binding than SARS-RBD.\nAdditionally, a panel of murine monoclonal antibodies (mAbs) and polyclonal antibodies (pAbs) against SARS-CoV-S1/receptor-binding domain (RBD) were unable to interact with the SARS-CoV-2 S protein, indicating notable differences in antigenicity between SARS-CoV and SARS-CoV-2.",
         "abstract": {
-          "text": [
-            "abstract text test"
-          ],
+          "text": ["abstract text test"],
           "tags": {
-            "sciwing": [
-              "tag 1"
-            ]
+            "sciwing": ["tag 1"]
           }
         },
         "bodyText": {
-          "text": [
-            "bodytext text test",
-            "paragraph 2"
-          ],
+          "text": ["bodytext text test", "paragraph 2"],
           "tags": {
             "0": {
               "tagPerPara": {
@@ -345,25 +305,16 @@
         "paper_id": "paper id test",
         "doi": "doi test",
         "title": "Structure, Function, and Antigenicity of the SARS-CoV-2 Spike Glycoprotein",
-        "authors": [
-          "author test"
-        ],
+        "authors": ["author test"],
         "summary": "Coronavirus spike (S) glycoproteins promote entry into cells and are the main target of antibodies.\nWe found that the SARS-CoV-2 S glycoprotein harbors a furin cleavage site at the boundary between the S(1)/S(2) subunits, which is processed during biogenesis and sets this virus apart from SARS-CoV and SARS-related CoVs. We determined cryo-EM structures of the SARS-CoV-2 S ectodomain trimer, providing a blueprint for the design of vaccines and inhibitors of viral entry.\nFinally, we demonstrate that SARS-CoV S murine polyclonal antibodies potently inhibited SARS-CoV-2 S mediated entry into cells, indicating that cross-neutralizing antibodies targeting conserved S epitopes can be elicited upon vaccination.",
         "abstract": {
-          "text": [
-            "abstract text test"
-          ],
+          "text": ["abstract text test"],
           "tags": {
-            "sciwing": [
-              "tag 1"
-            ]
+            "sciwing": ["tag 1"]
           }
         },
         "bodyText": {
-          "text": [
-            "bodytext text test",
-            "paragraph 2"
-          ],
+          "text": ["bodytext text test", "paragraph 2"],
           "tags": {
             "0": {
               "tagPerPara": {
@@ -384,25 +335,16 @@
         "paper_id": "paper id test",
         "doi": "doi test",
         "title": "SARS-CoV-2 Cell Entry Depends on ACE2 and TMPRSS2 and Is Blocked by a Clinically Proven Protease Inhibitor",
-        "authors": [
-          "author test"
-        ],
+        "authors": ["author test"],
         "summary": "Cell entry of coronaviruses depends on binding of the viral spike (S) proteins to cellular receptors and on S protein priming by host cell proteases.\nUnravelling which cellular factors are used by SARS-CoV-2 for entry might provide insights into viral transmission and reveal therapeutic targets.\nHere, we demonstrate that SARS-CoV-2 uses the SARS-CoV receptor ACE2 for entry and the serine protease TMPRSS2 for S protein priming.\nA TMPRSS2 inhibitor approved for clinical use blocked entry and might constitute a treatment option.\nFinally, we show that the sera from convalescent SARS patients cross-neutralized SARS-2-S-driven entry.\nOur results reveal important commonalities between SARS-CoV-2 and SARS-CoV infection and identify a potential target for antiviral intervention.",
         "abstract": {
-          "text": [
-            "abstract text test"
-          ],
+          "text": ["abstract text test"],
           "tags": {
-            "sciwing": [
-              "tag 1"
-            ]
+            "sciwing": ["tag 1"]
           }
         },
         "bodyText": {
-          "text": [
-            "bodytext text test",
-            "paragraph 2"
-          ],
+          "text": ["bodytext text test", "paragraph 2"],
           "tags": {
             "0": {
               "tagPerPara": {
@@ -423,25 +365,16 @@
         "paper_id": "paper id test",
         "doi": "doi test",
         "title": "On the interactions of the receptor-binding domain of SARS-CoV-1 and SARS-CoV-2 spike proteins with monoclonal antibodies and the receptor ACE2",
-        "authors": [
-          "author test"
-        ],
+        "authors": ["author test"],
         "summary": "A new betacoronavirus named SARS-CoV-2 has emerged as a new threat to global health and economy.\nBy constant-pH Monte Carlo simulations and the PROCEEDpKa method, we have mapped the electrostatic epitopes for four monoclonal antibodies and the angiotensin-converting enzyme 2 (ACE2) on both SARS-CoV-1 and the new SARS-CoV-2 S receptor binding domain (RBD) proteins.\nHowever, the affinity between the S RBD protein from the new SARS-CoV-2 and ACE2 is higher than for any studied antibody previously found complexed with SARS-CoV-1.\nBased on physical chemical analysis and free energies estimates, we can shed some light on the involved molecular recognition processes, their clinical aspects, the implications for drug developments, and suggest structural modifications on the CR3022 antibody that would improve its binding affinities for SARS-CoV-2 and contribute to address the ongoing international health crisis.",
         "abstract": {
-          "text": [
-            "abstract text test"
-          ],
+          "text": ["abstract text test"],
           "tags": {
-            "sciwing": [
-              "tag 1"
-            ]
+            "sciwing": ["tag 1"]
           }
         },
         "bodyText": {
-          "text": [
-            "bodytext text test",
-            "paragraph 2"
-          ],
+          "text": ["bodytext text test", "paragraph 2"],
           "tags": {
             "0": {
               "tagPerPara": {
@@ -462,25 +395,16 @@
         "paper_id": "paper id test",
         "doi": "doi test",
         "title": "Structural Basis of SARS-CoV-2 Spike Protein Priming by TMPRSS2",
-        "authors": [
-          "author test"
-        ],
+        "authors": ["author test"],
         "summary": "The present study aims to investigate the conformational details of complex between TMPRSS2 and SARS-CoV-2 spike protein, in order to discern the finer details of the priming of viral spike and to point candidate drug targets.\nBriefly, full length structural model of TMPRSS2 was developed and docked against the resolved structure of SARS-CoV-2 spike protein with directional restraints of both cleavage sites.\nKey functional residues of TMPRSS2 (His296, Ser441 and Ser460) were found to interact with immediate flanking residues of cleavage sites of SARS-CoV-2 spike protein.\nIn summary, the present study provide structural characteristics of molecular complex between human TMPRSS2 and SARS-CoV-2 spike protein and points to the candidate drug targets that could further be exploited to direct structure base drug designing.",
         "abstract": {
-          "text": [
-            "abstract text test"
-          ],
+          "text": ["abstract text test"],
           "tags": {
-            "sciwing": [
-              "tag 1"
-            ]
+            "sciwing": ["tag 1"]
           }
         },
         "bodyText": {
-          "text": [
-            "bodytext text test",
-            "paragraph 2"
-          ],
+          "text": ["bodytext text test", "paragraph 2"],
           "tags": {
             "0": {
               "tagPerPara": {
@@ -501,25 +425,16 @@
         "paper_id": "paper id test",
         "doi": "doi test",
         "title": "The SARS-CoV-2 exerts a distinctive strategy for interacting with the ACE2 human receptor",
-        "authors": [
-          "author test"
-        ],
+        "authors": ["author test"],
         "summary": "We compare the interaction between the human ACE2 receptor and the SARS-CoV-2 spike protein with that of other pathogenic coronaviruses using molecular dynamics simulations.\nSARS-CoV, SARS-CoV-2, and HCoV-NL63 recognize ACE2 as the natural receptor but present a distinct binding interface to ACE2 and a different network of residue-residue contacts.\nSARS-CoV and SARS-CoV-2 have comparable binding affinities achieved by balancing energetics and dynamics.\nThe SARS-CoV-2–ACE2 complex contains a higher number of contacts, a larger interface area, and decreased interface residue fluctuations relative to SARS-CoV.\nThese findings expose an exceptional evolutionary exploration exerted by coronaviruses toward host recognition.\nWe postulate that the versatility of cell receptor binding strategies has immediate implications on therapeutic strategies.\nOne Sentence  Molecular dynamics simulations reveal a temporal dimension of coronaviruses interactions with the host receptor.",
         "abstract": {
-          "text": [
-            "abstract text test"
-          ],
+          "text": ["abstract text test"],
           "tags": {
-            "sciwing": [
-              "tag 1"
-            ]
+            "sciwing": ["tag 1"]
           }
         },
         "bodyText": {
-          "text": [
-            "bodytext text test",
-            "paragraph 2"
-          ],
+          "text": ["bodytext text test", "paragraph 2"],
           "tags": {
             "0": {
               "tagPerPara": {
@@ -540,25 +455,16 @@
         "paper_id": "paper id test",
         "doi": "doi test",
         "title": "Broad Host Range of SARS-CoV-2 Predicted by Comparative and Structural Analysis of ACE2 in Vertebrates",
-        "authors": [
-          "author test"
-        ],
+        "authors": ["author test"],
         "summary": "Here, we utilized a unique dataset of 410 vertebrates, including 252 mammals, to study cross-species conservation of ACE2 and its likelihood to function as a SARS-CoV-2 receptor.\nWe designed a five-category ranking score based on the conservation properties of 25 amino acids important for the binding between receptor and virus, classifying all species from very high to very low.\nWe employed a protein structural analysis to qualitatively assess whether amino acid changes at variable residues would be likely to disrupt ACE2/SARS-CoV-2 binding, and found the number of predicted unfavorable changes significantly correlated with the binding score.\nUtilized appropriately, our results may lead to the identification of intermediate host species for SARS-CoV-2, justify the selection of animal models of COVID-19, and assist the conservation of animals both in native habitats and in human care.",
         "abstract": {
-          "text": [
-            "abstract text test"
-          ],
+          "text": ["abstract text test"],
           "tags": {
-            "sciwing": [
-              "tag 1"
-            ]
+            "sciwing": ["tag 1"]
           }
         },
         "bodyText": {
-          "text": [
-            "bodytext text test",
-            "paragraph 2"
-          ],
+          "text": ["bodytext text test", "paragraph 2"],
           "tags": {
             "0": {
               "tagPerPara": {
@@ -596,11 +502,7 @@
       "paper_id": "eee9bfeffbb609eff810827214ba9edf543349ae",
       "doi": "10.1101/2020.04.23.20076513",
       "title": "Chapter 2. Surge capacity and infrastructure considerations for mass critical care",
-      "authors": [
-        "John.Hick",
-        "Michael.Christian",
-        "Charles.Sprung"
-      ],
+      "authors": ["John.Hick", "Michael.Christian", "Charles.Sprung"],
       "summary": "",
       "abstract": {
         "text": [],
@@ -654,9 +556,7 @@
         "paper_id": "",
         "doi": "",
         "title": "",
-        "authors": [
-          ""
-        ],
+        "authors": [""],
         "summary": "",
         "abstract": {
           "text": [],
@@ -665,9 +565,7 @@
           }
         },
         "bodyText": {
-          "text": [
-            ""
-          ],
+          "text": [""],
           "tags": {}
         }
       }
@@ -731,25 +629,16 @@
         "paper_id": "paper id test",
         "doi": "doi test",
         "title": "Angiotensin-Converting Enzyme 2 as the Molecular Bridge Between Epidemiologic and Clinical Features of COVID-19",
-        "authors": [
-          "author test"
-        ],
+        "authors": ["author test"],
         "summary": "Angiotensin-Converting Enzyme 2 as the Molecular Bridge Between Epidemiologic and Clinical Features of COVID-19",
         "abstract": {
-          "text": [
-            "abstract text test"
-          ],
+          "text": ["abstract text test"],
           "tags": {
-            "sciwing": [
-              "tag 1"
-            ]
+            "sciwing": ["tag 1"]
           }
         },
         "bodyText": {
-          "text": [
-            "bodytext text test",
-            "paragraph 2"
-          ],
+          "text": ["bodytext text test", "paragraph 2"],
           "tags": {
             "0": {
               "tagPerPara": {
@@ -770,25 +659,16 @@
         "paper_id": "paper id test",
         "doi": "doi test",
         "title": "The Renin-Angiotensin-Aldosterone System in Coronavirus Infection – current considerations during the pandemic",
-        "authors": [
-          "author test"
-        ],
+        "authors": ["author test"],
         "summary": "The Renin-Angiotensin-Aldosterone System in Coronavirus Infection – current considerations during the pandemic",
         "abstract": {
-          "text": [
-            "abstract text test"
-          ],
+          "text": ["abstract text test"],
           "tags": {
-            "sciwing": [
-              "tag 1"
-            ]
+            "sciwing": ["tag 1"]
           }
         },
         "bodyText": {
-          "text": [
-            "bodytext text test",
-            "paragraph 2"
-          ],
+          "text": ["bodytext text test", "paragraph 2"],
           "tags": {
             "0": {
               "tagPerPara": {
@@ -809,25 +689,16 @@
         "paper_id": "paper id test",
         "doi": "doi test",
         "title": "Covid-19 and the angiotensin-converting enzyme (ACE2): Areas for research",
-        "authors": [
-          "author test"
-        ],
+        "authors": ["author test"],
         "summary": "Covid-19 and the angiotensin-converting enzyme (ACE2): Areas for research",
         "abstract": {
-          "text": [
-            "abstract text test"
-          ],
+          "text": ["abstract text test"],
           "tags": {
-            "sciwing": [
-              "tag 1"
-            ]
+            "sciwing": ["tag 1"]
           }
         },
         "bodyText": {
-          "text": [
-            "bodytext text test",
-            "paragraph 2"
-          ],
+          "text": ["bodytext text test", "paragraph 2"],
           "tags": {
             "0": {
               "tagPerPara": {
@@ -848,25 +719,16 @@
         "paper_id": "paper id test",
         "doi": "doi test",
         "title": "The Use of Captopril—Angiotensin Converting Enzyme (ACE) Inhibitor for Cystinuria During COVID-19 Pandemic",
-        "authors": [
-          "author test"
-        ],
+        "authors": ["author test"],
         "summary": "The Use of Captopril—Angiotensin Converting Enzyme (ACE) Inhibitor for Cystinuria During COVID-19 Pandemic",
         "abstract": {
-          "text": [
-            "abstract text test"
-          ],
+          "text": ["abstract text test"],
           "tags": {
-            "sciwing": [
-              "tag 1"
-            ]
+            "sciwing": ["tag 1"]
           }
         },
         "bodyText": {
-          "text": [
-            "bodytext text test",
-            "paragraph 2"
-          ],
+          "text": ["bodytext text test", "paragraph 2"],
           "tags": {
             "0": {
               "tagPerPara": {
@@ -887,25 +749,16 @@
         "paper_id": "paper id test",
         "doi": "doi test",
         "title": "Influence of HLA gene polymorphisms on susceptibility and outcome post infection with the SARS-CoV virus",
-        "authors": [
-          "author test"
-        ],
+        "authors": ["author test"],
         "summary": "Influence of HLA gene polymorphisms on susceptibility and outcome post infection with the SARS-CoV virus",
         "abstract": {
-          "text": [
-            "abstract text test"
-          ],
+          "text": ["abstract text test"],
           "tags": {
-            "sciwing": [
-              "tag 1"
-            ]
+            "sciwing": ["tag 1"]
           }
         },
         "bodyText": {
-          "text": [
-            "bodytext text test",
-            "paragraph 2"
-          ],
+          "text": ["bodytext text test", "paragraph 2"],
           "tags": {
             "0": {
               "tagPerPara": {
@@ -926,25 +779,16 @@
         "paper_id": "paper id test",
         "doi": "doi test",
         "title": "Angiotensin-converting enzyme 2 and coronavirus: research update on pathogenesis of the infection induced by this indissoluble bond",
-        "authors": [
-          "author test"
-        ],
+        "authors": ["author test"],
         "summary": "与严重急性呼吸系统综合征冠状病毒（SARS-CoV）一样，2019新型冠状病毒（2019-nCoV）亦是以血管紧张素转化酶2（ACE2）为受体感染细胞。ACE2作为肾素-血管紧张素系统（RAS）的重要成员，与ACE互为拮抗，二者的平衡与失衡在维护心血管系统生理功能、机体炎症反应、肺损伤等过程中均发挥着重要作用，而其在冠状病毒感染与致病机制中亦发挥着非常重要的作用。目前为止，在7种人畜共患的冠状病毒中有3种以ACE2为受体感染细胞，即SARS-CoV、人类冠状病毒NL63（HCoV-NL63）和2019-nCoV，了解这些病毒与ACE2的相互作用对于冠状病毒感染的预防和治疗意义重大。本文对相关文献进行了梳理，总结了ACE2及RAS系统在冠状病毒感染、致病过程中发挥的作用，对于2019-nCoV防治过程中存在的争议进行了归纳，针对ACE2和RAS系统中可能存在的2019-nCoV的治疗靶点进行了展望。.",
         "abstract": {
-          "text": [
-            "abstract text test"
-          ],
+          "text": ["abstract text test"],
           "tags": {
-            "sciwing": [
-              "tag 1"
-            ]
+            "sciwing": ["tag 1"]
           }
         },
         "bodyText": {
-          "text": [
-            "bodytext text test",
-            "paragraph 2"
-          ],
+          "text": ["bodytext text test", "paragraph 2"],
           "tags": {
             "0": {
               "tagPerPara": {
@@ -965,25 +809,16 @@
         "paper_id": "paper id test",
         "doi": "doi test",
         "title": "Human Angiotensin - Converting Enzyme 2 (ACE2) is a Receptor for Human Respiratory Coronavirus NL63",
-        "authors": [
-          "author test"
-        ],
+        "authors": ["author test"],
         "summary": "Human Angiotensin - Converting Enzyme 2 (ACE2) is a Receptor for Human Respiratory Coronavirus NL63",
         "abstract": {
-          "text": [
-            "abstract text test"
-          ],
+          "text": ["abstract text test"],
           "tags": {
-            "sciwing": [
-              "tag 1"
-            ]
+            "sciwing": ["tag 1"]
           }
         },
         "bodyText": {
-          "text": [
-            "bodytext text test",
-            "paragraph 2"
-          ],
+          "text": ["bodytext text test", "paragraph 2"],
           "tags": {
             "0": {
               "tagPerPara": {
@@ -1004,25 +839,16 @@
         "paper_id": "paper id test",
         "doi": "doi test",
         "title": "Endothelin receptor antagonists for pulmonary arterial hypertension and COVID-19: friend or foe ?",
-        "authors": [
-          "author test"
-        ],
+        "authors": ["author test"],
         "summary": "Endothelin receptor antagonists for pulmonary arterial hypertension and COVID-19: friend or foe ?",
         "abstract": {
-          "text": [
-            "abstract text test"
-          ],
+          "text": ["abstract text test"],
           "tags": {
-            "sciwing": [
-              "tag 1"
-            ]
+            "sciwing": ["tag 1"]
           }
         },
         "bodyText": {
-          "text": [
-            "bodytext text test",
-            "paragraph 2"
-          ],
+          "text": ["bodytext text test", "paragraph 2"],
           "tags": {
             "0": {
               "tagPerPara": {
@@ -1043,25 +869,16 @@
         "paper_id": "paper id test",
         "doi": "doi test",
         "title": "Cardiovascular Disease in the Post-COVID-19 Era – the Impending Tsunami?",
-        "authors": [
-          "author test"
-        ],
+        "authors": ["author test"],
         "summary": "Cardiovascular Disease in the Post-COVID-19 Era – the Impending Tsunami?",
         "abstract": {
-          "text": [
-            "abstract text test"
-          ],
+          "text": ["abstract text test"],
           "tags": {
-            "sciwing": [
-              "tag 1"
-            ]
+            "sciwing": ["tag 1"]
           }
         },
         "bodyText": {
-          "text": [
-            "bodytext text test",
-            "paragraph 2"
-          ],
+          "text": ["bodytext text test", "paragraph 2"],
           "tags": {
             "0": {
               "tagPerPara": {
@@ -1095,11 +912,7 @@
       "paper_id": "eee9bfeffbb609eff810827214ba9edf543349ae",
       "doi": "10.1101/2020.04.23.20076513",
       "title": "Chapter 2. Surge capacity and infrastructure considerations for mass critical care",
-      "authors": [
-        "John.Hick",
-        "Michael.Christian",
-        "Charles.Sprung"
-      ],
+      "authors": ["John.Hick", "Michael.Christian", "Charles.Sprung"],
       "summary": "",
       "abstract": {
         "text": [],
@@ -1153,9 +966,7 @@
         "paper_id": "",
         "doi": "",
         "title": "",
-        "authors": [
-          ""
-        ],
+        "authors": [""],
         "summary": "",
         "abstract": {
           "text": [],
@@ -1164,9 +975,7 @@
           }
         },
         "bodyText": {
-          "text": [
-            ""
-          ],
+          "text": [""],
           "tags": {}
         }
       }
@@ -1231,9 +1040,7 @@
         "paper_id": "",
         "doi": "",
         "title": "",
-        "authors": [
-          ""
-        ],
+        "authors": [""],
         "summary": "",
         "abstract": {
           "text": [],
@@ -1242,9 +1049,7 @@
           }
         },
         "bodyText": {
-          "text": [
-            ""
-          ],
+          "text": [""],
           "tags": {}
         }
       }
@@ -1330,9 +1135,7 @@
         "paper_id": "",
         "doi": "",
         "title": "",
-        "authors": [
-          ""
-        ],
+        "authors": [""],
         "summary": "",
         "abstract": {
           "text": [],
@@ -1341,9 +1144,7 @@
           }
         },
         "bodyText": {
-          "text": [
-            ""
-          ],
+          "text": [""],
           "tags": {}
         }
       }
@@ -1368,12 +1169,7 @@
       "paper_id": "54adf0867cfd42839625c25623e3c0a080c605ff",
       "doi": "10.1016/j.ebiom.2020.102768",
       "title": "Infectious Chronic Rhinosinusitis",
-      "authors": [
-        "Sumit.Bose",
-        "Leslie.Grammer",
-        "Anju.Peters",
-        "Chicago."
-      ],
+      "authors": ["Sumit.Bose", "Leslie.Grammer", "Anju.Peters", "Chicago."],
       "summary": "",
       "abstract": {
         "text": [],
@@ -1422,9 +1218,7 @@
         "paper_id": "",
         "doi": "",
         "title": "",
-        "authors": [
-          ""
-        ],
+        "authors": [""],
         "summary": "",
         "abstract": {
           "text": [],
@@ -1433,9 +1227,7 @@
           }
         },
         "bodyText": {
-          "text": [
-            ""
-          ],
+          "text": [""],
           "tags": {}
         }
       }
@@ -1460,11 +1252,7 @@
       "paper_id": "eee9bfeffbb609eff810827214ba9edf543349ae",
       "doi": "10.1101/2020.04.23.20076513",
       "title": "Chapter 2. Surge capacity and infrastructure considerations for mass critical care",
-      "authors": [
-        "John.Hick",
-        "Michael.Christian",
-        "Charles.Sprung"
-      ],
+      "authors": ["John.Hick", "Michael.Christian", "Charles.Sprung"],
       "summary": "",
       "abstract": {
         "text": [],
@@ -1518,9 +1306,7 @@
         "paper_id": "",
         "doi": "",
         "title": "",
-        "authors": [
-          ""
-        ],
+        "authors": [""],
         "summary": "",
         "abstract": {
           "text": [],
@@ -1529,9 +1315,7 @@
           }
         },
         "bodyText": {
-          "text": [
-            ""
-          ],
+          "text": [""],
           "tags": {}
         }
       }
@@ -1689,25 +1473,16 @@
         "paper_id": "paper id test",
         "doi": "doi test",
         "title": "Relative space-based GIS data model to analyze the group dynamics of moving objects",
-        "authors": [
-          "author test"
-        ],
+        "authors": ["author test"],
         "summary": "The relative motion of moving objects is an essential research topic in geographical information science (GIScience), which supports the innovation of geodatabases, spatial indexing, and geospatial services.\nThe derivation of relative motions among moving objects is not efficient because of the additional geo-computation of transformation between absolute space and relative space.\nTherefore, current GISs require an innovative approach to directly store, analyze and interpret the relative relationships of moving objects to support their efficient analysis.\nIt’s better computational performance of the proposed model when analyzing the relative relationships of moving objects than the absolute methods in a famous commercial GIS software based on this experimental results.\nThe proposed approach fills the gap of traditional GIS and shows promise for relative space-based geo-computation, analysis and service.",
         "abstract": {
-          "text": [
-            "abstract text test"
-          ],
+          "text": ["abstract text test"],
           "tags": {
-            "sciwing": [
-              "tag 1"
-            ]
+            "sciwing": ["tag 1"]
           }
         },
         "bodyText": {
-          "text": [
-            "bodytext text test",
-            "paragraph 2"
-          ],
+          "text": ["bodytext text test", "paragraph 2"],
           "tags": {
             "0": {
               "tagPerPara": {
@@ -1728,25 +1503,16 @@
         "paper_id": "paper id test",
         "doi": "doi test",
         "title": "Extended model of topological relations between spatial objects in geographic information systems",
-        "authors": [
-          "author test"
-        ],
+        "authors": ["author test"],
         "summary": "This paper presents an extended model for describing topological relations between two sets (objects) in geographic information systems (GIS).\nFirst, based on the definition of the topological relations between two objects, we uncover a sequence of topological relations between two convex sets.\nSecond, an extended model for topological relations between two sets is proposed based on the new definition.\nThe topological relations between two convex sets are expressed as a sequence of 4×4 matrices, which are the topological properties of Ao ∩Bo, Ao\\B, Bo\\A, ∂A∩∂B.\nThe results show that the number of topological relations between the two sets is not as simple as finite but infinite and can be approximated by a sequence of matrices.",
         "abstract": {
-          "text": [
-            "abstract text test"
-          ],
+          "text": ["abstract text test"],
           "tags": {
-            "sciwing": [
-              "tag 1"
-            ]
+            "sciwing": ["tag 1"]
           }
         },
         "bodyText": {
-          "text": [
-            "bodytext text test",
-            "paragraph 2"
-          ],
+          "text": ["bodytext text test", "paragraph 2"],
           "tags": {
             "0": {
               "tagPerPara": {
@@ -1767,25 +1533,16 @@
         "paper_id": "paper id test",
         "doi": "doi test",
         "title": "Temporal event searches based on event maps and relationships()",
-        "authors": [
-          "author test"
-        ],
+        "authors": ["author test"],
         "summary": "To satisfy a user’s need to find and understand the whole picture of an event effectively and efficiently, in this paper we formalize the problem of temporal event searches and propose a framework of event relationship analysis for search events based on user queries.\nWe define three kinds of event relationships: temporal, content dependence, and event reference, that can be used to identify to what extent a component event is dependent on another in the evolution of a target event (i.e., the query event).\nBased on the event relationships in the TEM, we further propose a method to measure the degrees of importance of events, so as to discover the important component events for a query, as well as the several algebraic operators involved in the TEM, that allow users to view the target event.",
         "abstract": {
-          "text": [
-            "abstract text test"
-          ],
+          "text": ["abstract text test"],
           "tags": {
-            "sciwing": [
-              "tag 1"
-            ]
+            "sciwing": ["tag 1"]
           }
         },
         "bodyText": {
-          "text": [
-            "bodytext text test",
-            "paragraph 2"
-          ],
+          "text": ["bodytext text test", "paragraph 2"],
           "tags": {
             "0": {
               "tagPerPara": {
@@ -1806,25 +1563,16 @@
         "paper_id": "paper id test",
         "doi": "doi test",
         "title": "Assessing the Certainty of Locations Produced by an Address Geocoding System",
-        "authors": [
-          "author test"
-        ],
+        "authors": ["author test"],
         "summary": "In this paper we understand addresses in a broader perspective, in which not only the conventional elements of postal addresses are considered, but other kinds of direct or indirect references to places, such as building names, postal codes, or telephone area codes, which are also valuable as locators to urban places.\nFirst, in the ontological definition, modeling, and implementation of an addressing database that is flexible enough to accommodate the variety of concepts and address formats used worldwide, along with direct and indirect references to places.\nThe schema also extends the notion of postal address to something broader, including popular names for places, building names, reference places, and other concepts.",
         "abstract": {
-          "text": [
-            "abstract text test"
-          ],
+          "text": ["abstract text test"],
           "tags": {
-            "sciwing": [
-              "tag 1"
-            ]
+            "sciwing": ["tag 1"]
           }
         },
         "bodyText": {
-          "text": [
-            "bodytext text test",
-            "paragraph 2"
-          ],
+          "text": ["bodytext text test", "paragraph 2"],
           "tags": {
             "0": {
               "tagPerPara": {
@@ -1845,25 +1593,16 @@
         "paper_id": "paper id test",
         "doi": "doi test",
         "title": "Hierarchical Clustering Using the Arithmetic-Harmonic Cut: Complexity and Experiments",
-        "authors": [
-          "author test"
-        ],
+        "authors": ["author test"],
         "summary": "This paper introduces a new hierarchical clustering problem defined by a novel objective function we call the arithmetic-harmonic cut.\nWe show that the problem of finding such a cut is [Image: see text]-hard and [Image: see text]-hard but is fixed-parameter tractable, which indicates that although the problem is unlikely to have a polynomial time algorithm (even for approximation), exact parameterized and local search based techniques may produce workable algorithms.\nTo this end, we implement a memetic algorithm for the problem and demonstrate the effectiveness of the arithmetic-harmonic cut on a number of datasets including a cancer type dataset and a corona virus dataset.\nWe show favorable performance compared to currently used hierarchical clustering techniques such as [Image: see text]-Means, Graclus and Normalized-Cut. The arithmetic-harmonic cut metric overcoming difficulties other hierarchal methods have in representing both intercluster differences and intracluster similarities.",
         "abstract": {
-          "text": [
-            "abstract text test"
-          ],
+          "text": ["abstract text test"],
           "tags": {
-            "sciwing": [
-              "tag 1"
-            ]
+            "sciwing": ["tag 1"]
           }
         },
         "bodyText": {
-          "text": [
-            "bodytext text test",
-            "paragraph 2"
-          ],
+          "text": ["bodytext text test", "paragraph 2"],
           "tags": {
             "0": {
               "tagPerPara": {
@@ -1884,25 +1623,16 @@
         "paper_id": "paper id test",
         "doi": "doi test",
         "title": "Remote Data Retrieval for Bioinformatics Applications: An Agent Migration Approach",
-        "authors": [
-          "author test"
-        ],
+        "authors": ["author test"],
         "summary": "Moreover, so far none of the existing approaches has been designed to address the following problems when retrieving the remote data in a mobile network environment: (1) the resources of mobile devices are limited; (2) network connection is relatively of low quality; and (3) mobile users are not always online.\nTo address the aforementioned problems, we integrate an agent migration approach with a multi-agent system to overcome the high latency or limited bandwidth problem by moving their computations to the required resources or services.\nMore importantly, the approach is fit for the mobile computing environments.\nAs a demonstration, the remote data retrieval from GenBank was used to illustrate the feasibility of the proposed approach.",
         "abstract": {
-          "text": [
-            "abstract text test"
-          ],
+          "text": ["abstract text test"],
           "tags": {
-            "sciwing": [
-              "tag 1"
-            ]
+            "sciwing": ["tag 1"]
           }
         },
         "bodyText": {
-          "text": [
-            "bodytext text test",
-            "paragraph 2"
-          ],
+          "text": ["bodytext text test", "paragraph 2"],
           "tags": {
             "0": {
               "tagPerPara": {
@@ -1923,25 +1653,16 @@
         "paper_id": "paper id test",
         "doi": "doi test",
         "title": "Social big data: Recent achievements and new challenges",
-        "authors": [
-          "author test"
-        ],
+        "authors": ["author test"],
         "summary": "Big data has become an important issue for a large number of research areas such as data mining, machine learning, computational intelligence, information fusion, the semantic Web, and social networks.\nThe rise of different big data frameworks such as Apache Hadoop and, more recently, Spark, for massive data processing based on the MapReduce paradigm has allowed for the efficient utilisation of data mining methods and machine learning algorithms in different domains.\nIn this paper, we present a revision of the new methodologies that is designed to allow for efficient data mining and information fusion from social media and of the new applications and frameworks that are currently appearing under the “umbrella” of the social networks, social media and big data paradigms.",
         "abstract": {
-          "text": [
-            "abstract text test"
-          ],
+          "text": ["abstract text test"],
           "tags": {
-            "sciwing": [
-              "tag 1"
-            ]
+            "sciwing": ["tag 1"]
           }
         },
         "bodyText": {
-          "text": [
-            "bodytext text test",
-            "paragraph 2"
-          ],
+          "text": ["bodytext text test", "paragraph 2"],
           "tags": {
             "0": {
               "tagPerPara": {
@@ -1962,25 +1683,16 @@
         "paper_id": "paper id test",
         "doi": "doi test",
         "title": "C-ME: A 3D Community-Based, Real-Time Collaboration Tool for Scientific Research and Training",
-        "authors": [
-          "author test"
-        ],
+        "authors": ["author test"],
         "summary": "Collaborative Molecular Modeling Environment (C-ME) is an interactive community-based collaboration system that allows researchers to organize information, visualize data on a two-dimensional (2-D) or three-dimensional (3-D) basis, and share and manage that information with collaborators in real time.\nThe system addresses two important aspects of collaboration: context and information management.\nC-ME allows a researcher to use a 3-D atomic structure model or a 2-D image as a contextual basis on which to attach and share annotations to specific atoms or molecules or to specific regions of a 2-D image.\nThese annotations provide additional information about the atomic structure or image data that can then be evaluated, amended or added to by other project members.",
         "abstract": {
-          "text": [
-            "abstract text test"
-          ],
+          "text": ["abstract text test"],
           "tags": {
-            "sciwing": [
-              "tag 1"
-            ]
+            "sciwing": ["tag 1"]
           }
         },
         "bodyText": {
-          "text": [
-            "bodytext text test",
-            "paragraph 2"
-          ],
+          "text": ["bodytext text test", "paragraph 2"],
           "tags": {
             "0": {
               "tagPerPara": {
@@ -2001,25 +1713,16 @@
         "paper_id": "paper id test",
         "doi": "doi test",
         "title": "Mining association rules with multiple minimum supports: a new mining algorithm and a support tuning mechanism",
-        "authors": [
-          "author test"
-        ],
+        "authors": ["author test"],
         "summary": "Mining association rules with multiple minimum supports is an important generalization of the association-rule-mining problem, which was recently proposed by Liu et al.\nInstead of setting a single minimum support threshold for all items, they allow users to specify multiple minimum supports to reflect the natures of the items, and an Apriori-based algorithm, named MSapriori, is developed to mine all frequent itemsets.\nAccordingly, an efficient MIS-tree-based algorithm, called the CFP-growth algorithm, is developed for mining all frequent itemsets.\nSecond, since each item can have its own minimum support, it is very difficult for users to set the appropriate thresholds for all items at a time.\nTo speed up this time-consuming tuning process, an efficient algorithm which can maintain the MIS-tree structure without rescanning database is proposed.",
         "abstract": {
-          "text": [
-            "abstract text test"
-          ],
+          "text": ["abstract text test"],
           "tags": {
-            "sciwing": [
-              "tag 1"
-            ]
+            "sciwing": ["tag 1"]
           }
         },
         "bodyText": {
-          "text": [
-            "bodytext text test",
-            "paragraph 2"
-          ],
+          "text": ["bodytext text test", "paragraph 2"],
           "tags": {
             "0": {
               "tagPerPara": {
@@ -2190,25 +1893,16 @@
         "paper_id": "paper id test",
         "doi": "doi test",
         "title": "Relative space-based GIS data model to analyze the group dynamics of moving objects",
-        "authors": [
-          "author test"
-        ],
+        "authors": ["author test"],
         "summary": "The relative motion of moving objects is an essential research topic in geographical information science (GIScience), which supports the innovation of geodatabases, spatial indexing, and geospatial services.\nThe derivation of relative motions among moving objects is not efficient because of the additional geo-computation of transformation between absolute space and relative space.\nTherefore, current GISs require an innovative approach to directly store, analyze and interpret the relative relationships of moving objects to support their efficient analysis.\nIt’s better computational performance of the proposed model when analyzing the relative relationships of moving objects than the absolute methods in a famous commercial GIS software based on this experimental results.\nThe proposed approach fills the gap of traditional GIS and shows promise for relative space-based geo-computation, analysis and service.",
         "abstract": {
-          "text": [
-            "abstract text test"
-          ],
+          "text": ["abstract text test"],
           "tags": {
-            "sciwing": [
-              "tag 1"
-            ]
+            "sciwing": ["tag 1"]
           }
         },
         "bodyText": {
-          "text": [
-            "bodytext text test",
-            "paragraph 2"
-          ],
+          "text": ["bodytext text test", "paragraph 2"],
           "tags": {
             "0": {
               "tagPerPara": {
@@ -2229,25 +1923,16 @@
         "paper_id": "paper id test",
         "doi": "doi test",
         "title": "Extended model of topological relations between spatial objects in geographic information systems",
-        "authors": [
-          "author test"
-        ],
+        "authors": ["author test"],
         "summary": "This paper presents an extended model for describing topological relations between two sets (objects) in geographic information systems (GIS).\nFirst, based on the definition of the topological relations between two objects, we uncover a sequence of topological relations between two convex sets.\nSecond, an extended model for topological relations between two sets is proposed based on the new definition.\nThe topological relations between two convex sets are expressed as a sequence of 4×4 matrices, which are the topological properties of Ao ∩Bo, Ao\\B, Bo\\A, ∂A∩∂B.\nThe results show that the number of topological relations between the two sets is not as simple as finite but infinite and can be approximated by a sequence of matrices.",
         "abstract": {
-          "text": [
-            "abstract text test"
-          ],
+          "text": ["abstract text test"],
           "tags": {
-            "sciwing": [
-              "tag 1"
-            ]
+            "sciwing": ["tag 1"]
           }
         },
         "bodyText": {
-          "text": [
-            "bodytext text test",
-            "paragraph 2"
-          ],
+          "text": ["bodytext text test", "paragraph 2"],
           "tags": {
             "0": {
               "tagPerPara": {
@@ -2268,25 +1953,16 @@
         "paper_id": "paper id test",
         "doi": "doi test",
         "title": "Temporal event searches based on event maps and relationships()",
-        "authors": [
-          "author test"
-        ],
+        "authors": ["author test"],
         "summary": "To satisfy a user’s need to find and understand the whole picture of an event effectively and efficiently, in this paper we formalize the problem of temporal event searches and propose a framework of event relationship analysis for search events based on user queries.\nWe define three kinds of event relationships: temporal, content dependence, and event reference, that can be used to identify to what extent a component event is dependent on another in the evolution of a target event (i.e., the query event).\nBased on the event relationships in the TEM, we further propose a method to measure the degrees of importance of events, so as to discover the important component events for a query, as well as the several algebraic operators involved in the TEM, that allow users to view the target event.",
         "abstract": {
-          "text": [
-            "abstract text test"
-          ],
+          "text": ["abstract text test"],
           "tags": {
-            "sciwing": [
-              "tag 1"
-            ]
+            "sciwing": ["tag 1"]
           }
         },
         "bodyText": {
-          "text": [
-            "bodytext text test",
-            "paragraph 2"
-          ],
+          "text": ["bodytext text test", "paragraph 2"],
           "tags": {
             "0": {
               "tagPerPara": {
@@ -2307,25 +1983,16 @@
         "paper_id": "paper id test",
         "doi": "doi test",
         "title": "Assessing the Certainty of Locations Produced by an Address Geocoding System",
-        "authors": [
-          "author test"
-        ],
+        "authors": ["author test"],
         "summary": "In this paper we understand addresses in a broader perspective, in which not only the conventional elements of postal addresses are considered, but other kinds of direct or indirect references to places, such as building names, postal codes, or telephone area codes, which are also valuable as locators to urban places.\nFirst, in the ontological definition, modeling, and implementation of an addressing database that is flexible enough to accommodate the variety of concepts and address formats used worldwide, along with direct and indirect references to places.\nThe schema also extends the notion of postal address to something broader, including popular names for places, building names, reference places, and other concepts.",
         "abstract": {
-          "text": [
-            "abstract text test"
-          ],
+          "text": ["abstract text test"],
           "tags": {
-            "sciwing": [
-              "tag 1"
-            ]
+            "sciwing": ["tag 1"]
           }
         },
         "bodyText": {
-          "text": [
-            "bodytext text test",
-            "paragraph 2"
-          ],
+          "text": ["bodytext text test", "paragraph 2"],
           "tags": {
             "0": {
               "tagPerPara": {
@@ -2346,25 +2013,16 @@
         "paper_id": "paper id test",
         "doi": "doi test",
         "title": "Hierarchical Clustering Using the Arithmetic-Harmonic Cut: Complexity and Experiments",
-        "authors": [
-          "author test"
-        ],
+        "authors": ["author test"],
         "summary": "This paper introduces a new hierarchical clustering problem defined by a novel objective function we call the arithmetic-harmonic cut.\nWe show that the problem of finding such a cut is [Image: see text]-hard and [Image: see text]-hard but is fixed-parameter tractable, which indicates that although the problem is unlikely to have a polynomial time algorithm (even for approximation), exact parameterized and local search based techniques may produce workable algorithms.\nTo this end, we implement a memetic algorithm for the problem and demonstrate the effectiveness of the arithmetic-harmonic cut on a number of datasets including a cancer type dataset and a corona virus dataset.\nWe show favorable performance compared to currently used hierarchical clustering techniques such as [Image: see text]-Means, Graclus and Normalized-Cut. The arithmetic-harmonic cut metric overcoming difficulties other hierarchal methods have in representing both intercluster differences and intracluster similarities.",
         "abstract": {
-          "text": [
-            "abstract text test"
-          ],
+          "text": ["abstract text test"],
           "tags": {
-            "sciwing": [
-              "tag 1"
-            ]
+            "sciwing": ["tag 1"]
           }
         },
         "bodyText": {
-          "text": [
-            "bodytext text test",
-            "paragraph 2"
-          ],
+          "text": ["bodytext text test", "paragraph 2"],
           "tags": {
             "0": {
               "tagPerPara": {
@@ -2385,25 +2043,16 @@
         "paper_id": "paper id test",
         "doi": "doi test",
         "title": "Remote Data Retrieval for Bioinformatics Applications: An Agent Migration Approach",
-        "authors": [
-          "author test"
-        ],
+        "authors": ["author test"],
         "summary": "Moreover, so far none of the existing approaches has been designed to address the following problems when retrieving the remote data in a mobile network environment: (1) the resources of mobile devices are limited; (2) network connection is relatively of low quality; and (3) mobile users are not always online.\nTo address the aforementioned problems, we integrate an agent migration approach with a multi-agent system to overcome the high latency or limited bandwidth problem by moving their computations to the required resources or services.\nMore importantly, the approach is fit for the mobile computing environments.\nAs a demonstration, the remote data retrieval from GenBank was used to illustrate the feasibility of the proposed approach.",
         "abstract": {
-          "text": [
-            "abstract text test"
-          ],
+          "text": ["abstract text test"],
           "tags": {
-            "sciwing": [
-              "tag 1"
-            ]
+            "sciwing": ["tag 1"]
           }
         },
         "bodyText": {
-          "text": [
-            "bodytext text test",
-            "paragraph 2"
-          ],
+          "text": ["bodytext text test", "paragraph 2"],
           "tags": {
             "0": {
               "tagPerPara": {
@@ -2424,25 +2073,16 @@
         "paper_id": "paper id test",
         "doi": "doi test",
         "title": "Social big data: Recent achievements and new challenges",
-        "authors": [
-          "author test"
-        ],
+        "authors": ["author test"],
         "summary": "Big data has become an important issue for a large number of research areas such as data mining, machine learning, computational intelligence, information fusion, the semantic Web, and social networks.\nThe rise of different big data frameworks such as Apache Hadoop and, more recently, Spark, for massive data processing based on the MapReduce paradigm has allowed for the efficient utilisation of data mining methods and machine learning algorithms in different domains.\nIn this paper, we present a revision of the new methodologies that is designed to allow for efficient data mining and information fusion from social media and of the new applications and frameworks that are currently appearing under the “umbrella” of the social networks, social media and big data paradigms.",
         "abstract": {
-          "text": [
-            "abstract text test"
-          ],
+          "text": ["abstract text test"],
           "tags": {
-            "sciwing": [
-              "tag 1"
-            ]
+            "sciwing": ["tag 1"]
           }
         },
         "bodyText": {
-          "text": [
-            "bodytext text test",
-            "paragraph 2"
-          ],
+          "text": ["bodytext text test", "paragraph 2"],
           "tags": {
             "0": {
               "tagPerPara": {
@@ -2463,25 +2103,16 @@
         "paper_id": "paper id test",
         "doi": "doi test",
         "title": "C-ME: A 3D Community-Based, Real-Time Collaboration Tool for Scientific Research and Training",
-        "authors": [
-          "author test"
-        ],
+        "authors": ["author test"],
         "summary": "Collaborative Molecular Modeling Environment (C-ME) is an interactive community-based collaboration system that allows researchers to organize information, visualize data on a two-dimensional (2-D) or three-dimensional (3-D) basis, and share and manage that information with collaborators in real time.\nThe system addresses two important aspects of collaboration: context and information management.\nC-ME allows a researcher to use a 3-D atomic structure model or a 2-D image as a contextual basis on which to attach and share annotations to specific atoms or molecules or to specific regions of a 2-D image.\nThese annotations provide additional information about the atomic structure or image data that can then be evaluated, amended or added to by other project members.",
         "abstract": {
-          "text": [
-            "abstract text test"
-          ],
+          "text": ["abstract text test"],
           "tags": {
-            "sciwing": [
-              "tag 1"
-            ]
+            "sciwing": ["tag 1"]
           }
         },
         "bodyText": {
-          "text": [
-            "bodytext text test",
-            "paragraph 2"
-          ],
+          "text": ["bodytext text test", "paragraph 2"],
           "tags": {
             "0": {
               "tagPerPara": {
@@ -2502,25 +2133,16 @@
         "paper_id": "paper id test",
         "doi": "doi test",
         "title": "Mining association rules with multiple minimum supports: a new mining algorithm and a support tuning mechanism",
-        "authors": [
-          "author test"
-        ],
+        "authors": ["author test"],
         "summary": "Mining association rules with multiple minimum supports is an important generalization of the association-rule-mining problem, which was recently proposed by Liu et al.\nInstead of setting a single minimum support threshold for all items, they allow users to specify multiple minimum supports to reflect the natures of the items, and an Apriori-based algorithm, named MSapriori, is developed to mine all frequent itemsets.\nAccordingly, an efficient MIS-tree-based algorithm, called the CFP-growth algorithm, is developed for mining all frequent itemsets.\nSecond, since each item can have its own minimum support, it is very difficult for users to set the appropriate thresholds for all items at a time.\nTo speed up this time-consuming tuning process, an efficient algorithm which can maintain the MIS-tree structure without rescanning database is proposed.",
         "abstract": {
-          "text": [
-            "abstract text test"
-          ],
+          "text": ["abstract text test"],
           "tags": {
-            "sciwing": [
-              "tag 1"
-            ]
+            "sciwing": ["tag 1"]
           }
         },
         "bodyText": {
-          "text": [
-            "bodytext text test",
-            "paragraph 2"
-          ],
+          "text": ["bodytext text test", "paragraph 2"],
           "tags": {
             "0": {
               "tagPerPara": {
@@ -2662,9 +2284,7 @@
         "paper_id": "",
         "doi": "",
         "title": "",
-        "authors": [
-          ""
-        ],
+        "authors": [""],
         "summary": "",
         "abstract": {
           "text": [],
@@ -2673,9 +2293,7 @@
           }
         },
         "bodyText": {
-          "text": [
-            ""
-          ],
+          "text": [""],
           "tags": {}
         }
       }
@@ -2702,11 +2320,7 @@
       "paper_id": "eee9bfeffbb609eff810827214ba9edf543349ae",
       "doi": "10.1101/2020.04.23.20076513",
       "title": "Chapter 2. Surge capacity and infrastructure considerations for mass critical care",
-      "authors": [
-        "John.Hick",
-        "Michael.Christian",
-        "Charles.Sprung"
-      ],
+      "authors": ["John.Hick", "Michael.Christian", "Charles.Sprung"],
       "summary": "",
       "abstract": {
         "text": [],
@@ -2760,9 +2374,7 @@
         "paper_id": "",
         "doi": "",
         "title": "",
-        "authors": [
-          ""
-        ],
+        "authors": [""],
         "summary": "",
         "abstract": {
           "text": [],
@@ -2771,9 +2383,7 @@
           }
         },
         "bodyText": {
-          "text": [
-            ""
-          ],
+          "text": [""],
           "tags": {}
         }
       }
@@ -2885,9 +2495,7 @@
         "paper_id": "",
         "doi": "",
         "title": "",
-        "authors": [
-          ""
-        ],
+        "authors": [""],
         "summary": "",
         "abstract": {
           "text": [],
@@ -2896,9 +2504,7 @@
           }
         },
         "bodyText": {
-          "text": [
-            ""
-          ],
+          "text": [""],
           "tags": {}
         }
       }
@@ -2919,11 +2525,7 @@
       "paper_id": "eee9bfeffbb609eff810827214ba9edf543349ae",
       "doi": "10.1101/2020.04.23.20076513",
       "title": "Chapter 2. Surge capacity and infrastructure considerations for mass critical care",
-      "authors": [
-        "John.Hick",
-        "Michael.Christian",
-        "Charles.Sprung"
-      ],
+      "authors": ["John.Hick", "Michael.Christian", "Charles.Sprung"],
       "summary": "",
       "abstract": {
         "text": [],
@@ -2977,9 +2579,7 @@
         "paper_id": "",
         "doi": "",
         "title": "",
-        "authors": [
-          ""
-        ],
+        "authors": [""],
         "summary": "",
         "abstract": {
           "text": [],
@@ -2988,9 +2588,7 @@
           }
         },
         "bodyText": {
-          "text": [
-            ""
-          ],
+          "text": [""],
           "tags": {}
         }
       }
@@ -3021,11 +2619,7 @@
       "paper_id": "3444632493df477a1e1264db4c8f61f78829f4c7",
       "doi": "10.1101/2020.04.08.20056051",
       "title": "Journal Pre-proof COVID-19 spread: the Italian case",
-      "authors": [
-        "Sergio.Harari",
-        "Michele.Vitacca",
-        "M.Fers"
-      ],
+      "authors": ["Sergio.Harari", "Michele.Vitacca", "M.Fers"],
       "summary": "",
       "abstract": {
         "text": [],
@@ -3065,9 +2659,7 @@
         "paper_id": "",
         "doi": "",
         "title": "",
-        "authors": [
-          ""
-        ],
+        "authors": [""],
         "summary": "",
         "abstract": {
           "text": [],
@@ -3076,9 +2668,7 @@
           }
         },
         "bodyText": {
-          "text": [
-            ""
-          ],
+          "text": [""],
           "tags": {}
         }
       }
@@ -3196,9 +2786,7 @@
         "paper_id": "",
         "doi": "",
         "title": "",
-        "authors": [
-          ""
-        ],
+        "authors": [""],
         "summary": "",
         "abstract": {
           "text": [],
@@ -3207,9 +2795,7 @@
           }
         },
         "bodyText": {
-          "text": [
-            ""
-          ],
+          "text": [""],
           "tags": {}
         }
       }
@@ -3230,11 +2816,7 @@
       "paper_id": "eee9bfeffbb609eff810827214ba9edf543349ae",
       "doi": "10.1101/2020.04.23.20076513",
       "title": "Chapter 2. Surge capacity and infrastructure considerations for mass critical care",
-      "authors": [
-        "John.Hick",
-        "Michael.Christian",
-        "Charles.Sprung"
-      ],
+      "authors": ["John.Hick", "Michael.Christian", "Charles.Sprung"],
       "summary": "",
       "abstract": {
         "text": [],
@@ -3288,9 +2870,7 @@
         "paper_id": "",
         "doi": "",
         "title": "",
-        "authors": [
-          ""
-        ],
+        "authors": [""],
         "summary": "",
         "abstract": {
           "text": [],
@@ -3299,9 +2879,7 @@
           }
         },
         "bodyText": {
-          "text": [
-            ""
-          ],
+          "text": [""],
           "tags": {}
         }
       }
@@ -3320,11 +2898,7 @@
       "paper_id": "eee9bfeffbb609eff810827214ba9edf543349ae",
       "doi": "10.1101/2020.04.23.20076513",
       "title": "Chapter 2. Surge capacity and infrastructure considerations for mass critical care",
-      "authors": [
-        "John.Hick",
-        "Michael.Christian",
-        "Charles.Sprung"
-      ],
+      "authors": ["John.Hick", "Michael.Christian", "Charles.Sprung"],
       "summary": "",
       "abstract": {
         "text": [],
@@ -3378,9 +2952,7 @@
         "paper_id": "",
         "doi": "",
         "title": "",
-        "authors": [
-          ""
-        ],
+        "authors": [""],
         "summary": "",
         "abstract": {
           "text": [],
@@ -3389,9 +2961,7 @@
           }
         },
         "bodyText": {
-          "text": [
-            ""
-          ],
+          "text": [""],
           "tags": {}
         }
       }
@@ -3411,11 +2981,7 @@
       "paper_id": "eee9bfeffbb609eff810827214ba9edf543349ae",
       "doi": "10.1101/2020.04.23.20076513",
       "title": "Chapter 2. Surge capacity and infrastructure considerations for mass critical care",
-      "authors": [
-        "John.Hick",
-        "Michael.Christian",
-        "Charles.Sprung"
-      ],
+      "authors": ["John.Hick", "Michael.Christian", "Charles.Sprung"],
       "summary": "",
       "abstract": {
         "text": [],
@@ -3469,9 +3035,7 @@
         "paper_id": "",
         "doi": "",
         "title": "",
-        "authors": [
-          ""
-        ],
+        "authors": [""],
         "summary": "",
         "abstract": {
           "text": [],
@@ -3480,9 +3044,7 @@
           }
         },
         "bodyText": {
-          "text": [
-            ""
-          ],
+          "text": [""],
           "tags": {}
         }
       }
