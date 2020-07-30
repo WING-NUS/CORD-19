@@ -222,9 +222,9 @@
   text-decoration: none;
   color: black;
   position: relative;
-  border: 2px outset #819eaf80;
+  border: 2px outset #1097c080;
   padding: 5px;
-  background: white;
+  background: rgba(147, 180, 231, 0.425);
   border-radius: 0.5rem;
   line-height: 15px;
   margin: 0.2rem;
@@ -232,9 +232,7 @@
 
 .button {
   position: relative;
-  /* border: 1px solid #0c1e41;
-  background: white; */
-  color: black;
+  color: #4469e0;
   text-decoration: underline;
 }
 
@@ -396,7 +394,7 @@
 }
 
 .inactive_title {
-  color: black;
+  color: #4469e0;
   text-decoration: underline;
 }
 .selected_part {

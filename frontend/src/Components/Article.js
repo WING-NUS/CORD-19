@@ -29,15 +29,13 @@ const Article = ({
   function checkSentsToDisplay() {
     if (answer === undefined) {
       return (
-        <div className="main_answer_list_title">
-          No Sentences answering the query!
-        </div>
+        <div className="main_answer_list_title">No Relavant Sentences !</div>
       );
     } else {
       return (
         <div>
           {/* <div className="main_answer_list_title"> */}
-          Sentences answering the query &nbsp;&nbsp;|&nbsp;&nbsp;
+          Relavant Sentences &nbsp;&nbsp;|&nbsp;&nbsp;
           <button className="button" onClick={toggle}>
             {open ? "Show Less" : "Show More"}
           </button>
@@ -64,11 +62,8 @@ const Article = ({
     } else {
       return (
         <span>
-          <span className="sentence_index">Sentence {id + 1} :</span>
+          <span className="sentence_index"> [{answer.sent_section[id]}]</span>
           {item}
-          <span className="sentence_index">
-            [{answer.sent_section[id]} section]
-          </span>
         </span>
       );
     }
@@ -86,14 +81,16 @@ const Article = ({
           className="inactive"
           activeClassName="active"
         >
-          {title}↗︎
+          {title}[↗︎More Details]
         </NavLink>
+        <span>
+          <br />
+          Authors: {author} &nbsp;&nbsp;|&nbsp;&nbsp;Publish Date: {doc_date}
+        </span>
         {/* </div> */}
 
         {/* <h3>{title}</h3>
-        <span>
-          Authors: {author} &nbsp;&nbsp;|&nbsp;&nbsp;Publish Date: {doc_date}
-          &nbsp;&nbsp;|&nbsp;&nbsp;
+        
           <NavLink
             to={{
               pathname: `/specificArticle/sentences/${paper_id}`,

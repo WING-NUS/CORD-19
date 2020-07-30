@@ -5,186 +5,89 @@ import Footer from "./Footer";
 import Select from "react-select";
 import Dropdown from "react-dropdown";
 
-function SearchMain() {
-  const [query, setQuery] = useState("");
-  // const [articles, setArticles] = useState();
-  //for testing,dynamic data
-  const [articles, setArticles] = useState(articleSample);
-  const [alert, setAlert] = useState("");
+class SearchMain extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      query: props.location.state.query,
+      articles: props.location.state.articles
+    };
+    this.onSubmit = this.onSubmit.bind(this);
+    this.onChange = this.onChange.bind(this);
+    this.getData = this.getData.bind(this);
+    this.get_articles = this.get_articles.bind(this);
+  }
 
-  //url for search function
-  //const url = `http://localhost:8000/answer/?query=${query}`;
-  const url = `https://cord19backend.herokuapp.com/answer/?query=${query}`;
+  getData = async () => {
+    //url for search function
+    const url = `https://cord19backend.herokuapp.com/answer/?query=${this.state.query}`;
 
-  const getData = async () => {
-    if (query !== "") {
+    if (this.state.query !== "") {
       const result = await Axios.get(url);
-      if (!result.data) {
-        return setAlert("No article retrieved for this query.");
-      }
-      console.log(result);
-      setArticles(result.data);
-      setQuery("");
-      setAlert("");
-    } else {
-      setAlert("Please fill the form");
+      this.setState({ articles: result.data });
     }
   };
 
-  //control for number of sentences
-  var [sentNumber, setSentNumber] = useState({
-    value: "<=3",
-    label: "Less or = 3"
-  });
-  const defaultOption = sentNumber;
-  const options = [
-    { value: "<=3", label: "Less or = 3" },
-    { value: "all", label: "all" }
-  ];
-  const _onSelect = option => {
-    setSentNumber(option);
+  get_articles = () => {
+    if (this.state.articles.length === 0) {
+      this.getData();
+    }
   };
 
-  //control of highlightmodel
-  var [highlightModel, setHighlightModel] = useState({
-    value: "sciwing",
-    label: "SCIWING"
-  });
-  const defaulthHighlightModelOption = highlightModel;
-  const highlightModeloptions = [
-    { value: "sciwing", label: "SCIWING" },
-    { value: "coda19", label: "CODA19" }
-  ];
-  const _highlightModelOnSelect = option => {
-    setHighlightModel(option);
-  };
+  onChange = e => this.setState({ query: e.target.value });
 
-  const onChange = e => setQuery(e.target.value);
-
-  const onSubmit = e => {
+  onSubmit = e => {
     e.preventDefault();
-    getData();
+    this.getData();
+
+    this.props.history.push({
+      pathname: `/search/query/${this.state.query}`,
+      state: { articles: [], query: this.state.query }
+    });
   };
 
-  //highlight control for abstract varaibles
-  var [highlightParts, setHighlightParts] = useState([
-    { label: "Finding", value: "finding" }
-  ]);
-  const defaultHighlightParts = highlightParts;
-  const highlightPartsOptions = [
-    { label: "Background", value: "background" },
-    { label: "Purpose", value: "purpose" },
-    { label: "Finding", value: "finding" },
-    { label: "Method", value: "method" },
-    { label: "Others", value: "others" }
-  ];
-  const highlightList = highlightParts => {
-    var result = [];
-    if (highlightParts === null) {
-      return result;
-    } else {
-      for (let i = 0; i < highlightParts.length; i++) {
-        result.push(highlightParts[i].value);
-      }
-      return result;
-    }
-  };
-  const _highlightOnSelectSearch = option => {
-    setHighlightParts(option);
-    highlightList(option);
-  };
-
-  return (
-    <div>
-      <div className="header">
-        <form
-          onSubmit={onSubmit}
-          className="search-form"
-          htmlFor="search-input"
-        >
-          <input
-            type="text"
-            name="query"
-            value={query}
-            id="search-input"
-            // placeholder="Search..."
-            placeholder="What are the risk factors of covid 19?"
-            //placeholder="Is there a cure for Covid-19?"
-            //placeholder="How long will the outbreak of Covid-19 last?"
-            autoComplete="off"
-            onChange={onChange}
-          />
-          <input type="submit" value="Search" />
-        </form>
-        {/* </div> */}
-      </div>
-
-      {/* <div className="control_panel">
-        <div className="article">
-          <div className="control_title">
-            <h3>Control Panel</h3>
-          </div>
+  render() {
+    return (
+      <div>
+        <div className="header">
+          <form
+            onSubmit={this.onSubmit}
+            className="search-form"
+            htmlFor="search-input"
+          >
+            <input
+              type="text"
+              name="query"
+              value={this.state.query}
+              id="search-input"
+              // placeholder="Search..."
+              placeholder={this.state.query}
+              //placeholder="Is there a cure for Covid-19?"
+              //placeholder="How long will the outbreak of Covid-19 last?"
+              autoComplete="off"
+              onChange={this.onChange}
+            />
+            <input type="submit" value="Search" />
+          </form>
         </div>
-        <div className="article">
-          <div className="control_title">
-            <h4>Relavant Sentences</h4>
-          </div>
-          <div className="answer-list">
-            Number of Sentences to display:
-            <Dropdown
-              options={options}
-              onChange={_onSelect}
-              value={defaultOption}
-              placeholder="Select Type"
-            />
-          </div>
-        </div> */}
 
-        {/* <div className="article">
-          <div className="control_title">
-            <h4>Abstract</h4>
-          </div>
-
-          <div className="answer-list">
-            Highlight Model:
-            <Dropdown
-              options={highlightModeloptions}
-              onChange={_highlightModelOnSelect}
-              value={defaulthHighlightModelOption}
-              placeholder="Select Type"
-            />
-          </div>
-          <div className="answer-list">
-            Highlight Sections:
-            <div className="Dropdown">
-              <Select
-                options={highlightPartsOptions}
-                onChange={_highlightOnSelectSearch}
-                value={defaultHighlightParts}
-                isMulti
+        <div className="articles_main">
+          {this.get_articles()}
+          {this.state.articles !== [] &&
+            this.state.articles.map(article => (
+              <Article
+                key={article.paper_id}
+                article={article}
+                abstractHighlights={[]}
+                abstractHighlightModel={"sciwing"}
+                sentToDisplay={"all"}
               />
-              <div className="col-md-4"></div>
-            </div>
-          </div>
-        </div> */}
-      {/* </div> */}
-
-      <div className="articles_main">
-        {/* <div className="articles_inner"> */}
-        {articles !== [] &&
-          articles.map(article => (
-            <Article
-              key={article.paper_id}
-              article={article}
-              abstractHighlights={highlightList(highlightParts)}
-              abstractHighlightModel={highlightModel.value}
-              sentToDisplay={sentNumber.value}
-            />
-          ))}
+            ))}
+        </div>
+        <Footer />
       </div>
-      <Footer />
-    </div>
-  );
+    );
+  }
 }
 
 export default SearchMain;

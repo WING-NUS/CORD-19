@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Switch, Route, Router } from "react-router-dom";
 import InitialPage from "./Components/InitialPage";
 import SearchMain from "./Components/SearchMain";
+import Search from "./Components/Search";
 import ArticleDetails from "./Components/ArticleDetails";
 import CompareMain from "./Components/CompareMain";
 import CompareArticles from "./Components/CompareArticles";
@@ -19,7 +20,14 @@ function App() {
         <div>
           <Route exact path="/" component={InitialPage} exact />
           <Route exact path="/compare" component={CompareMain} exact />
-          <Route exact path="/search" component={SearchMain} exact />
+          <Route exact path="/search" component={Search} exact />
+          <Route
+            exact
+            path="/search/query/:query"
+            component={SearchMain}
+            exact
+          />
+          {/* /Search/Query/${this.state.query} */}
           <Route exact path="/specificArticle/:id" component={ArticleDetails} />
           <Route
             exact
