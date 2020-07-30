@@ -38,6 +38,13 @@ export default function ArticleDetailsSentence(props) {
     setSentNumber(option);
   };
 
+  const check_sent_section = id => {
+    var result = "No Section Available";
+    if (answer.sent_section[id]) {
+      result = answer.sent_section[id];
+    }
+    return result;
+  };
   const sent_section = (item, id) => {
     if (
       answer["sent_section"] === undefined ||
@@ -52,11 +59,9 @@ export default function ArticleDetailsSentence(props) {
     } else {
       return (
         <span>
-          <span className="sentence_index">Sentence {id + 1} :</span>
+          <span className="sentence_index"> [{check_sent_section(id)}]</span>
+          {/* <span className="sentence_index"> [{answer.sent_section[id]}]</span> */}
           {item}
-          <span className="sentence_index">
-            [{answer.sent_section[id]} section]
-          </span>
         </span>
       );
     }

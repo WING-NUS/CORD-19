@@ -48,6 +48,13 @@ const Article = ({
     }
   }
 
+  const check_sent_section = id => {
+    var result = "No Section Available";
+    if (answer.sent_section[id]) {
+      result = answer.sent_section[id];
+    }
+    return result;
+  };
   const sent_section = (item, id) => {
     if (
       answer["sent_section"] === undefined ||
@@ -62,7 +69,8 @@ const Article = ({
     } else {
       return (
         <span>
-          <span className="sentence_index"> [{answer.sent_section[id]}]</span>
+          <span className="sentence_index"> [{check_sent_section(id)}]</span>
+          {/* <span className="sentence_index"> [{answer.sent_section[id]}]</span> */}
           {item}
         </span>
       );
