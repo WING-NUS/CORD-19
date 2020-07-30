@@ -25,23 +25,23 @@ const SimilarArticle = ({
   return (
     <div className="article">
       <div className="title-author-date">
-        <h2>{title}</h2>
+        {/* <div className="main_answer_list_title"> */}
         <NavLink
           to={{
-            pathname: `/specificArticle/Abstract/${paper_id}`,
+            pathname: `/specificArticle/sentences/${paper_id}`,
             state: { article: article }
           }}
           className="inactive"
           activeClassName="active"
         >
-          Show Details
+          {title}[↗︎More Details]
         </NavLink>
-
         <span>
-          &nbsp;&nbsp;|&nbsp;&nbsp;Authors: {author}{" "}
-          &nbsp;&nbsp;|&nbsp;&nbsp;Publish Date: {doc_date}
+          <br />
+          Authors: {author} &nbsp;&nbsp;|&nbsp;&nbsp;Publish Date: {doc_date}
         </span>
       </div>
+
       {
         <AbstractDetails
           abstract={abstract}

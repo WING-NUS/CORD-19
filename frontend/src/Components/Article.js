@@ -87,28 +87,6 @@ const Article = ({
           <br />
           Authors: {author} &nbsp;&nbsp;|&nbsp;&nbsp;Publish Date: {doc_date}
         </span>
-        {/* </div> */}
-
-        {/* <h3>{title}</h3>
-        
-          <NavLink
-            to={{
-              pathname: `/specificArticle/sentences/${paper_id}`,
-              state: { article: article }
-            }}
-            className="inactive"
-            activeClassName="active"
-          >
-            Show Details
-          </NavLink>
-          &nbsp;&nbsp;|&nbsp;&nbsp;
-          <button
-            className="button"
-            onClick={() => setShowAbstract(!showAbstract)}
-          >
-            Show Abstract
-          </button>
-        </span> */}
       </div>
 
       {/* <div className="answer-list">{checkSentsToDisplay()}</div> */}

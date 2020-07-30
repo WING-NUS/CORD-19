@@ -53,7 +53,10 @@ class CompareMain extends React.Component {
   }
 
   Heatmap_show() {
-    if (Object.keys(this.state.graph_data).length === 0) {
+    if (
+      this.state.graph_data === null ||
+      Object.keys(this.state.graph_data).length === 0
+    ) {
       return <div>Please select Y-axis value!</div>;
     } else {
       return (
@@ -63,10 +66,11 @@ class CompareMain extends React.Component {
           xLabelsLocation={"bottom"}
           xLabelWidth={100}
           yLabelTextAlign={"left"}
-          yLabelWidth={100}
+          yLabelWidth={150}
           data={this.state.graph_data.numbers}
-          height={150}
-          squares
+          height={80}
+          width={200}
+          // squares
           onClick={(x, y) => this.redirectToTarget(x, y)}
           cellStyle={(background, value, min, max, data, x, y) => ({
             background: `rgba(66, 86, 244, ${1 - (max - value) / (max - min)})`,
