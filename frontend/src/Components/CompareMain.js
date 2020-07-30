@@ -33,8 +33,8 @@ class CompareMain extends React.Component {
 
   _onSelect(option) {
     this.setState({ selected: option });
-    //change to the correct url to get compare results
-    // const url_graph_data = `http://localhost:8000/answer/?paper_id=${query}`;
+    // //change to the correct url to get compare results
+    const url_graph_data = `https://cord19backend.herokuapp.com/compare/?y=${option.value}`;
     // const result = await Axios.get(url_graph_data );
     // this.setState({ graph_data: result.data });
 

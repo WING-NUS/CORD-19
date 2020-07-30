@@ -9,11 +9,22 @@ const Article = ({
   sentToDisplay,
   abstractHighlightModel
 }) => {
-  console.log(article);
-  console.log(abstractHighlights);
   const [showAbstract, setShowAbstract] = useState(false);
   const { paper_id, title, doc_date, authors, abstract, answer } = article;
   const author = authors.join(", ");
+
+  var MAX_ITEMS = 3;
+  const [open, setOpen] = useState(false);
+  function toggle() {
+    setOpen(!open);
+  }
+
+  function getRenderedItems() {
+    if (open) {
+      return answer.sents;
+    }
+    return answer.sents.slice(0, MAX_ITEMS);
+  }
 
   function checkSentsToDisplay() {
     if (answer === undefined) {
@@ -25,9 +36,12 @@ const Article = ({
     } else {
       return (
         <div>
-          <div className="main_answer_list_title">
-            Sentences answering the query
-          </div>
+          {/* <div className="main_answer_list_title"> */}
+          Sentences answering the query &nbsp;&nbsp;|&nbsp;&nbsp;
+          <button className="button" onClick={toggle}>
+            {open ? "Show Less" : "Show More"}
+          </button>
+          {/* </div> */}
           {getRenderedItems().map((item, id) => (
             <div key={id}>{sent_section(item, id)}</div>
           ))}
@@ -60,19 +74,10 @@ const Article = ({
     }
   };
 
-  function getRenderedItems() {
-    if (sentToDisplay === "all") {
-      return answer.sents;
-    }
-    if (sentToDisplay === "<=3") {
-      return answer.sents.slice(0, 3);
-    }
-  }
-
   return (
     <div className="article">
       <div className="title-author-date">
-        <h3>{title}</h3>
+        {/* <div className="main_answer_list_title"> */}
         <NavLink
           to={{
             pathname: `/specificArticle/sentences/${paper_id}`,
@@ -81,10 +86,24 @@ const Article = ({
           className="inactive"
           activeClassName="active"
         >
-          Show Details
+          {title}↗︎
         </NavLink>
+        {/* </div> */}
 
+        {/* <h3>{title}</h3>
         <span>
+          Authors: {author} &nbsp;&nbsp;|&nbsp;&nbsp;Publish Date: {doc_date}
+          &nbsp;&nbsp;|&nbsp;&nbsp;
+          <NavLink
+            to={{
+              pathname: `/specificArticle/sentences/${paper_id}`,
+              state: { article: article }
+            }}
+            className="inactive"
+            activeClassName="active"
+          >
+            Show Details
+          </NavLink>
           &nbsp;&nbsp;|&nbsp;&nbsp;
           <button
             className="button"
@@ -92,10 +111,10 @@ const Article = ({
           >
             Show Abstract
           </button>
-          &nbsp;&nbsp;|&nbsp;&nbsp;Authors: {author}{" "}
-          &nbsp;&nbsp;|&nbsp;&nbsp;Publish Date: {doc_date}
-        </span>
+        </span> */}
       </div>
+
+      {/* <div className="answer-list">{checkSentsToDisplay()}</div> */}
 
       <div className="answer-list">{checkSentsToDisplay()}</div>
 

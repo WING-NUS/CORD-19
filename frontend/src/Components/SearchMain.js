@@ -92,10 +92,8 @@ function SearchMain() {
   const _highlightOnSelectSearch = option => {
     setHighlightParts(option);
     highlightList(option);
-    console.log("highlight on select function here");
-    console.log(highlightList(option));
   };
-  console.log(highlightList(highlightParts));
+
   return (
     <div>
       <div className="header">
@@ -121,7 +119,7 @@ function SearchMain() {
         {/* </div> */}
       </div>
 
-      <div className="control_panel">
+      {/* <div className="control_panel">
         <div className="article">
           <div className="control_title">
             <h3>Control Panel</h3>
@@ -140,9 +138,9 @@ function SearchMain() {
               placeholder="Select Type"
             />
           </div>
-        </div>
+        </div> */}
 
-        <div className="article">
+        {/* <div className="article">
           <div className="control_title">
             <h4>Abstract</h4>
           </div>
@@ -168,10 +166,10 @@ function SearchMain() {
               <div className="col-md-4"></div>
             </div>
           </div>
-        </div>
-      </div>
+        </div> */}
+      {/* </div> */}
 
-      <div className="articles">
+      <div className="articles_main">
         {/* <div className="articles_inner"> */}
         {articles !== [] &&
           articles.map(article => (
