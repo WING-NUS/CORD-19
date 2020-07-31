@@ -9,18 +9,7 @@ import Dropdown from "react-dropdown";
 
 export default function ArticleDetailsSimilarPaper(props) {
   //dinamic similar articles, comment out &set correct url to use
-  const [query, setQuery] = useState("");
   var [similar, setSimilar] = useState([]);
-
-  const url_similar = `https://cord19backend.herokuapp.com/similar/?paper_id=${query}`;
-  const getData = async () => {
-    if (query !== "") {
-      const result = await Axios.get(url_similar);
-      setSimilar(result.data);
-      setQuery("");
-    }
-  };
-
   const {
     paper_id,
     doi,
@@ -32,6 +21,16 @@ export default function ArticleDetailsSimilarPaper(props) {
     bodyText,
     url
   } = props.location.state.article;
+
+  const url_similar = `https://cord19backend.herokuapp.com/similar/${paper_id}`;
+  const getData = async () => {
+    console.log("get infor here in getdata");
+    console.log(url_similar);
+    const result = await Axios.get(url_similar);
+    setSimilar(result.data);
+    console.log(similar);
+  };
+
   const article = props.location.state.article;
   const author = authors.join(", ");
   var MAX_ITEMS = 1;
@@ -127,20 +126,7 @@ export default function ArticleDetailsSimilarPaper(props) {
   };
 
   const similar_papers = () => {
-    // will be removed, for static data
-    if (paper_id === "PMC3763004") {
-      similar = similar_paper_1_1;
-    }
-    if (paper_id === "PMC7233365") {
-      similar = similar_paper_1_2;
-    }
-    if (paper_id === "PMC3989246") {
-      similar = similar_paper_3_1;
-    }
-    if (paper_id === "PMC7164849") {
-      similar = similar_paper_3_2;
-    }
-    //ends here
+    getData();
     if (similar.length > 0) {
       return (
         // <Collapsible trigger="Show Similar Articles">

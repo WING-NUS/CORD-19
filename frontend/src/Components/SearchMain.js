@@ -20,6 +20,7 @@ class SearchMain extends React.Component {
 
   getData = async () => {
     //url for search function
+    console.log("in getdata");
     const url = `https://cord19backend.herokuapp.com/answer/?query=${this.state.query}`;
 
     if (this.state.query !== "") {
