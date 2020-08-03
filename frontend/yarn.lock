@@ -2549,7 +2549,7 @@ browserify-sign@^4.0.0:
     browserify-rsa "^4.0.0"
     create-hash "^1.1.0"
     create-hmac "^1.1.2"
-    elliptic "^6.0.0"
+    elliptic "^6.5.3"
     inherits "^2.0.1"
     parse-asn1 "^5.0.0"
 
@@ -2730,7 +2730,7 @@ caniuse-api@^3.0.0:
   dependencies:
     browserslist "^4.0.0"
     caniuse-lite "^1.0.0"
-    lodash.memoize "^4.1.2"
+    lodash.memoize "^4.17.19"
     lodash.uniq "^4.5.0"
 
 caniuse-lite@^1.0.0, caniuse-lite@^1.0.30000981, caniuse-lite@^1.0.30001020, caniuse-lite@^1.0.30001035:
@@ -10491,7 +10491,7 @@ websocket-driver@>=0.5.1:
   dependencies:
     http-parser-js ">=0.4.0 <0.4.11"
     safe-buffer ">=5.1.0"
-    websocket-extensions ">=0.1.1"
+    websocket-extensions ">=0.1.4"
 
 websocket-extensions@>=0.1.1:
   version "0.1.3"
