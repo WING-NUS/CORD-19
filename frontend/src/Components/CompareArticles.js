@@ -52,9 +52,7 @@ export default function CompareArticles(props) {
 
   return (
     <div>
-      <div className="header">
-        <Header />
-      </div>
+      <Header />
       <div className="control_panel">
         <div className="article">
           <div className="control_title">

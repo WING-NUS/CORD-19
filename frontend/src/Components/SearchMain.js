@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import Axios from "axios";
 import Article from "./Article";
 import Footer from "./Footer";
-import Select from "react-select";
-import Dropdown from "react-dropdown";
+import logo from "./logo.png";
+import { NavLink } from "react-router-dom";
 
 class SearchMain extends React.Component {
   constructor(props) {
@@ -50,6 +50,15 @@ class SearchMain extends React.Component {
     return (
       <div>
         <div className="header">
+          <NavLink
+            to={{
+              pathname: `/`
+            }}
+            className="initial_button"
+            activeClassName="active"
+          >
+            <img className="logo" src={logo} alt="Logo" />
+          </NavLink>
           <form
             onSubmit={this.onSubmit}
             className="search-form"
@@ -60,10 +69,7 @@ class SearchMain extends React.Component {
               name="query"
               value={this.state.query}
               id="search-input"
-              // placeholder="Search..."
               placeholder={this.state.query}
-              //placeholder="Is there a cure for Covid-19?"
-              //placeholder="How long will the outbreak of Covid-19 last?"
               autoComplete="off"
               onChange={this.onChange}
             />

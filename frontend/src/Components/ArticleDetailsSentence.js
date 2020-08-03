@@ -102,9 +102,7 @@ export default function ArticleDetailsSentence(props) {
 
   return (
     <div>
-      <div className="header">
-        <Header />
-      </div>
+      <Header />
       <div className="control_panel">
         <div className="article">
           <div className="control_title">

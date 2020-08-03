@@ -126,7 +126,7 @@ export default function ArticleDetailsSimilarPaper(props) {
   };
 
   const similar_papers = () => {
-    // getData();
+    getData();
     if (similar.length > 0) {
       return (
         // <Collapsible trigger="Show Similar Articles">
@@ -153,9 +153,7 @@ export default function ArticleDetailsSimilarPaper(props) {
 
   return (
     <div>
-      <div className="header">
-        <Header />
-      </div>
+      <Header />
       <div className="control_panel">
         <div className="article">
           <div className="control_title">
@@ -195,7 +193,6 @@ export default function ArticleDetailsSimilarPaper(props) {
           <div className="title-author-date">
             <h2>{title}</h2>
             <span>
-              {/* Relevant Sentences | Abstract | Body Text | Original PDF ↗︎ */}
               Authors: {author}
               &nbsp;&nbsp;|&nbsp;&nbsp;Publish Date: {doc_date}
             </span>

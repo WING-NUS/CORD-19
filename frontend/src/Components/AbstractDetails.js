@@ -1,5 +1,4 @@
 import React from "react";
-// import { v4 as uuidv4 } from "uuid";
 
 const AbstractDetails = ({ abstract, highlights, highlightModel }) => {
   const result = abstract.text.map((text, i) => {

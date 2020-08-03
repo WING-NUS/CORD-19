@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import AbstractDetails from "./AbstractDetails";
 import { NavLink } from "react-router-dom";
-import Collapsible from "react-collapsible";
 
 const Article = ({
   article,

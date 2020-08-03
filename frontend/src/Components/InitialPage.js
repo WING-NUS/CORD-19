@@ -3,12 +3,13 @@ import Header from "./Header";
 import { NavLink } from "react-router-dom";
 import Footer from "./Footer";
 export default function ArticleDetails(props) {
+  const query1 = "Is there a vaccine for covid-19?";
+  const query2 = "Is there a cure for covid-19?";
+  const query3 = "What do we know about covid-19 risk factor?";
   return (
     <div>
-      <div className="header">
-        <Header />
-      </div>
-      <div className="initial_intro">
+      <Header />
+      <div className="articles_main_initial">
         <div className="article">
           <div className="title-author-date">
             <h3>WING-NUS COVID-19</h3>
@@ -53,16 +54,8 @@ export default function ArticleDetails(props) {
               the current solutions, it will provide multiple clear functions
               for users.
             </p>
-          </div>
-        </div>
-      </div>
-
-      <div className="initial_search">
-        <div className="article">
-          <div className="title-author-date">
+            <br />
             <h3>Search Function</h3>
-          </div>
-          <div className="answer-list">
             <p>
               The website uses a third-party search engine to provide an
               improved interface of related papers to the query. The most
@@ -82,24 +75,51 @@ export default function ArticleDetails(props) {
                 Click here to play with Search Function ↗︎
               </NavLink>
             </p>
+            <p>Or test it out with sample questions here:</p>
+            <p>
+              <NavLink
+                to={{
+                  pathname: `/search/query/${query1}`,
+                  state: { query: query1, articles: [] }
+                }}
+                className="initial_button"
+                activeClassName="active"
+              >
+                {query1}↗︎
+              </NavLink>
+            </p>
+            <p>
+              <NavLink
+                to={{
+                  pathname: `/search/query/${query2}`,
+                  state: { query: query2, articles: [] }
+                }}
+                className="initial_button"
+                activeClassName="active"
+              >
+                {query2}↗︎
+              </NavLink>
+            </p>
+            <p>
+              <NavLink
+                to={{
+                  pathname: `/search/query/${query3}`,
+                  state: { query: query3, articles: [] }
+                }}
+                className="initial_button"
+                activeClassName="active"
+              >
+                {query3}↗︎
+              </NavLink>
+            </p>
             <br />
-            <br />
-          </div>
-        </div>
-      </div>
-
-      <div className=" initial_compare">
-        <div className="article">
-          <div className="title-author-date">
             <h3>2d Compare Function</h3>
-          </div>
-          <div className="answer-list">
             <p>
               The website provides a 2d comparison function where the user can
               select 2 areas to categorize the articles. For now, X-axis is
               fixed as Publish Time.
             </p>
-            <p>Senario:</p>
+            <p>Scenario:</p>
             <span>
               If the user wishes to find out the risk factors of Corona Virus
               according to the publishing timeline of articles. Simiply
@@ -126,6 +146,7 @@ export default function ArticleDetails(props) {
           </div>
         </div>
       </div>
+
       <Footer />
     </div>
   );

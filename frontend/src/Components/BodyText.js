@@ -64,8 +64,6 @@ const BodyText = ({ bodyText, sectionHeaderType, tag_list }) => {
     }
   }
   //return correctly: {conclusion:[3.4.5],intro:[0]}
-  console.log("line 65");
-  console.log(unique_section_header_to_body);
 
   const unique_headers = Object.keys(unique_section_header_to_body);
 
