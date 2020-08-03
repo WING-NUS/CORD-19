@@ -40,10 +40,10 @@ const create_text_from_header = (
 
 const BodyText = ({ bodyText }) => {
   const tags = bodyText.tags;
-  const tag_dict = tags.sciwing;
+  const tag_dict = tags.sciwingI2B2;
   const keys = Object.keys(tag_dict);
 
-  const section_headers = bodyText.section_header.Original;
+  const section_headers = bodyText.section_header.original;
   var unique_section_header_to_body = {};
   for (let i = 0; i < section_headers.length; i++) {
     var sh = section_headers[i];
@@ -67,15 +67,16 @@ const BodyText = ({ bodyText }) => {
 
   return (
     <div className="answer-list">
+      <h3>Body Text</h3>
       <div>
-        Sciwing I2B2:
+        Font color for bio-ner-tags:
         <span className="problem"> &nbsp;&nbsp;Problem&nbsp;&nbsp;</span>
         <span className="test"> Test&nbsp;&nbsp;</span>
         <span className="treatment"> Treatment &nbsp;&nbsp;</span>
         <br />
       </div>
       <br />
-      <p>{result}</p>
+      <div>{result}</div>
     </div>
   );
 };
