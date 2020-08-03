@@ -6,8 +6,6 @@ const SimilarArticle = ({
   abstractHighlights,
   abstractHighlightModel
 }) => {
-  const [showAbstract, setShowAbstract] = useState(false);
-  const [open, setOpen] = useState(false);
   const {
     paper_id,
     doi,
@@ -18,8 +16,6 @@ const SimilarArticle = ({
     abstract
   } = article;
 
-  var MAX_ITEMS = 3;
-  // var listAnswers = answer.sents.slice(0, size).map(sent => <li>{sent}</li>);
   const author = authors.join(", ");
 
   return (

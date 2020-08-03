@@ -43,6 +43,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: burlywood;
   background: linear-gradient(157.04deg, #061a40 0%, #006daa 100%);
 }
 
@@ -236,6 +237,13 @@
   text-decoration: underline;
 }
 
+.initial_button {
+  position: relative;
+  color: #4469e0;
+  text-decoration: underline;
+  font-weight: 550;
+}
+
 .App-link {
   color: #61dafb;
 }
@@ -254,6 +262,11 @@
 
 .sentence_index {
   font-weight: bold;
+}
+
+.bold {
+  color: #4469e0;
+  /* font-weight: 550; */
 }
 
 /*Container*/
@@ -410,6 +423,18 @@
 
 .external_link {
   color: burlywood;
+  text-decoration: underline;
+}
+
+.external_link_initial {
+  color: #4469e0;
+  /* color: burlywood; */
+  text-decoration: underline;
+}
+
+.external_link_Footer {
+  color: black;
+  /* color: burlywood; */
   text-decoration: underline;
 }
 

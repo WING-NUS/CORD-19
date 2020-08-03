@@ -24,11 +24,11 @@ export default function ArticleDetailsSimilarPaper(props) {
 
   const url_similar = `https://cord19backend.herokuapp.com/similar/${paper_id}`;
   const getData = async () => {
-    console.log("get infor here in getdata");
-    console.log(url_similar);
-    const result = await Axios.get(url_similar);
-    setSimilar(result.data);
-    console.log(similar);
+    if (paper_id !== "") {
+      const result = await Axios.get(url_similar);
+      setSimilar(result.data);
+      // this.setState({ articles: result.data });
+    }
   };
 
   const article = props.location.state.article;
@@ -126,7 +126,7 @@ export default function ArticleDetailsSimilarPaper(props) {
   };
 
   const similar_papers = () => {
-    getData();
+    // getData();
     if (similar.length > 0) {
       return (
         // <Collapsible trigger="Show Similar Articles">

@@ -39,7 +39,6 @@ const Article = ({
           <button className="button" onClick={toggle}>
             {open ? "Show Less" : "Show More"}
           </button>
-          {/* </div> */}
           {getRenderedItems().map((item, id) => (
             <div key={id}>{sent_section(item, id)}</div>
           ))}

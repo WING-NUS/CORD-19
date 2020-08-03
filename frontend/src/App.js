@@ -4,14 +4,14 @@ import InitialPage from "./Components/InitialPage";
 import SearchMain from "./Components/SearchMain";
 import Search from "./Components/Search";
 import ArticleDetails from "./Components/ArticleDetails";
+import CompareMainOriginal from "./Components/CompareMainOriginal";
 import CompareMain from "./Components/CompareMain";
+import Compare from "./Components/Compare";
 import CompareArticles from "./Components/CompareArticles";
 import ArticleDetailsAbstract from "./Components/ArticleDetailsAbstract";
 import ArticleDetailsSentence from "./Components/ArticleDetailsSentence";
 import ArticleDetailsBodyText from "./Components/ArticleDetailsBodyText";
 import ArticleDetailsSimilarPaper from "./Components/ArticleDetailsSimilarPaper";
-
-import testxixi from "./Components/testxixi";
 
 function App() {
   return (
@@ -19,7 +19,8 @@ function App() {
       <Switch>
         <div>
           <Route exact path="/" component={InitialPage} exact />
-          <Route exact path="/compare" component={CompareMain} exact />
+          {/* <Route exact path="/compare" component={CompareMain} exact /> */}
+          <Route exact path="/compare" component={CompareMainOriginal} exact />
           <Route exact path="/search" component={Search} exact />
           <Route
             exact
@@ -29,6 +30,7 @@ function App() {
           />
           {/* /Search/Query/${this.state.query} */}
           <Route exact path="/specificArticle/:id" component={ArticleDetails} />
+          <Route exact path="/compare/:type" component={Compare} />
           <Route
             exact
             path="/specificArticle/sentences/:id"
@@ -50,7 +52,6 @@ function App() {
             component={ArticleDetailsSimilarPaper}
           />
 
-          <Route exact path="/test" component={testxixi} />
           <Route
             exact
             path="/CompareArticles"

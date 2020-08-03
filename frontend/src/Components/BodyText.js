@@ -11,13 +11,11 @@ const bio_tag = (i, j, keys, tag_dict, tag_list) => {
 };
 
 const highlight_tag_in_text = (text, textIndex, keys, tag_dict, tag_list) => {
-  return text
-    .split(" ")
-    .map((word, j) => (
-      <span className={bio_tag(textIndex, j, keys, tag_dict, tag_list)}>
-        {word + " "}
-      </span>
-    ));
+  return text.split(" ").map((word, j) => (
+    <span key={j} className={bio_tag(textIndex, j, keys, tag_dict, tag_list)}>
+      {word + " "}
+    </span>
+  ));
 };
 
 const create_text_from_header = (
@@ -30,11 +28,12 @@ const create_text_from_header = (
 ) => {
   return (
     <Collapsible trigger={header}>
+      {/* position refers to where the text is in the document */}
       {unique_section_header_to_body[header].map((position, i) => (
-        <p>
+        <p key={i}>
           {highlight_tag_in_text(
             bodyText.text[position],
-            i,
+            position,
             keys,
             tag_dict,
             tag_list
@@ -64,16 +63,24 @@ const BodyText = ({ bodyText, sectionHeaderType, tag_list }) => {
       unique_section_header_to_body[sh].push(i);
     }
   }
+  //return correctly: {conclusion:[3.4.5],intro:[0]}
+  console.log("line 65");
+  console.log(unique_section_header_to_body);
 
   const unique_headers = Object.keys(unique_section_header_to_body);
+
   const result = unique_headers.map((header, i) => {
-    return create_text_from_header(
-      header,
-      keys,
-      tag_dict,
-      bodyText,
-      unique_section_header_to_body,
-      tag_list
+    return (
+      <div key={i}>
+        {create_text_from_header(
+          header,
+          keys,
+          tag_dict,
+          bodyText,
+          unique_section_header_to_body,
+          tag_list
+        )}
+      </div>
     );
   });
 

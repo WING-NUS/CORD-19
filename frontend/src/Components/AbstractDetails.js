@@ -11,7 +11,11 @@ const AbstractDetails = ({ abstract, highlights, highlightModel }) => {
       }
     }
 
-    return <span className={style}>{text}</span>;
+    return (
+      <span key={i} className={style}>
+        {text}
+      </span>
+    );
   });
 
   const abstract_details = () => {
