@@ -2,4 +2,5 @@
 ./backend/abstract_tagging
 ./backend/biomedical_ner_tagging
 ./backend/commands
+./backend/utils/__pycache__
 *.pyc
