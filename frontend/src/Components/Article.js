@@ -10,9 +10,7 @@ const Article = ({
 }) => {
   const [showAbstract, setShowAbstract] = useState(false);
   const { paper_id, title, doc_date, authors, abstract, answer } = article;
-  const author = authors.join(", ");
 
-  var MAX_ITEMS = 3;
   const [open, setOpen] = useState(false);
   function toggle() {
     setOpen(!open);
@@ -20,10 +18,22 @@ const Article = ({
 
   function getRenderedItems() {
     if (open) {
-      return answer.sents;
+      return unique_section_sent_list;
+    } else {
+      var to_return = unique_section_sent_list.slice(0, 1);
+      to_return[0] = to_return[0].substring(0, 300) + "...";
+      return to_return;
     }
-    return answer.sents.slice(0, MAX_ITEMS);
   }
+
+  const sent_section = (item, id) => {
+    return (
+      <span>
+        <span className="sentence_index"> [{unique_sections[id]}]</span>
+        {item}
+      </span>
+    );
+  };
 
   function checkSentsToDisplay() {
     if (answer === undefined) {
@@ -34,7 +44,7 @@ const Article = ({
       return (
         <div>
           {/* <div className="main_answer_list_title"> */}
-          Relavant Sentences &nbsp;&nbsp;|&nbsp;&nbsp;
+          Relevant Sentences &nbsp;&nbsp;|&nbsp;&nbsp;
           <button className="button" onClick={toggle}>
             {open ? "Show Less" : "Show More"}
           </button>
@@ -46,33 +56,57 @@ const Article = ({
     }
   }
 
-  const check_sent_section = id => {
-    var result = "No Section Available";
-    if (answer.sent_section[id]) {
-      result = answer.sent_section[id];
+  var unique_section_header_to_sents = {};
+  for (let i = 0; i < answer.sent_section.length; i++) {
+    var sh = answer.sent_section[i];
+    if (sh === "") {
+      sh = "No Section Available";
+    }
+    if (!(sh in unique_section_header_to_sents)) {
+      unique_section_header_to_sents[sh] = [i];
+    } else {
+      unique_section_header_to_sents[sh].push(i);
+    }
+  }
+  const unique_sections = Object.keys(unique_section_header_to_sents); //header
+  var unique_section_sent_list = [];
+  for (let j = 0; j < unique_sections.length; j++) {
+    var sent = "";
+    for (
+      let k = 0;
+      k < unique_section_header_to_sents[unique_sections[j]].length;
+      k++
+    ) {
+      var position = unique_section_header_to_sents[unique_sections[j]][k];
+      if (k === 0) {
+        sent = sent + answer.sents[position];
+      } else {
+        sent = sent + "." + answer.sents[position];
+      }
+    }
+    unique_section_sent_list.push(sent);
+  }
+
+  const check_author = () => {
+    var result = "No author available";
+    if (authors.length > 0) {
+      result = authors.join(", ");
+    }
+    if (result.length > 70) {
+      result = result.substring(0, 69) + "...";
     }
     return result;
   };
-  const sent_section = (item, id) => {
-    if (
-      answer["sent_section"] === undefined ||
-      answer["sent_section"].length < 1
-    ) {
-      return (
-        <span>
-          <span className="sentence_index">Sentence {id + 1} :</span>
-          {item}
-        </span>
-      );
-    } else {
-      return (
-        <span>
-          <span className="sentence_index"> [{check_sent_section(id)}]</span>
-          {/* <span className="sentence_index"> [{answer.sent_section[id]}]</span> */}
-          {item}
-        </span>
-      );
+
+  const check_title = () => {
+    var result = "No title available";
+    if (title !== "") {
+      result = title;
     }
+    if (result.length > 150) {
+      result = result.substring(0, 149) + "...";
+    }
+    return result;
   };
 
   return (
@@ -87,15 +121,13 @@ const Article = ({
           className="inactive"
           activeClassName="active"
         >
-          {title}[↗︎More Details]
+          {check_title()}↗︎
         </NavLink>
         <span>
           <br />
-          Authors: {author} &nbsp;&nbsp;|&nbsp;&nbsp;Publish Date: {doc_date}
+          Authors: {check_author()} &nbsp;&nbsp;|&nbsp;&nbsp;Date: {doc_date}
         </span>
       </div>
-
-      {/* <div className="answer-list">{checkSentsToDisplay()}</div> */}
 
       <div className="answer-list">{checkSentsToDisplay()}</div>
 

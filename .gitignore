@@ -4,3 +4,4 @@
 ./backend/commands
 ./backend/utils/__pycache__
 *.pyc
+node_modules/

@@ -11,18 +11,13 @@ export default function ArticleDetailsAbstract(props) {
 
   const {
     paper_id,
-    doi,
     doc_date,
     title,
     authors,
-    summary,
     abstract,
-    bodyText,
     url
   } = props.location.state.article;
   const article = props.location.state.article;
-  const author = authors.join(", ");
-  var MAX_ITEMS = 1;
   const article_url = `${url}`;
 
   //control related
@@ -70,6 +65,21 @@ export default function ArticleDetailsAbstract(props) {
     console.log(highlightList(option));
   };
 
+  const check_author = () => {
+    var result = "No author available";
+    if (authors.length > 0) {
+      result = authors.join(", ");
+    }
+    return result;
+  };
+  const check_title = () => {
+    var result = "No title available";
+    if (title !== "") {
+      result = title;
+    }
+    return result;
+  };
+
   return (
     <div>
       <Header />
@@ -110,11 +120,11 @@ export default function ArticleDetailsAbstract(props) {
       <div className="articles">
         <div className="article">
           <div className="title-author-date">
-            <h2>{title}</h2>
+            <h2>{check_title()}</h2>
             <span>
               {/* Relevant Sentences | Abstract | Body Text | Original PDF ↗︎ */}
-              Authors: {author}
-              &nbsp;&nbsp;|&nbsp;&nbsp;Publish Date: {doc_date}
+              Authors: {check_author()}
+              &nbsp;&nbsp;|&nbsp;&nbsp;Date: {doc_date}
             </span>
             <br />
             <NavLink

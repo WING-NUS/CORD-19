@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Header from "./Header";
+import logo from "./logo.png";
 import { NavLink } from "react-router-dom";
 import Footer from "./Footer";
 export default function ArticleDetails(props) {
@@ -8,7 +8,18 @@ export default function ArticleDetails(props) {
   const query3 = "What do we know about covid-19 risk factor?";
   return (
     <div>
-      <Header />
+      <div className="header">
+        <NavLink
+          to={{
+            pathname: `/`
+          }}
+          className="initial_button"
+          activeClassName="active"
+        >
+          <img className="logo" src={logo} alt="Logo" />
+        </NavLink>
+        WING-NUS COVID-19
+      </div>
       <div className="articles_main_initial">
         <div className="article">
           <div className="title-author-date">
@@ -34,7 +45,8 @@ export default function ArticleDetails(props) {
             <p>
               WING-NUS COVID-19 is a web scientific document tool that helps
               scientists decipher important information from floods of
-              coronavirus research online, it uses &nbsp;
+              coronavirus research online, It uses a modern scientific document
+              processing system,&nbsp;
               <a
                 target="_blank"
                 href="https://pypi.org/project/sciwing/"
@@ -42,7 +54,7 @@ export default function ArticleDetails(props) {
               >
                 SciWING
               </a>
-              &nbsp;a modern framework from&nbsp;
+              &nbsp;from&nbsp;
               <a
                 target="_blank"
                 href="https://wing.comp.nus.edu.sg/"
@@ -50,19 +62,23 @@ export default function ArticleDetails(props) {
               >
                 WING-NUS
               </a>
-              &nbsp;to facilitate Scientidic Document Processing. Rather than
-              the current solutions, it will provide multiple clear functions
-              for users.
+              &nbsp;to facilitate abstract and named entity tagging and section
+              analyses.
             </p>
             <br />
             <h3>Search Function</h3>
             <p>
-              The website uses a third-party search engine to provide an
-              improved interface of related papers to the query. The most
-              relevant sentences and paragraphs for each article will be shown.
-              The user can also choose to view the abstract of each related
-              paper, highlight the different sections (background, purpose,
-              method, etc) to facilitate understanding.
+              This website uses the &nbsp;
+              <a
+                target="_blank"
+                href="http://cslab241.cs.aueb.gr:5000/"
+                className="external_link_initial"
+              >
+                AUEB NLP Group Search Engine
+              </a>
+              &nbsp; to retrieve relevant documents and sentences to perform
+              further document analysis. You can use WING-NUS COVID-19 to
+              facilitate your understanding of COVID-19.
             </p>
             <p>
               <NavLink
@@ -72,17 +88,17 @@ export default function ArticleDetails(props) {
                 className="initial_button"
                 activeClassName="active"
               >
-                Click here to play with Search Function ↗︎
+                Try a Search Here
               </NavLink>
             </p>
-            <p>Or test it out with sample questions here:</p>
+            <p>Or test it out with these popular queries:</p>
             <p>
               <NavLink
                 to={{
                   pathname: `/search/query/${query1}`,
                   state: { query: query1, articles: [] }
                 }}
-                className="initial_button"
+                className="initial_link"
                 activeClassName="active"
               >
                 {query1}↗︎
@@ -94,7 +110,7 @@ export default function ArticleDetails(props) {
                   pathname: `/search/query/${query2}`,
                   state: { query: query2, articles: [] }
                 }}
-                className="initial_button"
+                className="initial_link"
                 activeClassName="active"
               >
                 {query2}↗︎
@@ -106,7 +122,7 @@ export default function ArticleDetails(props) {
                   pathname: `/search/query/${query3}`,
                   state: { query: query3, articles: [] }
                 }}
-                className="initial_button"
+                className="initial_link"
                 activeClassName="active"
               >
                 {query3}↗︎
@@ -115,23 +131,9 @@ export default function ArticleDetails(props) {
             <br />
             <h3>2d Compare Function</h3>
             <p>
-              The website provides a 2d comparison function where the user can
-              select 2 areas to categorize the articles. For now, X-axis is
-              fixed as Publish Time.
+              WING-NUS COVID-19 also provides a 2D comparison to help you drill
+              down on articles matching filters by their publication time.
             </p>
-            <p>Scenario:</p>
-            <span>
-              If the user wishes to find out the risk factors of Corona Virus
-              according to the publishing timeline of articles. Simiply
-              <span className="bold">
-                &nbsp; Select the Y-axis from the Dropdown List &nbsp;
-              </span>
-              in control panel , the application will retrieve relevant articles
-              about risk factors such as Asthma, Dementia, Smoking status and
-              Overweight or obese, and show the result on a 2d graph, with the x
-              axis representing the factors and y axis depicting the date of the
-              articles published.
-            </span>
             <p>
               <NavLink
                 to={{
@@ -140,7 +142,7 @@ export default function ArticleDetails(props) {
                 className="initial_button"
                 activeClassName="active"
               >
-                Click to play with 2d Compare Function ↗︎
+                Try out the trending comparison function
               </NavLink>
             </p>
           </div>

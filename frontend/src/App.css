@@ -108,6 +108,10 @@
   text-align: center;
 }
 
+.abstract {
+  font-weight: 550;
+}
+
 .articles {
   position: absolute;
   left: 20%;
@@ -133,6 +137,7 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: flex-start;
+  line-height: 20px;
   /* overflow-y: scroll; */
 }
 
@@ -277,11 +282,20 @@
   text-decoration: underline;
 }
 
-.initial_button {
+.initial_link {
   position: relative;
   color: #4469e0;
   text-decoration: underline;
   font-weight: 550;
+}
+
+.initial_button {
+  position: relative;
+  color: white;
+  background: #4469e0;
+  /* text-decoration: underline; */
+  font-weight: 600;
+  border: 2px outset #1097c080;
 }
 
 .App-link {
@@ -480,6 +494,7 @@
 
 .Collapsible {
   background-color: base;
+  margin: 3px;
 }
 .Collapsible__contentInner {
   padding: 10px;

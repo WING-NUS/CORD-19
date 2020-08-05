@@ -15,7 +15,6 @@ const Header = () => {
       >
         <img className="logo" src={logo} alt="Logo" />
       </NavLink>
-      NUS-WING COVID-19
     </div>
   );
 };

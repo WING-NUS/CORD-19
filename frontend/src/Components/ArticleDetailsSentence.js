@@ -17,62 +17,46 @@ export default function ArticleDetailsSentence(props) {
     url
   } = props.location.state.article;
   const article = props.location.state.article;
-  const author = authors.join(", ");
-  var MAX_ITEMS = 1;
   const article_url = `${url}`;
-  const section_headers = bodyText.section_header.original;
 
   //control related
   //section header
   var [sentNumber, setSentNumber] = useState({
-    value: "all",
-    label: "all"
+    value: "Show All",
+    label: "Show All"
   });
   const defaultOption = sentNumber;
   const options = [
-    { value: "<=5", label: "Less or = 5" },
-    { value: "<=10", label: "Less or = 10" },
-    { value: "all", label: "all" }
+    { value: "Show Less", label: "Show Less" },
+    { value: "Show All", label: "Show All" }
   ];
   const _onSelect = option => {
     setSentNumber(option);
   };
 
-  const check_sent_section = id => {
-    var result = "No Section Available";
-    if (answer.sent_section[id]) {
-      result = answer.sent_section[id];
-    }
-    return result;
-  };
-  const sent_section = (item, id) => {
-    if (
-      answer["sent_section"] === undefined ||
-      answer["sent_section"].length < 1
-    ) {
-      return (
-        <span>
-          <span className="sentence_index">Sentence {id + 1} :</span>
-          {item}
-        </span>
-      );
+  function getRenderedItems() {
+    if (sentNumber.value === "Show All") {
+      return unique_section_sent_list;
     } else {
-      return (
-        <span>
-          <span className="sentence_index"> [{check_sent_section(id)}]</span>
-          {/* <span className="sentence_index"> [{answer.sent_section[id]}]</span> */}
-          {item}
-        </span>
-      );
+      var to_return = unique_section_sent_list.slice(0, 1);
+      to_return[0] = to_return[0].substring(0, 500) + "...";
+      return to_return;
     }
+  }
+
+  const sent_section = (item, id) => {
+    return (
+      <span>
+        <span className="sentence_index"> [{unique_sections[id]}]</span>
+        {item}
+      </span>
+    );
   };
 
-  function checkSents() {
-    if (props.location.state.article["answer"] === undefined) {
+  function checkSentsToDisplay() {
+    if (answer === undefined) {
       return (
-        <div className="main_answer_list_title">
-          No Sentences answering the query!
-        </div>
+        <div className="main_answer_list_title">No Relavant Sentences !</div>
       );
     } else {
       return (
@@ -88,17 +72,51 @@ export default function ArticleDetailsSentence(props) {
     }
   }
 
-  function getRenderedItems() {
-    if (sentNumber.value === "all") {
-      return answer.sents;
+  var unique_section_header_to_sents = {};
+  for (let i = 0; i < answer.sent_section.length; i++) {
+    var sh = answer.sent_section[i];
+    if (sh === "") {
+      sh = "No Section Available";
     }
-    if (sentNumber.value === "<=5") {
-      return answer.sents.slice(0, 5);
-    }
-    if (sentNumber.value === "<=10") {
-      return answer.sents.slice(0, 10);
+    if (!(sh in unique_section_header_to_sents)) {
+      unique_section_header_to_sents[sh] = [i];
+    } else {
+      unique_section_header_to_sents[sh].push(i);
     }
   }
+  const unique_sections = Object.keys(unique_section_header_to_sents); //header
+  var unique_section_sent_list = [];
+  for (let j = 0; j < unique_sections.length; j++) {
+    var sent = "";
+    for (
+      let k = 0;
+      k < unique_section_header_to_sents[unique_sections[j]].length;
+      k++
+    ) {
+      var position = unique_section_header_to_sents[unique_sections[j]][k];
+      if (k === 0) {
+        sent = sent + answer.sents[position];
+      } else {
+        sent = sent + "." + answer.sents[position];
+      }
+    }
+    unique_section_sent_list.push(sent);
+  }
+
+  const check_author = () => {
+    var result = "No author available";
+    if (authors.length > 0) {
+      result = authors.join(", ");
+    }
+    return result;
+  };
+  const check_title = () => {
+    var result = "No title available";
+    if (title !== "") {
+      result = title;
+    }
+    return result;
+  };
 
   return (
     <div>
@@ -128,11 +146,11 @@ export default function ArticleDetailsSentence(props) {
       <div className="articles">
         <div className="article">
           <div className="title-author-date">
-            <h2>{title}</h2>
+            <h2>{check_title()}</h2>
             <span>
               {/* Relevant Sentences | Abstract | Body Text | Original PDF ↗︎ */}
-              Authors: {author}
-              &nbsp;&nbsp;|&nbsp;&nbsp;Publish Date: {doc_date}
+              Authors: {check_author()}
+              &nbsp;&nbsp;|&nbsp;&nbsp;Date: {doc_date}
             </span>
             <br />
             <NavLink
@@ -184,7 +202,7 @@ export default function ArticleDetailsSentence(props) {
             </a>
             <br />
           </div>
-          <div className="answer-list">{checkSents()}</div>
+          <div className="answer-list">{checkSentsToDisplay()}</div>
         </div>
       </div>
       <Footer />

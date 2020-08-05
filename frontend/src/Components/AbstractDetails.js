@@ -11,8 +11,11 @@ const AbstractDetails = ({ abstract, highlights, highlightModel }) => {
     }
 
     return (
-      <span key={i} className={style}>
-        {text}
+      <span>
+        <span key={i} className={style}>
+          {text}
+        </span>
+        &nbsp;&nbsp;
       </span>
     );
   });
@@ -24,7 +27,7 @@ const AbstractDetails = ({ abstract, highlights, highlightModel }) => {
       return (
         <div>
           <span className="main_answer_list_title">
-            <h3>Abstract</h3>
+            <div className="abstract">Abstract</div>
             <div>
               Highlight for abstract:
               <span id="square_background"></span>

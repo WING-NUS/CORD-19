@@ -2,7 +2,6 @@ import SimilarArticle from "./SimilarArticle";
 import React, { useState } from "react";
 import Header from "./Header";
 import Select from "react-select";
-
 import Footer from "./Footer";
 import Dropdown from "react-dropdown";
 

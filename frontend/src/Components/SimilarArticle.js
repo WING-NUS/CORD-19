@@ -16,8 +16,21 @@ const SimilarArticle = ({
     abstract
   } = article;
 
-  const author = authors.join(", ");
+  const check_author = () => {
+    var result = "No author available";
+    if (authors.length > 0) {
+      result = authors.join(", ");
+    }
+    return result;
+  };
 
+  const check_title = () => {
+    var result = "No title available";
+    if (title !== "") {
+      result = title;
+    }
+    return result;
+  };
   return (
     <div className="article">
       <div className="title-author-date">
@@ -30,11 +43,11 @@ const SimilarArticle = ({
           className="inactive"
           activeClassName="active"
         >
-          {title}[↗︎More Details]
+          {check_title()}↗︎
         </NavLink>
         <span>
           <br />
-          Authors: {author} &nbsp;&nbsp;|&nbsp;&nbsp;Publish Date: {doc_date}
+          Authors: {check_author()} &nbsp;&nbsp;|&nbsp;&nbsp;Date: {doc_date}
         </span>
       </div>
 
