@@ -21,6 +21,9 @@ const SimilarArticle = ({
     if (authors.length > 0) {
       result = authors.join(", ");
     }
+    if (result.length > 70) {
+      result = result.substring(0, 69) + "...";
+    }
     return result;
   };
 
@@ -28,6 +31,9 @@ const SimilarArticle = ({
     var result = "No title available";
     if (title !== "") {
       result = title;
+    }
+    if (result.length > 150) {
+      result = result.substring(0, 149) + "...";
     }
     return result;
   };
