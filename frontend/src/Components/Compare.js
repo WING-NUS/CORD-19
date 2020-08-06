@@ -27,6 +27,7 @@ class Compare extends React.Component {
       const result = await Axios.get(url_graph_data);
       this.setState({ graph_data: result.data });
     }
+    console.log(url_graph_data);
   };
 
   get_graph_data = () => {
@@ -57,14 +58,15 @@ class Compare extends React.Component {
   }
 
   graph_title() {
-    var a = "Article classified by ";
+    var a = "Article Classified By ";
     var b = this.state.selected.label;
-    var c = " over time ";
+    var c = " Over Time ";
     var title = a.concat(b, c);
     return title;
   }
 
   Heatmap_show() {
+    console.log(this.state.graph_data);
     if (
       this.state.graph_data === null ||
       Object.keys(this.state.graph_data).length === 0 ||
@@ -74,12 +76,12 @@ class Compare extends React.Component {
     } else {
       return (
         <HeatMap
-          xLabels={this.state.graph_data.Xaxis}
-          yLabels={this.state.graph_data.Yaxis}
+          xLabels={this.state.graph_data.Xaxis_with_total}
+          yLabels={this.state.graph_data.Yaxis_with_total}
           xLabelsLocation={"bottom"}
-          xLabelWidth={100}
+          xLabelWidth={200}
           yLabelTextAlign={"left"}
-          yLabelWidth={150}
+          yLabelWidth={200}
           data={this.state.graph_data.numbers}
           height={50}
           width={200}
