@@ -41,7 +41,11 @@ class Compare extends React.Component {
 
     this.props.history.push({
       pathname: `/CompareArticles`,
-      state: { articless: articless }
+      state: {
+        articless: articless,
+        x_value: this.state.graph_data.Xaxis[x],
+        y_value: this.state.graph_data.Yaxis[y]
+      }
     });
   };
 
@@ -72,7 +76,7 @@ class Compare extends React.Component {
       Object.keys(this.state.graph_data).length === 0 ||
       this.state.graph_data.Ytype !== this.state.selected.value
     ) {
-      return <div>Please wait for answer generating!</div>;
+      return <div>Processing. Please Wait.</div>;
     } else {
       return (
         <HeatMap
