@@ -7,6 +7,8 @@ import Dropdown from "react-dropdown";
 
 export default function CompareArticles(props) {
   const articles = props.location.state.articless;
+  const x_value = props.location.state.x_value;
+  const y_value = props.location.state.y_value;
   //control of highlightmodel
   var [highlightModel, setHighlightModel] = useState({
     value: "sciwing",
@@ -49,6 +51,12 @@ export default function CompareArticles(props) {
     highlightList(option);
   };
 
+  const _title_for_the_page = (x_value, y_value) => {
+    const result =
+      "Articles published in " + x_value + " related to " + y_value;
+    return <h3>{result}</h3>;
+  };
+
   return (
     <div>
       <Header />
@@ -87,6 +95,12 @@ export default function CompareArticles(props) {
       </div>
 
       <ul className="articles">
+        <div className="article">
+          <div className="control_title">
+            <h2>{_title_for_the_page(x_value, y_value)}</h2>
+          </div>
+        </div>
+
         {articles !== [] &&
           articles.map(article => (
             <SimilarArticle
