@@ -35,6 +35,36 @@ export default function ArticleDetailsSentence(props) {
   };
 
   function getRenderedItems() {
+    var unique_section_header_to_sents = {};
+    for (let i = 0; i < answer.sent_section.length; i++) {
+      var sh = answer.sent_section[i];
+      if (sh === "") {
+        sh = "No Section Available";
+      }
+      if (!(sh in unique_section_header_to_sents)) {
+        unique_section_header_to_sents[sh] = [i];
+      } else {
+        unique_section_header_to_sents[sh].push(i);
+      }
+    }
+    const unique_sections = Object.keys(unique_section_header_to_sents);
+    var unique_section_sent_list = [];
+    for (let j = 0; j < unique_sections.length; j++) {
+      var sent = "";
+      for (
+        let k = 0;
+        k < unique_section_header_to_sents[unique_sections[j]].length;
+        k++
+      ) {
+        var position = unique_section_header_to_sents[unique_sections[j]][k];
+        if (k === 0) {
+          sent = sent + answer.sents[position];
+        } else {
+          sent = sent + "." + answer.sents[position];
+        }
+      }
+      unique_section_sent_list.push(sent);
+    }
     if (sentNumber.value === "Show All") {
       return unique_section_sent_list;
     } else {
@@ -44,7 +74,9 @@ export default function ArticleDetailsSentence(props) {
     }
   }
 
-  const sent_section = (item, id) => {
+  const sent_section = (item, id, unique_sections) => {
+    //add code here
+
     return (
       <span>
         <span className="sentence_index"> [{unique_sections[id]}]</span>
@@ -59,49 +91,63 @@ export default function ArticleDetailsSentence(props) {
         <div className="main_answer_list_title">No Relavant Sentences !</div>
       );
     } else {
+      var unique_section_header_to_sents = {};
+      for (let i = 0; i < answer.sent_section.length; i++) {
+        var sh = answer.sent_section[i];
+        if (sh === "") {
+          sh = "No Section Available";
+        }
+        if (!(sh in unique_section_header_to_sents)) {
+          unique_section_header_to_sents[sh] = [i];
+        } else {
+          unique_section_header_to_sents[sh].push(i);
+        }
+      }
+      const unique_sections = Object.keys(unique_section_header_to_sents);
+      console.log(unique_sections);
       return (
         <div>
           <div className="main_answer_list_title">
             Sentences answering the query
           </div>
           {getRenderedItems().map((item, id) => (
-            <div key={id}>{sent_section(item, id)}</div>
+            <div key={id}>{sent_section(item, id, unique_sections)}</div>
           ))}
         </div>
       );
     }
   }
 
-  var unique_section_header_to_sents = {};
-  for (let i = 0; i < answer.sent_section.length; i++) {
-    var sh = answer.sent_section[i];
-    if (sh === "") {
-      sh = "No Section Available";
-    }
-    if (!(sh in unique_section_header_to_sents)) {
-      unique_section_header_to_sents[sh] = [i];
-    } else {
-      unique_section_header_to_sents[sh].push(i);
-    }
-  }
-  const unique_sections = Object.keys(unique_section_header_to_sents); //header
-  var unique_section_sent_list = [];
-  for (let j = 0; j < unique_sections.length; j++) {
-    var sent = "";
-    for (
-      let k = 0;
-      k < unique_section_header_to_sents[unique_sections[j]].length;
-      k++
-    ) {
-      var position = unique_section_header_to_sents[unique_sections[j]][k];
-      if (k === 0) {
-        sent = sent + answer.sents[position];
-      } else {
-        sent = sent + "." + answer.sents[position];
-      }
-    }
-    unique_section_sent_list.push(sent);
-  }
+  // var unique_section_header_to_sents = {};
+  // for (let i = 0; i < answer.sent_section.length; i++) {
+  //   var sh = answer.sent_section[i];
+  //   if (sh === "") {
+  //     sh = "No Section Available";
+  //   }
+  //   if (!(sh in unique_section_header_to_sents)) {
+  //     unique_section_header_to_sents[sh] = [i];
+  //   } else {
+  //     unique_section_header_to_sents[sh].push(i);
+  //   }
+  // }
+  // const unique_sections = Object.keys(unique_section_header_to_sents); //header
+  // var unique_section_sent_list = [];
+  // for (let j = 0; j < unique_sections.length; j++) {
+  //   var sent = "";
+  //   for (
+  //     let k = 0;
+  //     k < unique_section_header_to_sents[unique_sections[j]].length;
+  //     k++
+  //   ) {
+  //     var position = unique_section_header_to_sents[unique_sections[j]][k];
+  //     if (k === 0) {
+  //       sent = sent + answer.sents[position];
+  //     } else {
+  //       sent = sent + "." + answer.sents[position];
+  //     }
+  //   }
+  //   unique_section_sent_list.push(sent);
+  // }
 
   const check_author = () => {
     var result = "No author available";
