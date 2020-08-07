@@ -93,7 +93,8 @@ class Compare extends React.Component {
           onClick={(x, y) => this.redirectToTarget(x, y)}
           cellStyle={(background, value, min, max, data, x, y) => ({
             background: `rgba(66, 86, 244, ${1 - (max - value) / (max - min)})`,
-            fontSize: "20px"
+            fontSize: "20px",
+            textDecorationLine: "underline"
           })}
           cellRender={value => value}
           title={(value, unit) => `${value}`}
